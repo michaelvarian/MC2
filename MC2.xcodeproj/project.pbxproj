@@ -30,6 +30,7 @@
 		E17F395722D8844000901E47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E17F395622D8844000901E47 /* Assets.xcassets */; };
 		E17F395A22D8844000901E47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17F395822D8844000901E47 /* LaunchScreen.storyboard */; };
 		E17F396222D8A1C800901E47 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F396122D8A1C800901E47 /* Objects.swift */; };
+		E19F5D4022DE01FF0096E364 /* KomunitasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19F5D3F22DE01FF0096E364 /* KomunitasViewController.swift */; };
 		E1AC48ED22DC5CCF00B33A8A /* AktivitasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AC48EC22DC5CCF00B33A8A /* AktivitasViewController.swift */; };
 		E1AC48EF22DC604700B33A8A /* Komunitas.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AC48EE22DC604700B33A8A /* Komunitas.storyboard */; };
 		E1AC48F522DC66E400B33A8A /* FormKms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AC48F422DC66E400B33A8A /* FormKms.storyboard */; };
@@ -43,7 +44,6 @@
 		652FE2A422DDF28F00B175C0 /* JurnalCellDateRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalCellDateRow.swift; sourceTree = "<group>"; };
 		652FE2A522DDF28F00B175C0 /* JurnalCellRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalCellRow.swift; sourceTree = "<group>"; };
 		652FE2A822DDF30200B175C0 /* CommunityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityTableViewCell.swift; sourceTree = "<group>"; };
-		652FE2B022DDF3BE00B175C0 /* KomunitasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KomunitasViewController.swift; path = "/Users/michaelvariansutanto/Downloads/Mini Challenge 2/MC2/Controller/KomunitasViewController.swift"; sourceTree = "<absolute>"; };
 		E106535622DD9A4A00389E02 /* AktivitasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AktivitasTableViewCell.swift; sourceTree = "<group>"; };
 		E106535822DDA7E100389E02 /* DetailAktivitasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAktivitasViewController.swift; sourceTree = "<group>"; };
 		E106535A22DDB27400389E02 /* KesehatanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesehatanViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +65,7 @@
 		E17F395922D8844000901E47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E17F395B22D8844000901E47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E17F396122D8A1C800901E47 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
+		E19F5D3F22DE01FF0096E364 /* KomunitasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KomunitasViewController.swift; path = ../../../../Desktop/KomunitasViewController.swift; sourceTree = "<group>"; };
 		E1AC48EC22DC5CCF00B33A8A /* AktivitasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AktivitasViewController.swift; sourceTree = "<group>"; };
 		E1AC48EE22DC604700B33A8A /* Komunitas.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Komunitas.storyboard; sourceTree = "<group>"; };
 		E1AC48F422DC66E400B33A8A /* FormKms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FormKms.storyboard; sourceTree = "<group>"; };
@@ -158,7 +159,7 @@
 		E1EC276E22D98FD200528532 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				652FE2B022DDF3BE00B175C0 /* KomunitasViewController.swift */,
+				E19F5D3F22DE01FF0096E364 /* KomunitasViewController.swift */,
 				E12F5FBE22D9D80000C1C934 /* HariIniViewController.swift */,
 				E13058E322DB598500E76BB8 /* DetailTahapanViewController.swift */,
 				E1AC48EC22DC5CCF00B33A8A /* AktivitasViewController.swift */,
@@ -254,6 +255,7 @@
 				652FE2A922DDF30200B175C0 /* CommunityTableViewCell.swift in Sources */,
 				E106535922DDA7E100389E02 /* DetailAktivitasViewController.swift in Sources */,
 				E13058E422DB598500E76BB8 /* DetailTahapanViewController.swift in Sources */,
+				E19F5D4022DE01FF0096E364 /* KomunitasViewController.swift in Sources */,
 				E17F394F22D8843F00901E47 /* ViewController.swift in Sources */,
 				E106535B22DDB27400389E02 /* KesehatanViewController.swift in Sources */,
 				E106536122DDD32D00389E02 /* CatatanKesehatanTableViewCell.swift in Sources */,

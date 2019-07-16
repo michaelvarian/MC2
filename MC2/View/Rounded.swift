@@ -43,6 +43,11 @@ extension UIView {
         self.clipsToBounds = false
     }
     
+    func reallyRound(){
+        self.layer.cornerRadius = 20.0
+        self.clipsToBounds = false
+    }
+    
     
 }
 
