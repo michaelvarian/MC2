@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		65277B2722DE018900F8EC9F /* KomunitasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65277B2622DE018900F8EC9F /* KomunitasViewController.swift */; };
 		652FE2A322DDF26700B175C0 /* JurnalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A222DDF26700B175C0 /* JurnalViewController.swift */; };
 		652FE2A622DDF28F00B175C0 /* JurnalCellDateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A422DDF28F00B175C0 /* JurnalCellDateRow.swift */; };
 		652FE2A722DDF28F00B175C0 /* JurnalCellRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A522DDF28F00B175C0 /* JurnalCellRow.swift */; };
@@ -41,7 +40,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		65277B2622DE018900F8EC9F /* KomunitasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KomunitasViewController.swift; path = "/Users/michaelvariansutanto/Downloads/Mini Challenge 2/MC2/Controller/KomunitasViewController.swift"; sourceTree = "<absolute>"; };
 		652FE2A222DDF26700B175C0 /* JurnalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalViewController.swift; sourceTree = "<group>"; };
 		652FE2A422DDF28F00B175C0 /* JurnalCellDateRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalCellDateRow.swift; sourceTree = "<group>"; };
 		652FE2A522DDF28F00B175C0 /* JurnalCellRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalCellRow.swift; sourceTree = "<group>"; };
@@ -67,7 +65,7 @@
 		E17F395922D8844000901E47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E17F395B22D8844000901E47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E17F396122D8A1C800901E47 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
-		E19F5D3F22DE01FF0096E364 /* KomunitasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KomunitasViewController.swift; path = ../../../../Desktop/KomunitasViewController.swift; sourceTree = "<group>"; };
+		E19F5D3F22DE01FF0096E364 /* KomunitasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KomunitasViewController.swift; sourceTree = "<group>"; };
 		E1AC48EC22DC5CCF00B33A8A /* AktivitasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AktivitasViewController.swift; sourceTree = "<group>"; };
 		E1AC48EE22DC604700B33A8A /* Komunitas.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Komunitas.storyboard; sourceTree = "<group>"; };
 		E1AC48F422DC66E400B33A8A /* FormKms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FormKms.storyboard; sourceTree = "<group>"; };
