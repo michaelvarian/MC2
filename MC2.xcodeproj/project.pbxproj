@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65277B2722DE018900F8EC9F /* KomunitasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65277B2622DE018900F8EC9F /* KomunitasViewController.swift */; };
 		652FE2A322DDF26700B175C0 /* JurnalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A222DDF26700B175C0 /* JurnalViewController.swift */; };
 		652FE2A622DDF28F00B175C0 /* JurnalCellDateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A422DDF28F00B175C0 /* JurnalCellDateRow.swift */; };
 		652FE2A722DDF28F00B175C0 /* JurnalCellRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A522DDF28F00B175C0 /* JurnalCellRow.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65277B2622DE018900F8EC9F /* KomunitasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KomunitasViewController.swift; path = "/Users/michaelvariansutanto/Downloads/Mini Challenge 2/MC2/Controller/KomunitasViewController.swift"; sourceTree = "<absolute>"; };
 		652FE2A222DDF26700B175C0 /* JurnalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalViewController.swift; sourceTree = "<group>"; };
 		652FE2A422DDF28F00B175C0 /* JurnalCellDateRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalCellDateRow.swift; sourceTree = "<group>"; };
 		652FE2A522DDF28F00B175C0 /* JurnalCellRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalCellRow.swift; sourceTree = "<group>"; };
