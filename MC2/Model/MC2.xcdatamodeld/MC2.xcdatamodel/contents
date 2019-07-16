@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Aktivitas" representedClassName="Aktivitas" syncable="YES" codeGenerationType="class">
+        <attribute name="descAktivitas" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fotoAktivitas" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idAktivitas" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="namaAktivitas" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toAkun" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Akun" inverseName="toAktivitas" inverseEntity="Akun" syncable="YES"/>
+    </entity>
+    <entity name="Akun" representedClassName="Akun" syncable="YES" codeGenerationType="class">
+        <attribute name="idAkun" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="namaOrangTua" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tanggalLahir" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="toAktivitas" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Aktivitas" inverseName="toAkun" inverseEntity="Aktivitas" syncable="YES"/>
+        <relationship name="toDataBayi" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DataBayi" inverseName="toAkun" inverseEntity="DataBayi" syncable="YES"/>
+        <relationship name="toDataKesehatan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DataKesehatan" inverseName="toAkun" inverseEntity="DataKesehatan" syncable="YES"/>
+        <relationship name="toImunisasi" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Imunisasi" inverseName="toAkun" inverseEntity="Imunisasi" syncable="YES"/>
+        <relationship name="toKomunitas" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Komunitas" inverseName="toKomunitas" inverseEntity="Komunitas" syncable="YES"/>
+        <relationship name="toKondisi" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Kondisi" inverseName="toAkun" inverseEntity="Kondisi" syncable="YES"/>
+        <relationship name="toTumbuhKembang" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TumbuhKembang" inverseName="toAkun" inverseEntity="TumbuhKembang" syncable="YES"/>
+    </entity>
+    <entity name="DataBayi" representedClassName="DataBayi" syncable="YES" codeGenerationType="class">
+        <attribute name="berat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="idDataBayi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="panjang" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="toAkun" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Akun" inverseName="toDataBayi" inverseEntity="Akun" syncable="YES"/>
+    </entity>
+    <entity name="DataKesehatan" representedClassName="DataKesehatan" syncable="YES" codeGenerationType="class">
+        <attribute name="catatan" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fotoKesehatan" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idDataKesehatan" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pengobatan" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tanggalPengobatan" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="toAkun" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Akun" inverseName="toDataKesehatan" inverseEntity="Akun" syncable="YES"/>
+    </entity>
+    <entity name="Imunisasi" representedClassName="Imunisasi" syncable="YES" codeGenerationType="class">
+        <attribute name="descImunisasi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idImunisasi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isCheck" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="jenisImunisasi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tanggalImunisasi" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toAkun" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Akun" inverseName="toImunisasi" inverseEntity="Akun" syncable="YES"/>
+    </entity>
+    <entity name="Komunitas" representedClassName="Komunitas" syncable="YES" codeGenerationType="class">
+        <attribute name="descKomunitas" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fotoKomunitas" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idKomunitas" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="linkKomunitas" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="namaKomunitas" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toKomunitas" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Akun" inverseName="toKomunitas" inverseEntity="Akun" syncable="YES"/>
+    </entity>
+    <entity name="Kondisi" representedClassName="Kondisi" syncable="YES" codeGenerationType="class">
+        <attribute name="descStatusGizi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descStatusImunisasi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descStatusTumbuh" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idKondisi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isNaik" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="kenaikanBeratMinimum" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toAkun" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Akun" inverseName="toKondisi" inverseEntity="Akun" syncable="YES"/>
+    </entity>
+    <entity name="TumbuhKembang" representedClassName="TumbuhKembang" syncable="YES" codeGenerationType="class">
+        <attribute name="descTumbuh" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idTumbuh" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isCheck" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="toAkun" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Akun" inverseName="toTumbuhKembang" inverseEntity="Akun" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Kondisi" positionX="51.046875" positionY="253.0546875" width="128" height="163"/>
+        <element name="TumbuhKembang" positionX="49.55078125" positionY="428.609375" width="128" height="103"/>
+        <element name="Komunitas" positionX="50.0390625" positionY="107.19140625" width="128" height="133"/>
+        <element name="Aktivitas" positionX="53.76171875" positionY="-159.41015625" width="128" height="118"/>
+        <element name="Imunisasi" positionX="52.21484375" positionY="-31.34765625" width="128" height="133"/>
+        <element name="Akun" positionX="-361.53125" positionY="47.79296875" width="128" height="193"/>
+        <element name="DataKesehatan" positionX="-352.92578125" positionY="-148.703125" width="128" height="133"/>
+        <element name="DataBayi" positionX="-358.5390625" positionY="371.15625" width="128" height="103"/>
+    </elements>
+</model>
