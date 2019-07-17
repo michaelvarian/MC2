@@ -18,20 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Logogram" translatesAutoresizingMaskIntoConstraints="NO" id="8XJ-a8-61r" userLabel="logoImage View">
-                                <rect key="frame" x="104" y="162" width="207" height="207"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="207" id="E8g-0U-OlB"/>
-                                    <constraint firstAttribute="height" constant="207" id="cQN-7w-dKT"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Logotype" translatesAutoresizingMaskIntoConstraints="NO" id="wIe-bZ-atw" userLabel="logoText View">
-                                <rect key="frame" x="146" y="380" width="106" height="103"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="103" id="awP-3X-HOu"/>
-                                    <constraint firstAttribute="width" constant="106" id="jhH-UD-g0u"/>
-                                </constraints>
-                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bE6-X4-Coc" userLabel="imageContainerView">
+                                <rect key="frame" x="107" y="168" width="204" height="306"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logogram" translatesAutoresizingMaskIntoConstraints="NO" id="8XJ-a8-61r" userLabel="logoImage View">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logotype" translatesAutoresizingMaskIntoConstraints="NO" id="wIe-bZ-atw" userLabel="logoText View">
+                                        <rect key="frame" x="48" y="203" width="106" height="103"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3n-bu-Yr9">
                                 <rect key="frame" x="69" y="755" width="277" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
