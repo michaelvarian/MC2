@@ -31,9 +31,6 @@ var tabelJurnal: [jurnal] = []
 
 var tabelJurnalFiltered: [jurnal] = []
 
-var tabelPercobaan: [jurnal] = []
-
-
 //The object inits
 
 //enum panggilan
