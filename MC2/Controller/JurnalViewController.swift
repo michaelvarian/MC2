@@ -20,9 +20,13 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var jurnalTableView: UITableView!
     
-    @IBOutlet weak var filterDateStart: UIButton!
+//    @IBOutlet weak var filterDateStart: UIButton!
+//
+//    @IBOutlet weak var filterDateEnd: UIButton!
     
-    @IBOutlet weak var filterDateEnd: UIButton!
+    @IBOutlet weak var filterDateStart: UITextField!
+    
+    @IBOutlet weak var filterDateEnd: UITextField!
     
     @IBOutlet weak var filterTumbuhKembang: UIButton!
 
@@ -34,6 +38,14 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
   //  let sections: [[String]] = []
     
+    let datePicker = UIDatePicker()
+    
+    var isFilterTumbuhKembangHighlighted = false
+    
+    var isFilterImunisasiHighlighted = false
+    
+    var isFilterCatatanKesehatanHighlighted = false
+    
     let sections = ["section1", "section2", "section3"]
     
     let rows = [["row1 section1", "row2 section1", "row3 section1"], ["row1 section2"], ["row1 section3", "row2 section3"]]
@@ -42,7 +54,12 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var isFiltered = false
     
+    var textFieldTag = 0
+    
     override func viewWillAppear(_ animated: Bool) {
+        //setDatePicker()
+        
+        setDatePicker()
         
         jurnalTableView.allowsSelectionDuringEditing = false
         
@@ -146,7 +163,7 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 var date = Date()
                 date = tabelJurnal[indexPath.section].jurnalContent[indexPath.row].date
                 let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy//MM/dd"
+                formatter.dateFormat = "yyyy/MM/dd"
                 let dateString = formatter.string(from: date)
                 cell.dateTitle.text = dateString
                 cell.dateLine.layer.cornerRadius = 3
@@ -169,7 +186,7 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 var date = Date()
                 date = tabelJurnalFiltered[indexPath.section].jurnalContent[indexPath.row].date
                 let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy//MM/dd"
+                formatter.dateFormat = "yyyy/MM/dd"
                 let dateString = formatter.string(from: date)
                 cell.dateTitle.text = dateString
                 cell.dateLine.layer.cornerRadius = 3
@@ -315,7 +332,7 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     addSubSection = false
                     let date = jurnalContents2.date
                     let formatter = DateFormatter()
-                    formatter.dateFormat = "yyyy//MM/dd"
+                    formatter.dateFormat = "yyyy/MM/dd"
                     let dateString = formatter.string(from: date)
                     let dateDate = formatter.date(from: dateString)
                     print("a date must be output at this point")
@@ -423,8 +440,94 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
             isFilterOpened = false
         }
     }
+    
+    @IBAction func filterButtonClick(_ sender: UIButton) {
+        
+        switch sender.tag
+        {
+        case 0:
+            switch isFilterTumbuhKembangHighlighted
+            {
+            case false:
+                filterTumbuhKembang.setHighlighted()
+                isFilterTumbuhKembangHighlighted = true
+            case true:
+                filterTumbuhKembang.setHighlighted()
+                isFilterTumbuhKembangHighlighted = false
+            }
+        case 1:
+            switch isFilterImunisasiHighlighted
+            {
+            case false:
+                filterImunisasi.setHighlighted()
+                isFilterImunisasiHighlighted = true
+            case true:
+                filterImunisasi.setHighlighted()
+                isFilterImunisasiHighlighted = false
+            }
+        case 2:
+            switch isFilterCatatanKesehatanHighlighted
+            {
+            case false:
+                filterCatatanKesehatan.setHighlighted()
+                isFilterCatatanKesehatanHighlighted = true
+            case true:
+                filterCatatanKesehatan.setHighlighted()
+                isFilterCatatanKesehatanHighlighted = false
+            }
+        default: break
+        }
+    }
+    
+    @IBAction func filterDateStartClicked(_ sender: UITextField) {
+        textFieldTag = sender.tag
+        print("date end is clicked")
+    }
+    
+    @IBAction func filterDateEndClicked(_ sender: UITextField) {
+        textFieldTag = sender.tag
+        print("date end is clicked")
+    }
+    
+    func setDatePicker()
+    {
+        datePicker.datePickerMode = .date
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneDatePicker))
+        let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
+        toolbar.setItems([doneButton, space, cancelButton], animated: false)
+        //textField.inputAccessoryView = toolbar
+        //textField.inputView = datePicker
+//        filterDateStart.inputAccessoryView = toolbar
+//        filterDateStart.inputView = datePicker
+        filterDateStart.inputAccessoryView = toolbar
+        filterDateStart.inputView = datePicker
+        filterDateEnd.inputAccessoryView = toolbar
+        filterDateEnd.inputView = datePicker
+    }
+    
+    @objc func doneDatePicker(){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        //txtDatePicker.text = formatter.string(from: datePicker.date)
+        switch textFieldTag {
+        case 0:
+            filterDateStart.text = formatter.string(from: datePicker.date)
+        case 1:
+            filterDateEnd.text = formatter.string(from: datePicker.date)
+        default:
+            break
+        }
+        
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+    }
 }
-
 
 extension UIView
 {
@@ -436,5 +539,32 @@ extension UIView
         self.layer.shadowRadius = 2
         self.layer.shouldRasterize = true
         self.layer.masksToBounds = false
+    }
+    
+    func setHighlighted()
+    {
+        if self.backgroundColor == UIColor.white
+        {
+            self.backgroundColor = .lightGray
+            
+            self.layer.shadowColor = UIColor.darkGray.cgColor
+            self.layer.shadowOpacity = 0.3
+            self.layer.shadowOffset = CGSize(width: 0, height: 5)
+            self.layer.shadowRadius = 0
+            self.layer.shouldRasterize = true
+            self.layer.masksToBounds = false
+        }
+        
+        else if self.backgroundColor == UIColor.lightGray
+        {
+            self.backgroundColor = .white
+            
+            self.layer.shadowColor = UIColor.darkGray.cgColor
+            self.layer.shadowOpacity = 0.3
+            self.layer.shadowOffset = CGSize(width: 0, height: 5)
+            self.layer.shadowRadius = 2
+            self.layer.shouldRasterize = true
+            self.layer.masksToBounds = false
+        }
     }
 }
