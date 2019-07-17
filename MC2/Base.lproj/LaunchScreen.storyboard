@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,15 +15,54 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="onj-YP-M58" userLabel="logoContainerView">
+                                <rect key="frame" x="87" y="264.5" width="240" height="367"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logogram" translatesAutoresizingMaskIntoConstraints="NO" id="jtv-DQ-lDU" userLabel="logoImage">
+                                        <rect key="frame" x="16" y="0.0" width="207" height="207"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="207" id="eMX-0T-DfK"/>
+                                            <constraint firstAttribute="width" constant="207" id="kFF-0A-PkW"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logotype" translatesAutoresizingMaskIntoConstraints="NO" id="Jft-Jg-hwd" userLabel="logoText">
+                                        <rect key="frame" x="43" y="220" width="153" height="147"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="153" id="FD4-xH-eYK"/>
+                                            <constraint firstAttribute="height" constant="147" id="rEu-wa-JKO"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Jft-Jg-hwd" secondAttribute="bottom" id="A4w-Zg-9vI"/>
+                                    <constraint firstItem="Jft-Jg-hwd" firstAttribute="leading" secondItem="onj-YP-M58" secondAttribute="leading" constant="43" id="Nf5-DJ-mEO"/>
+                                    <constraint firstAttribute="width" constant="240" id="OzW-IU-2FC"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jft-Jg-hwd" secondAttribute="trailing" constant="44" id="RiZ-MO-8Ze"/>
+                                    <constraint firstAttribute="trailing" secondItem="jtv-DQ-lDU" secondAttribute="trailing" constant="17" id="SGJ-bi-uX6"/>
+                                    <constraint firstAttribute="height" constant="367" id="aPk-35-VRZ"/>
+                                    <constraint firstItem="jtv-DQ-lDU" firstAttribute="leading" secondItem="onj-YP-M58" secondAttribute="leading" constant="16" id="aqQ-Oj-09v"/>
+                                    <constraint firstItem="jtv-DQ-lDU" firstAttribute="top" secondItem="onj-YP-M58" secondAttribute="top" id="q3V-ex-iPZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="onj-YP-M58" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="TxN-aL-zBf"/>
+                            <constraint firstItem="onj-YP-M58" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="iBV-z2-a5K"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logogram" width="69" height="69"/>
+        <image name="logotype" width="51" height="49"/>
+    </resources>
 </document>
