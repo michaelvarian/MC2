@@ -289,7 +289,19 @@ func initJurnalObjects()
     tabelJurnal.append(section2)
 }
 
-
+func addDataTahapan(){
+    let tahapan1 = tumbuh(idTumbuh: "1", idAkun: "1", namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
+    let tahapan2 = tumbuh(idTumbuh: "1", idAkun: "1", namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
+    let tahapan3 = tumbuh(idTumbuh: "1", idAkun: "1", namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
+    let tahapan4 = tumbuh(idTumbuh: "1", idAkun: "1", namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
+    let tahapan5 = tumbuh(idTumbuh: "1", idAkun: "1", namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
+    
+    tabelTumbuh.append(tahapan1)
+    tabelTumbuh.append(tahapan2)
+    tabelTumbuh.append(tahapan3)
+    tabelTumbuh.append(tahapan4)
+    tabelTumbuh.append(tahapan5)
+}
 
 
 /// this is line 296

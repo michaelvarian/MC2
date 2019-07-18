@@ -10,6 +10,9 @@ import UIKit
 
 class HariIniViewController: UIViewController {
     
+    // Contants
+    let cellHomeTahapan = "cellHomeTahapan"
+    
     // Layout
     @IBOutlet weak var headerView: UIImageView!
     @IBOutlet weak var accountImage: UIImageView!
@@ -49,9 +52,14 @@ class HariIniViewController: UIViewController {
     @IBOutlet weak var namaKomunitasLabel: UILabel!
     @IBOutlet weak var detailKomunitasButton: UIButton!
     
+    
+    @IBOutlet weak var homeTahapanTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStartView()
+        addDataTahapan()
+        cellDelegate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,6 +82,56 @@ class HariIniViewController: UIViewController {
     }
     
    
+}
+
+extension HariIniViewController: UITableViewDataSource, UITableViewDelegate{
+    
+    
+    func cellDelegate(){
+        homeTahapanTable.delegate = self
+        homeTahapanTable.dataSource = self
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tabelTumbuh.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellHomeTahapan) as! HomeTahapanTableViewCell
+        let tahapan = tabelTumbuh[indexPath.row]
+        cell.tahapanDeskripsi.text = tahapan.descTumbuh
+        cell.checkBoxTahapan.addTarget(self, action: #selector(checkMarkedClicked(sender:)), for: .touchUpInside)
+        
+        return cell
+    }
+    
+    @objc func checkMarkedClicked(sender: UIButton){
+        if sender.isSelected == false{
+            showAlertView(sender: sender)
+        }else{
+            sender.isSelected = false
+        }
+    }
+    
+    func showAlertView(sender:UIButton){
+        let alert = UIAlertController(title: "Waw Hebat", message: "Apakah buah hati anda dapat melakukannya", preferredStyle: .alert)
+        
+        let ya = UIAlertAction(title: "Ya", style: .default) { action in
+            sender.isSelected = true
+        }
+        
+        let tidak = UIAlertAction(title: "Tidak ", style: .default) { action in
+            sender.isSelected = false
+        }
+        
+        alert.addAction(tidak)
+        alert.addAction(ya)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    
 }
 
 extension HariIniViewController{
@@ -132,3 +190,4 @@ extension HariIniViewController{
         present(actionSheet, animated: true, completion: nil)
     }
 }
+
