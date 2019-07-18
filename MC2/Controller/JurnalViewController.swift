@@ -40,12 +40,6 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     let datePicker = UIDatePicker()
     
-    var isFilterTumbuhKembangHighlighted = false
-    
-    var isFilterImunisasiHighlighted = false
-    
-    var isFilterCatatanKesehatanHighlighted = false
-    
     let sections = ["section1", "section2", "section3"]
     
     let rows = [["row1 section1", "row2 section1", "row3 section1"], ["row1 section2"], ["row1 section3", "row2 section3"]]
@@ -55,6 +49,8 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var isFiltered = false
     
     var textFieldTag = 0
+    
+    var filterEnumCategory: jurnalCategoryEnum = .all
     
     override func viewWillAppear(_ animated: Bool) {
         //setDatePicker()
@@ -360,37 +356,27 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         switch sender.tag
         {
         case 0:
-            switch isFilterTumbuhKembangHighlighted
-            {
-            case false:
-                filterTumbuhKembang.setHighlighted()
-                isFilterTumbuhKembangHighlighted = true
-            case true:
-                filterTumbuhKembang.setHighlighted()
-                isFilterTumbuhKembangHighlighted = false
-            }
+           // switch isFilterTumbuhKembangHighlighted
+            filterEnumCategory = .tumbuhKembang
+            filterTumbuhKembang.setTouched(bool: true)
+            filterImunisasi.setTouched(bool: false)
+            filterCatatanKesehatan.setTouched(bool: false)
         case 1:
-            switch isFilterImunisasiHighlighted
-            {
-            case false:
-                filterImunisasi.setHighlighted()
-                isFilterImunisasiHighlighted = true
-            case true:
-                filterImunisasi.setHighlighted()
-                isFilterImunisasiHighlighted = false
-            }
+           // switch isFilterImunisasiHighlighted
+            filterEnumCategory = .imunisasi
+            filterTumbuhKembang.setTouched(bool: false)
+            filterImunisasi.setTouched(bool: true)
+            filterCatatanKesehatan.setTouched(bool: false)
         case 2:
-            switch isFilterCatatanKesehatanHighlighted
-            {
-            case false:
-                filterCatatanKesehatan.setHighlighted()
-                isFilterCatatanKesehatanHighlighted = true
-            case true:
-                filterCatatanKesehatan.setHighlighted()
-                isFilterCatatanKesehatanHighlighted = false
-            }
+          //  switch isFilterCatatanKesehatanHighlighted
+            filterEnumCategory = .catatanKesehatan
+            filterTumbuhKembang.setTouched(bool: false)
+            filterImunisasi.setTouched(bool: false)
+            filterCatatanKesehatan.setTouched(bool: true)
         default: break
         }
+        
+        filterJournal(searchText: jurnalSearchBar.text!, startDate: filterDateStart.text!, endDate: filterDateEnd.text!)
     }
     
     @IBAction func filterDateStartClicked(_ sender: UITextField) {
@@ -452,18 +438,7 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 {
                     if (jurnalContents.date > dateStartDate! || jurnalContents.date == dateStartDate) && (jurnalContents.date < dateEndDate! || jurnalContents.date < dateEndDate!)
                     {
-                        let categoryFilter = jurnalContents.jurnalCategory
-                        if isFilterTumbuhKembangHighlighted && isFilterImunisasiHighlighted && isFilterCatatanKesehatanHighlighted
-                        {
-                            if categoryFilter == .tumbuhKembang || categoryFilter == .imunisasi || categoryFilter == .catatanKesehatan
-                            {
-                                boolAdd = false
-                            }
-                        }
-                        else
-                        {
                             boolAdd = true
-                        }
                     }
                 }
                 if boolAdd == true
@@ -548,18 +523,7 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
             {
                 if jurnalContents.titleJurnal.contains(searchText.lowercased()) && (jurnalContents.date > dateStartDate! || jurnalContents.date == dateStartDate) && (jurnalContents.date < dateEndDate! || jurnalContents.date < dateEndDate!)
                 {
-                    let categoryFilter = jurnalContents.jurnalCategory
-                    if isFilterTumbuhKembangHighlighted && isFilterImunisasiHighlighted && isFilterCatatanKesehatanHighlighted
-                    {
-                        if categoryFilter == .tumbuhKembang || categoryFilter == .imunisasi || categoryFilter == .catatanKesehatan
-                        {
-                            boolAdd = false
-                        }
-                    }
-                    else
-                    {
                         boolAdd = true
-                    }
                 }
             }
             if boolAdd == true
@@ -648,11 +612,6 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         jurnalTableView.reloadData()
     }
     
-    func filterEnum()
-    {
-        
-    }
-    
     func setDatePicker()
     {
         datePicker.datePickerMode = .date
@@ -718,9 +677,9 @@ extension UIView
         self.layer.masksToBounds = false
     }
     
-    func setHighlighted()
+    func setTouched(bool: Bool)
     {
-        if self.backgroundColor == UIColor.white
+        if bool == true
         {
             self.backgroundColor = .lightGray
             
@@ -732,7 +691,7 @@ extension UIView
             self.layer.masksToBounds = false
         }
         
-        else if self.backgroundColor == UIColor.lightGray
+        else if bool == false
         {
             self.backgroundColor = .white
             

@@ -202,6 +202,7 @@ enum jurnalCategoryEnum
     case imunisasi
     case catatanKesehatan
     case empty
+    case all
 }
 
 class jurnal
