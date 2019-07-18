@@ -287,7 +287,7 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) // called when text changes (including clear)
     {
-        filterJournal(searchText: searchText, startDate: "", endDate: "")
+        filterJournal(searchText: searchText, startDate: filterDateStart.text!, endDate: filterDateEnd.text!)
     }
     
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -470,42 +470,46 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         
                         for jurnalContents2 in tabelJurnal[jurnalCountRow].jurnalContent
                         {
-                                // addSubSection = true
-                                
-                                let date = jurnalContents2.date
-                                let dateString = formatter.string(from: date)
-                                let dateDate = formatter.date(from: dateString)
-                                print("dateDate: \(dateDate!)")
-                                
-                                print("a data is found with a jurnal content count of \(jurnalContents2.idJurnal) and category of \(jurnalContents2.jurnalCategory)")
-                                
-                                addSubSection = true
-                                
-                                for filteredJurnalDateSections in tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent
+                                    // addSubSection = true
+                            
+                                    let date = jurnalContents2.date
+                                    let dateString = formatter.string(from: date)
+                                    let dateDate = formatter.date(from: dateString)
+                                    print("dateDate: \(dateDate!)")
+                            
+                                    print("a data is found with a jurnal content count of \(jurnalContents2.idJurnal) and category of \(jurnalContents2.jurnalCategory)")
+                            
+                                if (jurnalContents2.date > dateStartDate! || jurnalContents2.date == dateStartDate) && (jurnalContents2.date < dateEndDate! || jurnalContents2.date < dateEndDate!)
                                 {
-                                    if filteredJurnalDateSections.date == dateDate! && filteredJurnalDateSections.jurnalCategory == jurnalCategoryEnum.empty
-                                    {
-                                        print("a match is found")
-                                        addSubSection = false
-                                    }
-                                }
-                                
-                                if addSubSection == true
-                                {
-                                    let newSubSection = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: .empty, date: dateDate!, titleJurnal: "", descJurnal: "")
-                                    //tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newSubSection)
                                     
-                                    print("")
-                                    print("     a subsection is added")
-                                    print("")
-                                }
-                                
-                                let newContent = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: jurnalContents2.jurnalCategory, date: dateDate!, titleJurnal: jurnalContents2.titleJurnal, descJurnal: jurnalContents2.descJurnal)
-                                
-                                tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newContent)
-                            print("")
-                            print("     a data is added")
-                            print("")
+                                    addSubSection = true
+                                    
+                                    for filteredJurnalDateSections in tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent
+                                    {
+                                        if filteredJurnalDateSections.date == dateDate! && filteredJurnalDateSections.jurnalCategory == jurnalCategoryEnum.empty
+                                        {
+                                            print("a match is found")
+                                            addSubSection = false
+                                        }
+                                    }
+                                    
+                                    if addSubSection == true
+                                    {
+                                        let newSubSection = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: .empty, date: dateDate!, titleJurnal: "", descJurnal: "")
+                                        //tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newSubSection)
+                                        
+                                        print("")
+                                        print("     a subsection is added")
+                                        print("")
+                                    }
+                                    
+                                    let newContent = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: jurnalContents2.jurnalCategory, date: dateDate!, titleJurnal: jurnalContents2.titleJurnal, descJurnal: jurnalContents2.descJurnal)
+                                    
+                                    tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newContent)
+                                print("")
+                                print("     a data is added")
+                                print("")
+                            }
                         }
                     }
                     jurnalCountFilteredSection += 1
@@ -566,26 +570,30 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
                             
                             print("a data is found with a jurnal content count of \(jurnalContents2.idJurnal) and category of \(jurnalContents2.jurnalCategory)")
                             
-                            addSubSection = true
-                            
-                            for filteredJurnalDateSections in tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent
+                            if (jurnalContents2.date > dateStartDate! || jurnalContents2.date == dateStartDate) && (jurnalContents2.date < dateEndDate! || jurnalContents2.date < dateEndDate!)
                             {
-                                if filteredJurnalDateSections.date == dateDate! && filteredJurnalDateSections.jurnalCategory == jurnalCategoryEnum.empty
+                            
+                                addSubSection = true
+                                
+                                for filteredJurnalDateSections in tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent
                                 {
-                                    print("a match is found")
-                                    addSubSection = false
+                                    if filteredJurnalDateSections.date == dateDate! && filteredJurnalDateSections.jurnalCategory == jurnalCategoryEnum.empty
+                                    {
+                                        print("a match is found")
+                                        addSubSection = false
+                                    }
                                 }
+                                
+                                if addSubSection == true
+                                {
+                                    let newSubSection = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: .empty, date: dateDate!, titleJurnal: "", descJurnal: "")
+                                    tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newSubSection)
+                                }
+                                
+                                let newContent = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: jurnalContents2.jurnalCategory, date: dateDate!, titleJurnal: jurnalContents2.titleJurnal, descJurnal: jurnalContents2.descJurnal)
+                                
+                                tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newContent)
                             }
-                            
-                            if addSubSection == true
-                            {
-                                let newSubSection = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: .empty, date: dateDate!, titleJurnal: "", descJurnal: "")
-                                tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newSubSection)
-                            }
-                            
-                            let newContent = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: jurnalContents2.jurnalCategory, date: dateDate!, titleJurnal: jurnalContents2.titleJurnal, descJurnal: jurnalContents2.descJurnal)
-                            
-                            tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newContent)
                         }
                     }
                 }
