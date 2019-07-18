@@ -163,7 +163,7 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 var date = Date()
                 date = tabelJurnal[indexPath.section].jurnalContent[indexPath.row].date
                 let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy/MM/dd"
+                formatter.dateFormat = "dd/MM/yyyy"
                 let dateString = formatter.string(from: date)
                 cell.dateTitle.text = dateString
                 cell.dateLine.layer.cornerRadius = 3
@@ -186,7 +186,7 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 var date = Date()
                 date = tabelJurnalFiltered[indexPath.section].jurnalContent[indexPath.row].date
                 let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy/MM/dd"
+                formatter.dateFormat = "dd/MM/yyyy"
                 let dateString = formatter.string(from: date)
                 cell.dateTitle.text = dateString
                 cell.dateLine.layer.cornerRadius = 3
@@ -291,148 +291,7 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) // called when text changes (including clear)
     {
-        //Empty the filtered jurnal array
-        tabelJurnalFiltered.removeAll()
-        
-        //This code loops the sections of the jurnal as well as adding the nested sections (for placing on the section) and then placing it on the tabelJurnalFiltered array
-        var jurnalCountSection = 0
-        var boolAdd = false
-       // var addJurnalContent: jurnalContent
-        for jurnals in tabelJurnal
-        {
-            boolAdd = false
-            for jurnalContents in tabelJurnal[jurnalCountSection].jurnalContent
-            {
-                if jurnalContents.titleJurnal.contains(searchText.lowercased())
-                {
-                    boolAdd = true
-                   // print("found!")
-                }
-            }
-            if boolAdd == true
-            {
-                tabelJurnalFiltered.append(jurnal(idJurnal: jurnals.idJurnal, idAkun: jurnals.idAkun, yearValue: jurnals.yearValue, monthValue: jurnals.monthValue, jurnalContent: [jurnalContent ]()))
-            }
-            jurnalCountSection += 1
-        }
-        
-        print("AAAAAA")
-        print("BBBBBB")
-        print("CCCCCC")
-        print("DDDDDD")
-        print("EEEEEE ")
-        
-        //This code loops the content of the jurnal content (for placing on the rows)
-        print("search text: \(searchText.lowercased())")
-        var jurnalCountRow = 0
-        var jurnalCountFilteredSection = 0
-        var addSubSection = true
-        var jurnalFilteredIndexCount = tabelJurnalFiltered.count
-        print("the filtered is counted with a result of: \(jurnalFilteredIndexCount)")
-        for jurnals2 in tabelJurnal
-        {
-            jurnalCountFilteredSection = 0
-            
-            print("jurnal with number of: \(jurnalCountRow)")
-            print("-----")
-            
-            for filteredJurnals in tabelJurnalFiltered
-            {
-                if jurnals2.yearValue == filteredJurnals.yearValue && jurnals2.monthValue == filteredJurnals.monthValue
-                {
-                    print("a matching year and date is found with an index of: \(jurnalCountFilteredSection)")
-                    
-                    for jurnalContents2 in tabelJurnal[jurnalCountRow].jurnalContent
-                                {
-                                    
-                                    if jurnalContents2.titleJurnal.contains(searchText.lowercased())
-                                    {
-                                       // addSubSection = true
-                    
-                                        let date = jurnalContents2.date
-                                        let formatter = DateFormatter()
-                                        formatter.dateFormat = "yyyy/MM/dd"
-                                        let dateString = formatter.string(from: date)
-                                        let dateDate = formatter.date(from: dateString)
-                                        print("dateDate: \(dateDate!)")
-                    
-                    
-                                            print("a data is found with a jurnal content count of \(jurnalContents2.idJurnal) and category of \(jurnalContents2.jurnalCategory)")
-                                        
-                                        addSubSection = true
-                                        
-                                            for filteredJurnalDateSections in tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent
-                                            {
-                                                if filteredJurnalDateSections.date == dateDate! && filteredJurnalDateSections.jurnalCategory == jurnalCategoryEnum.empty
-                                                {
-                                                    print("a match is found")
-                                                    addSubSection = false
-                                                }
-                                            }
-                                        
-                                            if addSubSection == true
-                                            {
-                                            let newSubSection = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: .empty, date: dateDate!, titleJurnal: "", descJurnal: "")
-                                            tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newSubSection)
-                                            }
-                    
-                                            let newContent = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: jurnalContents2.jurnalCategory, date: dateDate!, titleJurnal: jurnalContents2.titleJurnal, descJurnal: jurnalContents2.descJurnal)
-                                        
-                                            tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newContent)
-                                    }
-                                }
-                }
-                jurnalCountFilteredSection += 1
-            }
-            
-//            for jurnalContents2 in tabelJurnal[jurnalCount2].jurnalContent
-//            {
-//
-////                if jurnalContents2.titleJurnal.contains(searchText.lowercased())
-////                {
-////                   // addSubSection = true
-////
-////                    let date = jurnalContents2.date
-////                    let formatter = DateFormatter()
-////                    formatter.dateFormat = "yyyy/MM/dd"
-////                    let dateString = formatter.string(from: date)
-////                    let dateDate = formatter.date(from: dateString)
-////                    print("dateDate: \(dateDate!)")
-////
-////
-////                        print("a data is found with a jurnal content count of \(jurnalContents2.idJurnal) and category of \(jurnalContents2.jurnalCategory)")
-////
-//////                        print(String(idJurnalContentCount))
-//////                        print(tabelJurnalFiltered[jurnalCount2])
-////
-////                        let newSubSection = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: .empty, date: dateDate!, titleJurnal: "", descJurnal: "")
-////                        tabelJurnalFiltered[jurnalCount2].jurnalContent.append(newSubSection)
-////
-////                        let newContent = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: jurnalContents2.jurnalCategory, date: dateDate!, titleJurnal: jurnalContents2.titleJurnal, descJurnal: jurnalContents2.descJurnal)
-////                        tabelJurnalFiltered[jurnalCount2].jurnalContent.append(newContent)
-////
-////                }
-//
-//
-//            }
-            print("-----")
-                jurnalCountRow += 1
-//            if jurnalCountRow >= jurnalFilteredIndexCount
-//            {
-//                jurnalCount2 -= 1
-//            }
-        }
-        
-        if searchText.count == 0
-        {
-            isFiltered = false
-        }
-        else
-        {
-            isFiltered = true
-        }
-        
-        jurnalTableView.reloadData()
+        filterJournal(searchText: searchText, startDate: "", endDate: "")
     }
     
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -484,7 +343,7 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case false:
             UIView.animate(withDuration: 0.5)
             {
-                self.filterView.transform =    CGAffineTransform(translationX: 0, y: +150)
+                self.filterView.transform =  CGAffineTransform(translationX: 0, y: +150)
             }
             isFilterOpened = true
         case true:
@@ -544,6 +403,154 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("date end is clicked")
     }
     
+    @IBAction func screenTap(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+    
+    func filterJournal(searchText: String, startDate: String, endDate: String)
+    {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        var dateStartDate = formatter.date(from: startDate)
+        var dateEndDate = formatter.date(from: endDate)
+        
+        print("")
+        print("printing the dates")
+        print(startDate)
+        print("dateStartDate: \(dateStartDate)")
+        print(endDate)
+        print("dateEndDate: \(dateEndDate)")
+        print("")
+        
+        if startDate == "" && endDate == ""
+        {
+            dateStartDate = Date.distantPast
+            dateEndDate = Date.distantFuture
+        }
+        else if endDate == ""
+        {
+            dateEndDate = Date.distantFuture
+        }
+        else if startDate == ""
+        {
+            dateStartDate = Date.distantPast
+        }
+        
+        //Empty the filtered jurnal array
+        tabelJurnalFiltered.removeAll()
+        
+        //This code loops the sections of the jurnal as well as adding the nested sections (for placing on the section) and then placing it on the tabelJurnalFiltered array
+        var jurnalCountSection = 0
+        var boolAdd = false
+        for jurnals in tabelJurnal
+        {
+            boolAdd = false
+            for jurnalContents in tabelJurnal[jurnalCountSection].jurnalContent
+            {
+                if jurnalContents.titleJurnal.contains(searchText.lowercased()) && (jurnalContents.date > dateStartDate! || jurnalContents.date == dateStartDate) && (jurnalContents.date < dateEndDate! || jurnalContents.date < dateEndDate!)
+                {
+                    let categoryFilter = jurnalContents.jurnalCategory
+                    if isFilterTumbuhKembangHighlighted && isFilterImunisasiHighlighted && isFilterCatatanKesehatanHighlighted
+                    {
+                        if categoryFilter == .tumbuhKembang || categoryFilter == .imunisasi || categoryFilter == .catatanKesehatan
+                        {
+                            boolAdd = false
+                        }
+                    }
+                    else
+                    {
+                        boolAdd = true
+                    }
+                }
+            }
+            if boolAdd == true
+            {
+                tabelJurnalFiltered.append(jurnal(idJurnal: jurnals.idJurnal, idAkun: jurnals.idAkun, yearValue: jurnals.yearValue, monthValue: jurnals.monthValue, jurnalContent: [jurnalContent ]()))
+            }
+            jurnalCountSection += 1
+        }
+        
+        //This code loops the content of the jurnal content (for placing on the rows)
+        print("search text: \(searchText.lowercased())")
+        var jurnalCountRow = 0
+        var jurnalCountFilteredSection = 0
+        var addSubSection = true
+        var jurnalFilteredIndexCount = tabelJurnalFiltered.count
+        print("the filtered is counted with a result of: \(jurnalFilteredIndexCount)")
+        for jurnals2 in tabelJurnal
+        {
+            jurnalCountFilteredSection = 0
+            
+            print("jurnal with number of: \(jurnalCountRow)")
+            print("-----")
+            
+            for filteredJurnals in tabelJurnalFiltered
+            {
+                if jurnals2.yearValue == filteredJurnals.yearValue && jurnals2.monthValue == filteredJurnals.monthValue
+                {
+                    print("a matching year and date is found with an index of: \(jurnalCountFilteredSection)")
+                    
+                    for jurnalContents2 in tabelJurnal[jurnalCountRow].jurnalContent
+                    {
+                        if jurnalContents2.titleJurnal.contains(searchText.lowercased())
+                        {
+                            // addSubSection = true
+                            
+                            let date = jurnalContents2.date
+                            let dateString = formatter.string(from: date)
+                            let dateDate = formatter.date(from: dateString)
+                            print("dateDate: \(dateDate!)")
+                            
+                            print("a data is found with a jurnal content count of \(jurnalContents2.idJurnal) and category of \(jurnalContents2.jurnalCategory)")
+                            
+                            addSubSection = true
+                            
+                            for filteredJurnalDateSections in tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent
+                            {
+                                if filteredJurnalDateSections.date == dateDate! && filteredJurnalDateSections.jurnalCategory == jurnalCategoryEnum.empty
+                                {
+                                    print("a match is found")
+                                    addSubSection = false
+                                }
+                            }
+                            
+                            if addSubSection == true
+                            {
+                                let newSubSection = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: .empty, date: dateDate!, titleJurnal: "", descJurnal: "")
+                                tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newSubSection)
+                            }
+                            
+                            let newContent = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: jurnalContents2.jurnalCategory, date: dateDate!, titleJurnal: jurnalContents2.titleJurnal, descJurnal: jurnalContents2.descJurnal)
+                            
+                            tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newContent)
+                        }
+                    }
+                }
+                jurnalCountFilteredSection += 1
+            }
+            print("-----")
+            jurnalCountRow += 1
+        }
+        
+        print("jurnal search bar text count: \(searchText.count)")
+        
+        if searchText.count == 0
+        {
+            isFiltered = false
+        }
+        else
+        {
+            isFiltered = true
+        }
+        
+        jurnalTableView.reloadData()
+    }
+    
+    func filterEnum()
+    {
+        
+    }
+    
     func setDatePicker()
     {
         datePicker.datePickerMode = .date
@@ -585,7 +592,11 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
             break
         }
         
+        filterJournal(searchText: jurnalSearchBar.text!, startDate: filterDateStart.text!, endDate: filterDateEnd.text!)
+        
         self.view.endEditing(true)
+        
+
     }
     
     @objc func cancelDatePicker(){
