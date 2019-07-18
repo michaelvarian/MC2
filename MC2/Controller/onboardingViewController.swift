@@ -8,7 +8,30 @@
 
 import UIKit
 
-class onboardingViewController: UIViewController, UIScrollViewDelegate {
+class onboardingViewController: UIViewController, UIScrollViewDelegate, OnBoardingInputData {
+    func didTap() {
+        performSegue(withIdentifier: "goToHome", sender: self)
+//        let alert = UIAlertController(title: "What's your name?", message: nil, preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//
+//                alert.addTextField(configurationHandler: { textField in
+//                    textField.placeholder = "Masukan nama anak anda ..."
+//                })
+//
+//                alert.addTextField(configurationHandler: { textField in
+//                    textField.placeholder = "Masukan tanggal lahir anak anda ..."
+//                })
+//
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+//
+//                    if let name = alert.textFields?.first?.text {
+//                        print("Your name: \(name)")
+//                    }
+//                }))
+//
+//                self.present(alert, animated: true)
+    }
+    
 
     //create scroll view outlet
     @IBOutlet weak var scrollView: UIScrollView! {
@@ -43,21 +66,25 @@ class onboardingViewController: UIViewController, UIScrollViewDelegate {
         slide1.imageView.image = UIImage(named: "onboarding_1")
         slide1.mainTitle.text = "Main Title 1"
         slide1.descLabel.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod."
+        slide1.listener = self
         
         let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide2.imageView.image = UIImage(named: "onboarding_2")
         slide2.mainTitle.text = "Main Title 2"
         slide2.descLabel.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod."
+        slide2.listener = self
         
         let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide3.imageView.image = UIImage(named: "onboarding_3")
         slide3.mainTitle.text = "Main Title 3"
         slide3.descLabel.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod."
+        slide3.listener = self
         
         let slide4:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide4.imageView.image = UIImage(named: "onboarding_4")
         slide4.mainTitle.text = "Main Title 4"
         slide4.descLabel.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod."
+        slide4.listener = self
         
         return [slide1, slide2, slide3, slide4]
         
@@ -120,5 +147,12 @@ class onboardingViewController: UIViewController, UIScrollViewDelegate {
             
         }
     }
-    
 }
+
+// untuk menghubungkan button di slide UIView (Custom)
+
+    protocol OnBoardingInputData {
+        func didTap()
+    }
+
+

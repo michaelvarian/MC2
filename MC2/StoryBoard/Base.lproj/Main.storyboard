@@ -90,11 +90,12 @@
                     <connections>
                         <outlet property="pageControl" destination="EB4-ld-E3c" id="VVH-5F-Jr0"/>
                         <outlet property="scrollView" destination="2fJ-Z7-owM" id="xrE-Gu-EF4"/>
+                        <segue destination="abp-Jz-fBO" kind="show" identifier="goToHome" id="lyk-Vk-8Nf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nrg-5K-7py" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1995.6521739130437" y="20.758928571428569"/>
+            <point key="canvasLocation" x="2983" y="19"/>
         </scene>
     </scenes>
 </document>
