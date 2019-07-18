@@ -42,7 +42,7 @@
                     </constraints>
                     <state key="normal" title="Bawa saya langsung !"/>
                     <connections>
-                        <action selector="pushButtonAction:" destination="iN0-l3-epB" eventType="touchDown" id="jc3-Nq-hM2"/>
+                        <action selector="pushButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="dvr-dB-r70"/>
                     </connections>
                 </button>
             </subviews>
@@ -65,7 +65,7 @@
                 <outlet property="descLabel" destination="zAe-Qi-n5V" id="win-EH-tWh"/>
                 <outlet property="imageView" destination="cdn-zt-WAX" id="IWJ-Ws-fBZ"/>
                 <outlet property="mainTitle" destination="PEg-PT-H9C" id="grv-GL-OOS"/>
-                <outlet property="pushButton" destination="FMx-Tg-KuR" id="L7v-MH-7JV"/>
+                <outlet property="pushButton" destination="FMx-Tg-KuR" id="sb9-Ah-lwU"/>
             </connections>
         </view>
     </objects>
