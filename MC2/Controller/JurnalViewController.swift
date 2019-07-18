@@ -295,13 +295,13 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tabelJurnalFiltered.removeAll()
         
         //This code loops the sections of the jurnal as well as adding the nested sections (for placing on the section) and then placing it on the tabelJurnalFiltered array
-        var jurnalCount = 0
+        var jurnalCountSection = 0
         var boolAdd = false
        // var addJurnalContent: jurnalContent
         for jurnals in tabelJurnal
         {
             boolAdd = false
-            for jurnalContents in tabelJurnal[jurnalCount].jurnalContent
+            for jurnalContents in tabelJurnal[jurnalCountSection].jurnalContent
             {
                 if jurnalContents.titleJurnal.contains(searchText.lowercased())
                 {
@@ -313,10 +313,8 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
             {
                 tabelJurnalFiltered.append(jurnal(idJurnal: jurnals.idJurnal, idAkun: jurnals.idAkun, yearValue: jurnals.yearValue, monthValue: jurnals.monthValue, jurnalContent: [jurnalContent ]()))
             }
-            jurnalCount += 1
+            jurnalCountSection += 1
         }
-        
-        jurnalCount = 0
         
         print("AAAAAA")
         print("BBBBBB")
@@ -326,44 +324,103 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         //This code loops the content of the jurnal content (for placing on the rows)
         print("search text: \(searchText.lowercased())")
-        var jurnalCount2 = 0
-        var idJurnalContentCount = 0
+        var jurnalCountRow = 0
+        var jurnalCountFilteredSection = 0
         var addSubSection = true
         var jurnalFilteredIndexCount = tabelJurnalFiltered.count
         print("the filtered is counted with a result of: \(jurnalFilteredIndexCount)")
         for jurnals2 in tabelJurnal
         {
-            print("jurnal with number of: \(jurnalCount2)")
+            jurnalCountFilteredSection = 0
+            
+            print("jurnal with number of: \(jurnalCountRow)")
             print("-----")
             
-            for jurnalContents2 in tabelJurnal[jurnalCount2].jurnalContent
+            for filteredJurnals in tabelJurnalFiltered
             {
-                if jurnalContents2.titleJurnal.contains(searchText.lowercased())
+                if jurnals2.yearValue == filteredJurnals.yearValue && jurnals2.monthValue == filteredJurnals.monthValue
                 {
-                    addSubSection = true
+                    print("a matching year and date is found with an index of: \(jurnalCountFilteredSection)")
                     
-                    let date = jurnalContents2.date
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "yyyy/MM/dd"
-                    let dateString = formatter.string(from: date)
-                    let dateDate = formatter.date(from: dateString)
-                    print("dateDate: \(dateDate!)")
+                    for jurnalContents2 in tabelJurnal[jurnalCountRow].jurnalContent
+                                {
+                                    
+                                    if jurnalContents2.titleJurnal.contains(searchText.lowercased())
+                                    {
+                                       // addSubSection = true
+                    
+                                        let date = jurnalContents2.date
+                                        let formatter = DateFormatter()
+                                        formatter.dateFormat = "yyyy/MM/dd"
+                                        let dateString = formatter.string(from: date)
+                                        let dateDate = formatter.date(from: dateString)
+                                        print("dateDate: \(dateDate!)")
                     
                     
-                        print("a data is found with a jurnal content count of \(jurnalContents2.idJurnal) and category of \(jurnalContents2.jurnalCategory)")
+                                            print("a data is found with a jurnal content count of \(jurnalContents2.idJurnal) and category of \(jurnalContents2.jurnalCategory)")
+                                        
+                                        addSubSection = true
+                                        
+                                            for filteredJurnalDateSections in tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent
+                                            {
+                                                if filteredJurnalDateSections.date == dateDate! && filteredJurnalDateSections.jurnalCategory == jurnalCategoryEnum.empty
+                                                {
+                                                    print("a match is found")
+                                                    addSubSection = false
+                                                }
+                                            }
+                                        
+                                            if addSubSection == true
+                                            {
+                                            let newSubSection = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: .empty, date: dateDate!, titleJurnal: "", descJurnal: "")
+                                            tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newSubSection)
+                                            }
                     
-                    
-                        let newSubSection = jurnalContent(idJurnalContent: String(idJurnalContentCount), idJurnal: jurnals2.idJurnal, jurnalCategory: .empty, date: dateDate!, titleJurnal: "", descJurnal: "")
-                        tabelJurnalFiltered[jurnalCount2].jurnalContent.append(newSubSection)
-                
-                        let newContent = jurnalContent(idJurnalContent: String(idJurnalContentCount), idJurnal: jurnals2.idJurnal, jurnalCategory: jurnalContents2.jurnalCategory, date: dateDate!, titleJurnal: jurnalContents2.titleJurnal, descJurnal: jurnalContents2.descJurnal)
-                        tabelJurnalFiltered[jurnalCount2].jurnalContent.append(newContent)
-                    
-                        idJurnalContentCount += 1
+                                            let newContent = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: jurnalContents2.jurnalCategory, date: dateDate!, titleJurnal: jurnalContents2.titleJurnal, descJurnal: jurnalContents2.descJurnal)
+                                        
+                                            tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newContent)
+                                    }
+                                }
                 }
+                jurnalCountFilteredSection += 1
             }
+            
+//            for jurnalContents2 in tabelJurnal[jurnalCount2].jurnalContent
+//            {
+//
+////                if jurnalContents2.titleJurnal.contains(searchText.lowercased())
+////                {
+////                   // addSubSection = true
+////
+////                    let date = jurnalContents2.date
+////                    let formatter = DateFormatter()
+////                    formatter.dateFormat = "yyyy/MM/dd"
+////                    let dateString = formatter.string(from: date)
+////                    let dateDate = formatter.date(from: dateString)
+////                    print("dateDate: \(dateDate!)")
+////
+////
+////                        print("a data is found with a jurnal content count of \(jurnalContents2.idJurnal) and category of \(jurnalContents2.jurnalCategory)")
+////
+//////                        print(String(idJurnalContentCount))
+//////                        print(tabelJurnalFiltered[jurnalCount2])
+////
+////                        let newSubSection = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: .empty, date: dateDate!, titleJurnal: "", descJurnal: "")
+////                        tabelJurnalFiltered[jurnalCount2].jurnalContent.append(newSubSection)
+////
+////                        let newContent = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: jurnalContents2.jurnalCategory, date: dateDate!, titleJurnal: jurnalContents2.titleJurnal, descJurnal: jurnalContents2.descJurnal)
+////                        tabelJurnalFiltered[jurnalCount2].jurnalContent.append(newContent)
+////
+////                }
+//
+//
+//            }
             print("-----")
-            jurnalCount2 += 1
+                jurnalCountRow += 1
+//            if jurnalCountRow >= jurnalFilteredIndexCount
+//            {
+//                jurnalCount2 -= 1
+//            }
         }
         
         if searchText.count == 0
