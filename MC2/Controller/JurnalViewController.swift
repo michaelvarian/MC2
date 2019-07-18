@@ -403,9 +403,12 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("date end is clicked")
     }
     
+    @IBAction func screenTap(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+    
     func filterJournal(searchText: String, startDate: String, endDate: String)
     {
-        
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         var dateStartDate = formatter.date(from: startDate)
@@ -446,7 +449,18 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
             {
                 if jurnalContents.titleJurnal.contains(searchText.lowercased()) && (jurnalContents.date > dateStartDate! || jurnalContents.date == dateStartDate) && (jurnalContents.date < dateEndDate! || jurnalContents.date < dateEndDate!)
                 {
-                    boolAdd = true
+                    let categoryFilter = jurnalContents.jurnalCategory
+                    if isFilterTumbuhKembangHighlighted && isFilterImunisasiHighlighted && isFilterCatatanKesehatanHighlighted
+                    {
+                        if categoryFilter == .tumbuhKembang || categoryFilter == .imunisasi || categoryFilter == .catatanKesehatan
+                        {
+                            boolAdd = false
+                        }
+                    }
+                    else
+                    {
+                        boolAdd = true
+                    }
                 }
             }
             if boolAdd == true
@@ -478,7 +492,6 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     
                     for jurnalContents2 in tabelJurnal[jurnalCountRow].jurnalContent
                     {
-                        
                         if jurnalContents2.titleJurnal.contains(searchText.lowercased())
                         {
                             // addSubSection = true
@@ -519,6 +532,8 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
             jurnalCountRow += 1
         }
         
+        print("jurnal search bar text count: \(searchText.count)")
+        
         if searchText.count == 0
         {
             isFiltered = false
@@ -529,6 +544,11 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         jurnalTableView.reloadData()
+    }
+    
+    func filterEnum()
+    {
+        
     }
     
     func setDatePicker()
@@ -572,9 +592,11 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
             break
         }
         
+        filterJournal(searchText: jurnalSearchBar.text!, startDate: filterDateStart.text!, endDate: filterDateEnd.text!)
+        
         self.view.endEditing(true)
         
-        filterJournal(searchText: jurnalSearchBar.text!, startDate: filterDateStart.text!, endDate: filterDateEnd.text!)
+
     }
     
     @objc func cancelDatePicker(){
