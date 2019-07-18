@@ -31,7 +31,6 @@ var tabelJurnal: [jurnal] = []
 
 var tabelJurnalFiltered: [jurnal] = []
 
-
 //The object inits
 
 //enum panggilan
@@ -293,3 +292,4 @@ func initJurnalObjects()
 
 
 
+/// this is line 296
