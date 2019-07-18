@@ -8,7 +8,30 @@
 
 import UIKit
 
-class onboardingViewController: UIViewController, UIScrollViewDelegate {
+class onboardingViewController: UIViewController, UIScrollViewDelegate, OnBoardingInputData {
+    func didTap() {
+        performSegue(withIdentifier: "goToHome", sender: self)
+//        let alert = UIAlertController(title: "What's your name?", message: nil, preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//
+//                alert.addTextField(configurationHandler: { textField in
+//                    textField.placeholder = "Masukan nama anak anda ..."
+//                })
+//
+//                alert.addTextField(configurationHandler: { textField in
+//                    textField.placeholder = "Masukan tanggal lahir anak anda ..."
+//                })
+//
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+//
+//                    if let name = alert.textFields?.first?.text {
+//                        print("Your name: \(name)")
+//                    }
+//                }))
+//
+//                self.present(alert, animated: true)
+    }
+    
 
     //create scroll view outlet
     @IBOutlet weak var scrollView: UIScrollView! {
@@ -19,6 +42,9 @@ class onboardingViewController: UIViewController, UIScrollViewDelegate {
     
     //create page control outlet
     @IBOutlet weak var pageControl: UIPageControl!
+    
+    @IBOutlet weak var pushButton: UIButton!
+    
     
     //create new variable called slides
     var slides : [Slide] = [];
@@ -40,21 +66,25 @@ class onboardingViewController: UIViewController, UIScrollViewDelegate {
         slide1.imageView.image = UIImage(named: "onboarding_1")
         slide1.mainTitle.text = "Main Title 1"
         slide1.descLabel.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod."
+        slide1.listener = self
         
         let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide2.imageView.image = UIImage(named: "onboarding_2")
         slide2.mainTitle.text = "Main Title 2"
         slide2.descLabel.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod."
+        slide2.listener = self
         
         let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide3.imageView.image = UIImage(named: "onboarding_3")
         slide3.mainTitle.text = "Main Title 3"
         slide3.descLabel.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod."
+        slide3.listener = self
         
         let slide4:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide4.imageView.image = UIImage(named: "onboarding_4")
         slide4.mainTitle.text = "Main Title 4"
         slide4.descLabel.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod."
+        slide4.listener = self
         
         return [slide1, slide2, slide3, slide4]
         
@@ -117,42 +147,12 @@ class onboardingViewController: UIViewController, UIScrollViewDelegate {
             
         }
     }
-    
-    func scrollView(_ scrollView: UIScrollView, didScrollToPercentageOffset percentageHorizontalOffset: CGFloat) {
-        if(pageControl.currentPage == 0) {
-            //Change background color to toRed: 103/255, fromGreen: 58/255, fromBlue: 183/255, fromAlpha: 1
-            //Change pageControl selected color to toRed: 103/255, toGreen: 58/255, toBlue: 183/255, fromAlpha: 0.2
-            //Change pageControl unselected color to toRed: 255/255, toGreen: 255/255, toBlue: 255/255, fromAlpha: 1
-            
-            let pageUnselectedColor: UIColor = fade(fromRed: 255/255, fromGreen: 255/255, fromBlue: 255/255, fromAlpha: 1, toRed: 103/255, toGreen: 58/255, toBlue: 183/255, toAlpha: 1, withPercentage: percentageHorizontalOffset * 3)
-            pageControl.pageIndicatorTintColor = pageUnselectedColor
-            
-            
-            let bgColor: UIColor = fade(fromRed: 103/255, fromGreen: 58/255, fromBlue: 183/255, fromAlpha: 1, toRed: 255/255, toGreen: 255/255, toBlue: 255/255, toAlpha: 1, withPercentage: percentageHorizontalOffset * 3)
-            slides[pageControl.currentPage].backgroundColor = bgColor
-            
-            let pageSelectedColor: UIColor = fade(fromRed: 81/255, fromGreen: 36/255, fromBlue: 152/255, fromAlpha: 1, toRed: 103/255, toGreen: 58/255, toBlue: 183/255, toAlpha: 1, withPercentage: percentageHorizontalOffset * 3)
-            pageControl.currentPageIndicatorTintColor = pageSelectedColor
-        }
-    }
-    
-    
-    func fade(fromRed: CGFloat,
-              fromGreen: CGFloat,
-              fromBlue: CGFloat,
-              fromAlpha: CGFloat,
-              toRed: CGFloat,
-              toGreen: CGFloat,
-              toBlue: CGFloat,
-              toAlpha: CGFloat,
-              withPercentage percentage: CGFloat) -> UIColor {
-        
-        let red: CGFloat = (toRed - fromRed) * percentage + fromRed
-        let green: CGFloat = (toGreen - fromGreen) * percentage + fromGreen
-        let blue: CGFloat = (toBlue - fromBlue) * percentage + fromBlue
-        let alpha: CGFloat = (toAlpha - fromAlpha) * percentage + fromAlpha
-        
-        // return the fade colour
-        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
-    }
 }
+
+// untuk menghubungkan button di slide UIView (Custom)
+
+    protocol OnBoardingInputData {
+        func didTap()
+    }
+
+

@@ -213,7 +213,11 @@ Kembang</string>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="ETq-bn-anK"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Glu-MK-G3M" appends="YES" id="ZLI-N4-l0v"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="uLz-hw-Tcs"/>
                     <connections>
@@ -230,6 +234,11 @@ Kembang</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UFo-Td-dlm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Glu-MK-G3M">
+                    <connections>
+                        <action selector="screenTap:" destination="pQn-7n-1Xo" id="If6-HF-Cjm"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1737.68115942029" y="-385.04464285714283"/>
         </scene>

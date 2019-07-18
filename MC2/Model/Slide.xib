@@ -23,37 +23,40 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aplikasi ini akan membantu anda untuk peduli terhadap tumbuh kembang buah hati anda" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAe-Qi-n5V" userLabel="descLabel">
-                    <rect key="frame" x="57" y="607" width="310" height="90"/>
+                    <rect key="frame" x="57" y="639.5" width="310" height="57.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4n-2D-Lrf" userLabel="pushButton">
-                    <rect key="frame" x="134" y="727" width="146" height="29"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="X4n-2D-Lrf" secondAttribute="height" multiplier="277:55" id="7xW-0a-Ljz"/>
-                    </constraints>
-                    <state key="normal" title="Bawa saya langsung !"/>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEg-PT-H9C">
-                    <rect key="frame" x="163.5" y="576" width="87" height="23"/>
+                    <rect key="frame" x="163.5" y="608.5" width="87" height="23"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMx-Tg-KuR" userLabel="pushButton">
+                    <rect key="frame" x="59.5" y="749" width="295" height="73"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="295" id="f1L-ne-UHc"/>
+                        <constraint firstAttribute="height" constant="73" id="v0o-Hf-tew"/>
+                    </constraints>
+                    <state key="normal" title="Bawa saya langsung !"/>
+                    <connections>
+                        <action selector="pushButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="dvr-dB-r70"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="cdn-zt-WAX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="5" id="0bQ-Pn-MYJ"/>
                 <constraint firstItem="zAe-Qi-n5V" firstAttribute="top" secondItem="PEg-PT-H9C" secondAttribute="bottom" constant="8" symbolic="YES" id="6Nv-ur-vay"/>
                 <constraint firstItem="cdn-zt-WAX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="121" id="7Ka-Bh-inK"/>
-                <constraint firstItem="X4n-2D-Lrf" firstAttribute="top" secondItem="zAe-Qi-n5V" secondAttribute="bottom" constant="30" id="Lle-Nh-5xX"/>
                 <constraint firstItem="cdn-zt-WAX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-128" id="MIi-Fg-XEe"/>
                 <constraint firstItem="zAe-Qi-n5V" firstAttribute="trailing" secondItem="cdn-zt-WAX" secondAttribute="trailing" id="OlO-9m-An9"/>
-                <constraint firstItem="PEg-PT-H9C" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="139.5" id="WPX-A1-Yjf"/>
+                <constraint firstItem="FMx-Tg-KuR" firstAttribute="top" secondItem="zAe-Qi-n5V" secondAttribute="bottom" constant="52" id="PmX-Yq-BNB"/>
+                <constraint firstItem="PEg-PT-H9C" firstAttribute="top" secondItem="cdn-zt-WAX" secondAttribute="bottom" priority="250" constant="129" id="WPX-A1-Yjf"/>
                 <constraint firstAttribute="bottom" secondItem="zAe-Qi-n5V" secondAttribute="bottom" constant="199" id="dbj-Kr-xa6"/>
-                <constraint firstItem="X4n-2D-Lrf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="293.5" id="k1H-pD-e9z"/>
-                <constraint firstItem="X4n-2D-Lrf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tlO-Db-FaD"/>
+                <constraint firstItem="FMx-Tg-KuR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tJo-dL-1w9"/>
                 <constraint firstItem="zAe-Qi-n5V" firstAttribute="leading" secondItem="cdn-zt-WAX" secondAttribute="leading" id="tn5-0P-Yrz"/>
                 <constraint firstItem="PEg-PT-H9C" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ttC-CH-t5w"/>
             </constraints>
@@ -62,7 +65,7 @@
                 <outlet property="descLabel" destination="zAe-Qi-n5V" id="win-EH-tWh"/>
                 <outlet property="imageView" destination="cdn-zt-WAX" id="IWJ-Ws-fBZ"/>
                 <outlet property="mainTitle" destination="PEg-PT-H9C" id="grv-GL-OOS"/>
-                <outlet property="pushButton" destination="X4n-2D-Lrf" id="PxO-vf-2NJ"/>
+                <outlet property="pushButton" destination="FMx-Tg-KuR" id="sb9-Ah-lwU"/>
             </connections>
         </view>
     </objects>

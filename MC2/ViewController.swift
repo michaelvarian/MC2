@@ -12,12 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Inisialisasi Data
 
         
-        let aku = akun(idAkun: "1", namaOrangTua: "kevin", namaBayi: "", panggilan: "")
-        let aku2 = akun(idAkun: "1", namaOrangTua: "aldi", namaBayi: "", panggilan: "")
-        let aku3 = akun(idAkun: "1", namaOrangTua: "azis", namaBayi: "", panggilan: "")
+        let aku = akun(idAkun: "1", namaOrangTua: "kevin", panggilan: "")
+        let aku2 = akun(idAkun: "1", namaOrangTua: "aldi", panggilan: "")
+        let aku3 = akun(idAkun: "1", namaOrangTua: "azis", panggilan: "")
         
         
         

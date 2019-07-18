@@ -47,15 +47,12 @@ class akun
 {
     var idAkun: String //Primary Key
     var namaOrangTua: String
-    var namaBayi: String
     var panggilan: String
     
-    init(idAkun: String, namaOrangTua: String, namaBayi: String, panggilan: String) {
+    init(idAkun: String, namaOrangTua: String, panggilan: String) {
         self.idAkun = idAkun
         self.namaOrangTua = namaOrangTua
-        self.namaBayi = namaBayi
         self.panggilan = panggilan
-        
     }
 }
 
@@ -63,12 +60,22 @@ class dataBayi
 {
     var idDataBayi: String //Primary Key
     var idAkun: String //Foreign Key
+    var namaBayi: String
     var panjang: Double
+    var berat: Double
+    var tglLahir: Date
+    var jnsKelamin: String
+    var lingkarKepala: Int
     
-    init(idDataBayi: String, idAkun: String, panjang: Double) {
+    init(idDataBayi: String, idAkun: String, namaBayi: String, panjang: Double, berat: Double, tglLahir: Date, jnsKelamin: String, lingkarKepala: Int) {
         self.idDataBayi = idDataBayi
         self.idAkun = idAkun
+        self.namaBayi = namaBayi
         self.panjang = panjang
+        self.berat = berat
+        self.tglLahir = tglLahir
+        self.jnsKelamin = jnsKelamin
+        self.lingkarKepala = lingkarKepala
     }
 }
 
@@ -244,6 +251,20 @@ class jurnalContent
         self.titleJurnal = titleJurnal
         self.descJurnal = descJurnal
     }
+}
+
+func initAccount() {
+    let account1 = akun(idAkun: "1", namaOrangTua: "Linda Cook", panggilan: "Mama")
+    tabelAkun.append(account1)
+}
+
+func initDataBayi() {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy/MM/dd"
+    
+    let bayi1 = dataBayi(idDataBayi: "1", idAkun: "1", namaBayi: "Zhafran", panjang: 50, berat: 2.98, tglLahir: formatter.date(from: "2013/05/23")!, jnsKelamin: "Laki-Laki", lingkarKepala: 30)
+    
+    tabelDataBayi.append(bayi1)
 }
 
 func initJurnalObjects()
