@@ -40,6 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initJurnalObjects()
         initAccount()
         initDataBayi()
+        initTumbuh()
+        initImunisasi()
         return true
     }
 
