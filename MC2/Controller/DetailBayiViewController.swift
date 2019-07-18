@@ -19,6 +19,8 @@ class DetailBayiViewController: UIViewController {
     @IBOutlet weak var txtHeight: UITextField!
     @IBOutlet weak var txtHeadRound: UITextField!
     
+    let datePicker = UIDatePicker()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
@@ -29,6 +31,7 @@ class DetailBayiViewController: UIViewController {
         self.title = "Detail Bayi"
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
+        setDatePicker()
     }
     
     func updateView() {
@@ -36,10 +39,17 @@ class DetailBayiViewController: UIViewController {
         lblBabyName.text = dataBayi.namaBayi
         txtBabyName.text = dataBayi.namaBayi
         txtSex.text = dataBayi.jnsKelamin
-        //txtBirthDate.text = String(dataBayi.tglLahir)
+        //txtBirthDate.text = String(c)
         txtHeight.text = String(dataBayi.berat)
         txtWeight.text = String(dataBayi.panjang)
         txtHeadRound.text = String(dataBayi.lingkarKepala)
+        
+        var date = Date()
+        date = dataBayi.tglLahir
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let dateString = formatter.string(from: date)
+        txtBirthDate.text = dateString
     }
     
     @IBAction func btnSaveClicked(_ sender: UIButton) {
@@ -57,13 +67,37 @@ class DetailBayiViewController: UIViewController {
         tabelDataBayi.append(newBaby)
         updateView()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @objc func doneDatePicker() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        
+        txtBirthDate.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
     }
-    */
+    
+    @objc func cancelDatePicker() {
+        self.view.endEditing(true)
+    }
+    
+    func setDatePicker()
+    {
+        datePicker.datePickerMode = .date
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneDatePicker))
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 0))
+        label.text = "Pilih tanggal"
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        
+        let space = UIBarButtonItem(customView: label)
+        
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
+        toolbar.setItems([doneButton, space, cancelButton], animated: false)
+        
+        txtBirthDate.inputAccessoryView = toolbar
+        txtBirthDate.inputView = datePicker
+    }
 }

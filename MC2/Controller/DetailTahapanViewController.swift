@@ -27,11 +27,11 @@ class DetailTahapanViewController: UIViewController {
     }
     
     func addData(){
-        let tahapan1 = tumbuh(idTumbuh: "1", idAkun: "1", namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
-        let tahapan2 = tumbuh(idTumbuh: "1", idAkun: "1", namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
-        let tahapan3 = tumbuh(idTumbuh: "1", idAkun: "1", namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
-        let tahapan4 = tumbuh(idTumbuh: "1", idAkun: "1", namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
-        let tahapan5 = tumbuh(idTumbuh: "1", idAkun: "1", namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
+        let tahapan1 = tumbuh(idTumbuh: "1", idAkun: "1", bulan: 1, namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
+        let tahapan2 = tumbuh(idTumbuh: "1", idAkun: "1", bulan: 1, namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
+        let tahapan3 = tumbuh(idTumbuh: "1", idAkun: "1", bulan: 1, namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
+        let tahapan4 = tumbuh(idTumbuh: "1", idAkun: "1", bulan: 1, namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
+        let tahapan5 = tumbuh(idTumbuh: "1", idAkun: "1", bulan: 1, namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
         
         tabelTumbuh.append(tahapan1)
         tabelTumbuh.append(tahapan2)
