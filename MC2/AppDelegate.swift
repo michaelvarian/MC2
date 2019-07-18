@@ -16,9 +16,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
+        // Untuk membuat launch screen menjadi lebih lambat, atur intervalnya
         Thread.sleep(forTimeInterval: 0.5)
+        
+//       // untuk membuat agar onboarding muncul jika belum mengisi data bayi
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        var vc: UIViewController
+//
+//        //ganti forKey dengan data yang di-inginkan (normalnya dari data UserDefault)
+//        if (UserDefaults.standard.value(forKey: "idDatabayi") as? String) == nil {
+//            // show the onboarding screen
+//            vc = storyboard.instantiateViewController(withIdentifier: "onboarding")
+//        } else {
+//            // show the main screen
+//            vc = storyboard.instantiateInitialViewController()!
+//        }
+//        self.window?.rootViewController = vc
+//        self.window?.makeKeyAndVisible()
+        
         initJurnalObjects()
+        initAccount()
+        initDataBayi()
         return true
     }
 
