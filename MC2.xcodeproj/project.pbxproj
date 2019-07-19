@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FF9CC8E22E1A4DC009E12DD /* FormKmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF9CC8D22E1A4DC009E12DD /* FormKmsViewController.swift */; };
 		432DA16E22E17C4C00A7B78F /* JurnalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432DA16D22E17C4C00A7B78F /* JurnalButton.swift */; };
 		432DA17022E187C000A7B78F /* JurnalDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432DA16F22E187C000A7B78F /* JurnalDescriptionViewController.swift */; };
 		652FE2A322DDF26700B175C0 /* JurnalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A222DDF26700B175C0 /* JurnalViewController.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FF9CC8D22E1A4DC009E12DD /* FormKmsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormKmsViewController.swift; path = ../../../TemanKMS/MC2/Controller/FormKmsViewController.swift; sourceTree = "<group>"; };
 		432DA16D22E17C4C00A7B78F /* JurnalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JurnalButton.swift; sourceTree = "<group>"; };
 		432DA16F22E187C000A7B78F /* JurnalDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JurnalDescriptionViewController.swift; sourceTree = "<group>"; };
 		652FE2A222DDF26700B175C0 /* JurnalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				8612B3E122E052EB00AEA961 /* DetailBayiViewController.swift */,
 				E13058E322DB598500E76BB8 /* DetailTahapanViewController.swift */,
 				E1AC48EC22DC5CCF00B33A8A /* AktivitasViewController.swift */,
+				2FF9CC8D22E1A4DC009E12DD /* FormKmsViewController.swift */,
 				E106535822DDA7E100389E02 /* DetailAktivitasViewController.swift */,
 				E106535A22DDB27400389E02 /* KesehatanViewController.swift */,
 				E106535E22DDBE3100389E02 /* CatatanKesehatanViewController.swift */,
@@ -291,6 +294,7 @@
 				E12F5FBF22D9D80000C1C934 /* HariIniViewController.swift in Sources */,
 				652FE2A322DDF26700B175C0 /* JurnalViewController.swift in Sources */,
 				E17F396222D8A1C800901E47 /* Objects.swift in Sources */,
+				2FF9CC8E22E1A4DC009E12DD /* FormKmsViewController.swift in Sources */,
 				8612B3E222E052EB00AEA961 /* DetailBayiViewController.swift in Sources */,
 				432DA17022E187C000A7B78F /* JurnalDescriptionViewController.swift in Sources */,
 				E1AC48ED22DC5CCF00B33A8A /* AktivitasViewController.swift in Sources */,
