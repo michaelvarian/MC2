@@ -69,6 +69,10 @@ class HariIniViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     @IBAction func catatTapped(_ sender: UIButton) {
         showActionSheet()
     }
