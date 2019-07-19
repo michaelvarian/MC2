@@ -52,14 +52,14 @@ class onboardingViewController: UIViewController, UIScrollViewDelegate, OnBoardi
         
         let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide2.backgroundView.image = UIImage(named: "background_2")
-        slide2.imageView.image = UIImage(named: "onboarding_2")
+        slide2.imageView.image = UIImage(named: "image_2")
         slide2.mainTitle.text = "KMS Digital"
         slide2.descLabel.text = "Ketahui status gizi anak agar bisa mengantisipasi kekurangan gizi buah hati kita!"
         slide2.pushButton.isHidden = true
         
         let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide3.backgroundView.image = UIImage(named: "background_3")
-        slide3.imageView.image = UIImage(named: "onboarding_3")
+        slide3.imageView.image = UIImage(named: "image_3")
         slide3.mainTitle.text = "Catatan Kesehatan"
         slide3.descLabel.text = "Satukan catatan kesehatan anak untuk memudahkan konsultasi ke dokter!"
         slide3.pushButton.isHidden = true
