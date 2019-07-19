@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Form Kms View Controller-->
         <scene sceneID="nco-QM-pMj">
             <objects>
-                <viewController id="50V-He-nMr" sceneMemberID="viewController">
+                <viewController id="50V-He-nMr" customClass="FormKmsViewController" customModule="MC2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sWU-CN-miB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,6 +88,9 @@
                                 <rect key="frame" x="118" y="734" width="182" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Catat"/>
+                                <connections>
+                                    <action selector="tapToAddKms:" destination="50V-He-nMr" eventType="touchUpInside" id="vTq-6G-iRm"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Berat badan dalam kg" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N1j-o5-gBW">
                                 <rect key="frame" x="202" y="495" width="192" height="30"/>
@@ -114,6 +117,12 @@
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="2K5-g4-A05"/>
                     </view>
+                    <connections>
+                        <outlet property="explanationLabel" destination="DSK-XS-bfv" id="vwv-u1-WoP"/>
+                        <outlet property="heightTextField" destination="wib-e1-JyY" id="c6S-xC-dST"/>
+                        <outlet property="lingkarKepalaTextField" destination="JqM-Tf-kDV" id="ZIp-4d-yQr"/>
+                        <outlet property="weightTextField" destination="N1j-o5-gBW" id="Vit-DN-wXi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFi-ru-4Wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
