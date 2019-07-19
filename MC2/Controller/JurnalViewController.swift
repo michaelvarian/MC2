@@ -57,9 +57,13 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         setDatePicker()
         
-        jurnalTableView.allowsSelectionDuringEditing = false
+        //jurnalTableView.allowsSelectionDuringEditing = false
+        
+     //   jurnalTableView.allowsSelection = false
         
         jurnalTableView.allowsSelection = false
+        
+        jurnalTableView.allowsSelectionDuringEditing = false
         
         headerView.layer.cornerRadius = 20
         
@@ -171,6 +175,9 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let cell = jurnalTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JurnalCellRow
                 cell.jurnalTitle.text = tabelJurnal[indexPath.section].jurnalContent[indexPath.row].titleJurnal
                 cell.jurnalCircle.layer.cornerRadius = cell.jurnalCircle.frame.size.width/2
+                cell.jurnalClick!.sectionIndex = indexPath.section
+                cell.jurnalClick!.rowIndex = indexPath.row
+                cell.jurnalClick!.addTarget(self, action: #selector(jurnalRowButtonClicked(sender:)), for: .touchUpInside)
                 return cell
             }
         }
@@ -194,6 +201,9 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let cell = jurnalTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JurnalCellRow
                 cell.jurnalTitle.text = tabelJurnalFiltered[indexPath.section].jurnalContent[indexPath.row].titleJurnal
                 cell.jurnalCircle.layer.cornerRadius = cell.jurnalCircle.frame.size.width/2
+                cell.jurnalClick!.sectionIndex = indexPath.section
+                cell.jurnalClick!.rowIndex = indexPath.row
+                cell.jurnalClick!.addTarget(self, action: #selector(jurnalRowButtonClicked(sender:)), for: .touchUpInside)
                 return cell
             }
         }
@@ -282,6 +292,18 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
             {
                 return 150
             }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selected:  \(indexPath.row)")
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.5)
+        {
+            cell.alpha = 1
         }
     }
     
@@ -691,6 +713,12 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @objc func cancelDatePicker(){
         self.view.endEditing(true)
+    }
+    
+    @objc func jurnalRowButtonClicked(sender: JurnalButton!)
+    {
+        print("sectionIndex: \(sender.sectionIndex)")
+        print("rowIndex: \(sender.rowIndex)")
     }
 }
 

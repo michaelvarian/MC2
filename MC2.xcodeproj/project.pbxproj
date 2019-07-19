@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		432DA16E22E17C4C00A7B78F /* JurnalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432DA16D22E17C4C00A7B78F /* JurnalButton.swift */; };
 		652FE2A322DDF26700B175C0 /* JurnalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A222DDF26700B175C0 /* JurnalViewController.swift */; };
 		652FE2A622DDF28F00B175C0 /* JurnalCellDateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A422DDF28F00B175C0 /* JurnalCellDateRow.swift */; };
 		652FE2A722DDF28F00B175C0 /* JurnalCellRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A522DDF28F00B175C0 /* JurnalCellRow.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		432DA16D22E17C4C00A7B78F /* JurnalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JurnalButton.swift; sourceTree = "<group>"; };
 		652FE2A222DDF26700B175C0 /* JurnalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalViewController.swift; sourceTree = "<group>"; };
 		652FE2A422DDF28F00B175C0 /* JurnalCellDateRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalCellDateRow.swift; sourceTree = "<group>"; };
 		652FE2A522DDF28F00B175C0 /* JurnalCellRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalCellRow.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				652FE2A822DDF30200B175C0 /* CommunityTableViewCell.swift */,
 				E106536022DDD32D00389E02 /* CatatanKesehatanTableViewCell.swift */,
 				654D4D8F22DF621600EE0B23 /* Slide.swift */,
+				432DA16D22E17C4C00A7B78F /* JurnalButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				E17F394D22D8843F00901E47 /* AppDelegate.swift in Sources */,
 				E106535F22DDBE3100389E02 /* CatatanKesehatanViewController.swift in Sources */,
 				652FE2A622DDF28F00B175C0 /* JurnalCellDateRow.swift in Sources */,
+				432DA16E22E17C4C00A7B78F /* JurnalButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

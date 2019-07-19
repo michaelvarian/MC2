@@ -16,6 +16,8 @@ class JurnalCellRow: UITableViewCell {
     
     @IBOutlet weak var jurnalDesc: UITextView!
     
+    @IBOutlet weak var jurnalClick: JurnalButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
