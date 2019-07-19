@@ -12,6 +12,8 @@ class ProfilViewController: UIViewController {
 
     @IBOutlet weak var lblParentName: UILabel!
     @IBOutlet weak var lblCall: UILabel!
+    @IBOutlet weak var lblBabyName: UILabel!
+    @IBOutlet weak var lblAge: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,8 @@ class ProfilViewController: UIViewController {
     func updateView() {
         lblCall.text = tabelAkun.first?.panggilan
         lblParentName.text = tabelAkun.first?.namaOrangTua
+        lblBabyName.text = tabelDataBayi.first?.namaBayi
+        //lblAge.text =
     }
     
     @IBAction func btnEditAccount(_ sender: UIButton) {
