@@ -40,12 +40,6 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     let datePicker = UIDatePicker()
     
-    var isFilterTumbuhKembangHighlighted = false
-    
-    var isFilterImunisasiHighlighted = false
-    
-    var isFilterCatatanKesehatanHighlighted = false
-    
     let sections = ["section1", "section2", "section3"]
     
     let rows = [["row1 section1", "row2 section1", "row3 section1"], ["row1 section2"], ["row1 section3", "row2 section3"]]
@@ -56,14 +50,20 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var textFieldTag = 0
     
+    var filterEnumCategory: jurnalCategoryEnum = .all
+    
     override func viewWillAppear(_ animated: Bool) {
         //setDatePicker()
         
         setDatePicker()
         
-        jurnalTableView.allowsSelectionDuringEditing = false
+        //jurnalTableView.allowsSelectionDuringEditing = false
+        
+     //   jurnalTableView.allowsSelection = false
         
         jurnalTableView.allowsSelection = false
+        
+        jurnalTableView.allowsSelectionDuringEditing = false
         
         headerView.layer.cornerRadius = 20
         
@@ -175,6 +175,9 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let cell = jurnalTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JurnalCellRow
                 cell.jurnalTitle.text = tabelJurnal[indexPath.section].jurnalContent[indexPath.row].titleJurnal
                 cell.jurnalCircle.layer.cornerRadius = cell.jurnalCircle.frame.size.width/2
+                cell.jurnalClick!.sectionIndex = indexPath.section
+                cell.jurnalClick!.rowIndex = indexPath.row
+                cell.jurnalClick!.addTarget(self, action: #selector(jurnalRowButtonClicked(sender:)), for: .touchUpInside)
                 return cell
             }
         }
@@ -198,6 +201,9 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let cell = jurnalTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JurnalCellRow
                 cell.jurnalTitle.text = tabelJurnalFiltered[indexPath.section].jurnalContent[indexPath.row].titleJurnal
                 cell.jurnalCircle.layer.cornerRadius = cell.jurnalCircle.frame.size.width/2
+                cell.jurnalClick!.sectionIndex = indexPath.section
+                cell.jurnalClick!.rowIndex = indexPath.row
+                cell.jurnalClick!.addTarget(self, action: #selector(jurnalRowButtonClicked(sender:)), for: .touchUpInside)
                 return cell
             }
         }
@@ -289,9 +295,21 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selected:  \(indexPath.row)")
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.5)
+        {
+            cell.alpha = 1
+        }
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) // called when text changes (including clear)
     {
-        filterJournal(searchText: searchText, startDate: "", endDate: "")
+        filterJournal(searchText: searchText, startDate: filterDateStart.text!, endDate: filterDateEnd.text!)
     }
     
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -360,37 +378,45 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         switch sender.tag
         {
         case 0:
-            switch isFilterTumbuhKembangHighlighted
+            if filterEnumCategory == .tumbuhKembang
             {
-            case false:
-                filterTumbuhKembang.setHighlighted()
-                isFilterTumbuhKembangHighlighted = true
-            case true:
-                filterTumbuhKembang.setHighlighted()
-                isFilterTumbuhKembangHighlighted = false
+                resetFilterButtons()
+            }
+            else
+            {
+            filterEnumCategory = .tumbuhKembang
+            filterTumbuhKembang.setTouched(bool: true)
+            filterImunisasi.setTouched(bool: false)
+            filterCatatanKesehatan.setTouched(bool: false)
             }
         case 1:
-            switch isFilterImunisasiHighlighted
+            if filterEnumCategory == .imunisasi
             {
-            case false:
-                filterImunisasi.setHighlighted()
-                isFilterImunisasiHighlighted = true
-            case true:
-                filterImunisasi.setHighlighted()
-                isFilterImunisasiHighlighted = false
+                resetFilterButtons()
+            }
+            else
+            {
+            filterEnumCategory = .imunisasi
+            filterTumbuhKembang.setTouched(bool: false)
+            filterImunisasi.setTouched(bool: true)
+            filterCatatanKesehatan.setTouched(bool: false)
             }
         case 2:
-            switch isFilterCatatanKesehatanHighlighted
+            if filterEnumCategory == .catatanKesehatan
             {
-            case false:
-                filterCatatanKesehatan.setHighlighted()
-                isFilterCatatanKesehatanHighlighted = true
-            case true:
-                filterCatatanKesehatan.setHighlighted()
-                isFilterCatatanKesehatanHighlighted = false
+                resetFilterButtons()
+            }
+            else
+            {
+            filterEnumCategory = .catatanKesehatan
+            filterTumbuhKembang.setTouched(bool: false)
+            filterImunisasi.setTouched(bool: false)
+            filterCatatanKesehatan.setTouched(bool: true)
             }
         default: break
         }
+        
+        filterJournal(searchText: jurnalSearchBar.text!, startDate: filterDateStart.text!, endDate: filterDateEnd.text!)
     }
     
     @IBAction func filterDateStartClicked(_ sender: UITextField) {
@@ -442,25 +468,101 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //This code loops the sections of the jurnal as well as adding the nested sections (for placing on the section) and then placing it on the tabelJurnalFiltered array
         var jurnalCountSection = 0
         var boolAdd = false
+        
+        if searchText == ""
+        {
+            for jurnals in tabelJurnal
+            {
+                boolAdd = false
+                for jurnalContents in tabelJurnal[jurnalCountSection].jurnalContent
+                {
+                    if (jurnalContents.date > dateStartDate! || jurnalContents.date == dateStartDate) && (jurnalContents.date < dateEndDate! || jurnalContents.date < dateEndDate!) && (filterEnumCategory == jurnalContents.jurnalCategory || filterEnumCategory == .all)
+                    {
+                        boolAdd = true
+                    }
+                }
+                if boolAdd == true
+                {
+                    tabelJurnalFiltered.append(jurnal(idJurnal: jurnals.idJurnal, idAkun: jurnals.idAkun, yearValue: jurnals.yearValue, monthValue: jurnals.monthValue, jurnalContent: [jurnalContent ]()))
+                }
+                jurnalCountSection += 1
+            }
+            
+            //This code loops the content of the jurnal content (for placing on the rows)
+            print("search text: \(searchText.lowercased())")
+            var jurnalCountRow = 0
+            var jurnalCountFilteredSection = 0
+            var addSubSection = true
+            var jurnalFilteredIndexCount = tabelJurnalFiltered.count
+            print("the filtered is counted with a result of: \(jurnalFilteredIndexCount)")
+            for jurnals2 in tabelJurnal
+            {
+                jurnalCountFilteredSection = 0
+                
+                print("jurnal with number of: \(jurnalCountRow)")
+                print("-----")
+                
+                for filteredJurnals in tabelJurnalFiltered
+                {
+                    if jurnals2.yearValue == filteredJurnals.yearValue && jurnals2.monthValue == filteredJurnals.monthValue
+                    {
+                        print("a matching year and date is found with an index of: \(jurnalCountFilteredSection)")
+                        
+                        for jurnalContents2 in tabelJurnal[jurnalCountRow].jurnalContent
+                        {
+                                // addSubSection = true
+                                
+                                let date = jurnalContents2.date
+                                let dateString = formatter.string(from: date)
+                                let dateDate = formatter.date(from: dateString)
+                                print("dateDate: \(dateDate!)")
+                                
+                                print("a data is found with a jurnal content count of \(jurnalContents2.idJurnal) and category of \(jurnalContents2.jurnalCategory)")
+                                
+                                if (jurnalContents2.date > dateStartDate! || jurnalContents2.date == dateStartDate) && (jurnalContents2.date < dateEndDate! || jurnalContents2.date < dateEndDate!) && (filterEnumCategory == jurnalContents2.jurnalCategory || filterEnumCategory == .all)
+                                {
+                                    
+                                    addSubSection = true
+                                    
+                                    for filteredJurnalDateSections in tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent
+                                    {
+                                        if filteredJurnalDateSections.date == dateDate! && filteredJurnalDateSections.jurnalCategory == jurnalCategoryEnum.empty
+                                        {
+                                            print("a match is found")
+                                            addSubSection = false
+                                        }
+                                    }
+                                    
+                                    if addSubSection == true && filterEnumCategory == jurnalContents2.jurnalCategory
+                                    {
+                                        let newSubSection = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: .empty, date: dateDate!, titleJurnal: "", descJurnal: "")
+                                        tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newSubSection)
+                                    }
+                                    
+                                    let newContent = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: jurnalContents2.jurnalCategory, date: dateDate!, titleJurnal: jurnalContents2.titleJurnal, descJurnal: jurnalContents2.descJurnal)
+                                    
+                                    tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newContent)
+                                }
+                        }
+                    }
+                    jurnalCountFilteredSection += 1
+                }
+                
+                print("-----")
+                jurnalCountRow += 1
+            }
+            
+        }
+        else if searchText != ""
+        {
         for jurnals in tabelJurnal
         {
             boolAdd = false
             for jurnalContents in tabelJurnal[jurnalCountSection].jurnalContent
             {
-                if jurnalContents.titleJurnal.contains(searchText.lowercased()) && (jurnalContents.date > dateStartDate! || jurnalContents.date == dateStartDate) && (jurnalContents.date < dateEndDate! || jurnalContents.date < dateEndDate!)
+                if jurnalContents.titleJurnal.contains(searchText.lowercased()) && (jurnalContents.date > dateStartDate! || jurnalContents.date == dateStartDate) && (jurnalContents.date < dateEndDate! || jurnalContents.date < dateEndDate!) && (filterEnumCategory == jurnalContents.jurnalCategory || filterEnumCategory == .all)
                 {
-                    let categoryFilter = jurnalContents.jurnalCategory
-                    if isFilterTumbuhKembangHighlighted && isFilterImunisasiHighlighted && isFilterCatatanKesehatanHighlighted
-                    {
-                        if categoryFilter == .tumbuhKembang || categoryFilter == .imunisasi || categoryFilter == .catatanKesehatan
-                        {
-                            boolAdd = false
-                        }
-                    }
-                    else
-                    {
                         boolAdd = true
-                    }
                 }
             }
             if boolAdd == true
@@ -503,52 +605,54 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
                             
                             print("a data is found with a jurnal content count of \(jurnalContents2.idJurnal) and category of \(jurnalContents2.jurnalCategory)")
                             
-                            addSubSection = true
-                            
-                            for filteredJurnalDateSections in tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent
+                            if (jurnalContents2.date > dateStartDate! || jurnalContents2.date == dateStartDate) && (jurnalContents2.date < dateEndDate! || jurnalContents2.date < dateEndDate!) && (filterEnumCategory == jurnalContents2.jurnalCategory || filterEnumCategory == .all)
                             {
-                                if filteredJurnalDateSections.date == dateDate! && filteredJurnalDateSections.jurnalCategory == jurnalCategoryEnum.empty
+                            
+                                addSubSection = true
+                                
+                                for filteredJurnalDateSections in tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent
                                 {
-                                    print("a match is found")
-                                    addSubSection = false
+                                    if filteredJurnalDateSections.date == dateDate! && filteredJurnalDateSections.jurnalCategory == jurnalCategoryEnum.empty
+                                    {
+                                        print("a match is found")
+                                        addSubSection = false
+                                    }
                                 }
+                                
+                                if addSubSection == true || filterEnumCategory == jurnalContents2.jurnalCategory
+                                {
+                                    let newSubSection = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: .empty, date: dateDate!, titleJurnal: "", descJurnal: "")
+                                    tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newSubSection)
+                                }
+                                
+                                let newContent = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: jurnalContents2.jurnalCategory, date: dateDate!, titleJurnal: jurnalContents2.titleJurnal, descJurnal: jurnalContents2.descJurnal)
+                                
+                                tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newContent)
                             }
-                            
-                            if addSubSection == true
-                            {
-                                let newSubSection = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: .empty, date: dateDate!, titleJurnal: "", descJurnal: "")
-                                tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newSubSection)
-                            }
-                            
-                            let newContent = jurnalContent(idJurnalContent: jurnalContents2.idJurnalContent, idJurnal: jurnals2.idJurnal, jurnalCategory: jurnalContents2.jurnalCategory, date: dateDate!, titleJurnal: jurnalContents2.titleJurnal, descJurnal: jurnalContents2.descJurnal)
-                            
-                            tabelJurnalFiltered[jurnalCountFilteredSection].jurnalContent.append(newContent)
                         }
                     }
                 }
                 jurnalCountFilteredSection += 1
             }
+            
             print("-----")
             jurnalCountRow += 1
+        }
+            
         }
         
         print("jurnal search bar text count: \(searchText.count)")
         
-        if searchText.count == 0
-        {
-            isFiltered = false
-        }
-        else
-        {
+//        if searchText.count == 0
+//        {
+//            isFiltered = false
+//        }
+//        else
+//        {
             isFiltered = true
-        }
+//        }
         
         jurnalTableView.reloadData()
-    }
-    
-    func filterEnum()
-    {
-        
     }
     
     func setDatePicker()
@@ -579,6 +683,18 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         filterDateEnd.inputView = datePicker
     }
     
+    func resetFilterButtons()
+    {
+        filterEnumCategory = .all
+        filterCatatanKesehatan.setTouched(bool: false)
+        filterImunisasi.setTouched(bool: false)
+        filterTumbuhKembang.setTouched(bool: false)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? JurnalDescriptionViewController
+    }
+    
     @objc func doneDatePicker(){
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
@@ -602,6 +718,13 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @objc func cancelDatePicker(){
         self.view.endEditing(true)
     }
+    
+    @objc func jurnalRowButtonClicked(sender: JurnalButton!)
+    {
+        print("sectionIndex: \(sender.sectionIndex)")
+        print("rowIndex: \(sender.rowIndex)")
+        performSegue(withIdentifier: "viewJurnalDescriptionSegue", sender: self)
+    }
 }
 
 extension UIView
@@ -616,9 +739,9 @@ extension UIView
         self.layer.masksToBounds = false
     }
     
-    func setHighlighted()
+    func setTouched(bool: Bool)
     {
-        if self.backgroundColor == UIColor.white
+        if bool == true
         {
             self.backgroundColor = .lightGray
             
@@ -630,7 +753,7 @@ extension UIView
             self.layer.masksToBounds = false
         }
         
-        else if self.backgroundColor == UIColor.lightGray
+        else if bool == false
         {
             self.backgroundColor = .white
             

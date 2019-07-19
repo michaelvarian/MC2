@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		432DA16E22E17C4C00A7B78F /* JurnalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432DA16D22E17C4C00A7B78F /* JurnalButton.swift */; };
+		432DA17022E187C000A7B78F /* JurnalDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432DA16F22E187C000A7B78F /* JurnalDescriptionViewController.swift */; };
 		652FE2A322DDF26700B175C0 /* JurnalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A222DDF26700B175C0 /* JurnalViewController.swift */; };
 		652FE2A622DDF28F00B175C0 /* JurnalCellDateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A422DDF28F00B175C0 /* JurnalCellDateRow.swift */; };
 		652FE2A722DDF28F00B175C0 /* JurnalCellRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A522DDF28F00B175C0 /* JurnalCellRow.swift */; };
@@ -51,6 +53,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		432DA16D22E17C4C00A7B78F /* JurnalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JurnalButton.swift; sourceTree = "<group>"; };
+		432DA16F22E187C000A7B78F /* JurnalDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JurnalDescriptionViewController.swift; sourceTree = "<group>"; };
 		652FE2A222DDF26700B175C0 /* JurnalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalViewController.swift; sourceTree = "<group>"; };
 		652FE2A422DDF28F00B175C0 /* JurnalCellDateRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalCellDateRow.swift; sourceTree = "<group>"; };
 		652FE2A522DDF28F00B175C0 /* JurnalCellRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalCellRow.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 				652FE2A822DDF30200B175C0 /* CommunityTableViewCell.swift */,
 				E106536022DDD32D00389E02 /* CatatanKesehatanTableViewCell.swift */,
 				654D4D8F22DF621600EE0B23 /* Slide.swift */,
+				432DA16D22E17C4C00A7B78F /* JurnalButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				E17F396222D8A1C800901E47 /* Objects.swift in Sources */,
 				E1E62FA022E19CE70078A3D4 /* HomeKomunitasTableViewCell.swift in Sources */,
 				8612B3E222E052EB00AEA961 /* DetailBayiViewController.swift in Sources */,
+				432DA17022E187C000A7B78F /* JurnalDescriptionViewController.swift in Sources */,
 				E1AC48ED22DC5CCF00B33A8A /* AktivitasViewController.swift in Sources */,
 				E12F5FC122D9E7A900C1C934 /* Shadow.swift in Sources */,
 				E106535722DD9A4A00389E02 /* AktivitasTableViewCell.swift in Sources */,
@@ -321,6 +327,7 @@
 				E17F394D22D8843F00901E47 /* AppDelegate.swift in Sources */,
 				E106535F22DDBE3100389E02 /* CatatanKesehatanViewController.swift in Sources */,
 				652FE2A622DDF28F00B175C0 /* JurnalCellDateRow.swift in Sources */,
+				432DA16E22E17C4C00A7B78F /* JurnalButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,7 +474,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CLWMV75S4M;
+				DEVELOPMENT_TEAM = 5H2267G252;
 				INFOPLIST_FILE = MC2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -485,7 +492,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CLWMV75S4M;
+				DEVELOPMENT_TEAM = 5H2267G252;
 				INFOPLIST_FILE = MC2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

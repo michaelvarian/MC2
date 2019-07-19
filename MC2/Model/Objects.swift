@@ -27,6 +27,8 @@ var tabelKondisi: [kondisi] = []
 
 var tabelTumbuh: [tumbuh] = []
 
+var tabelKMS: [kms] = []
+
 var tabelJurnal: [jurnal] = []
 
 var tabelJurnalFiltered: [jurnal] = []
@@ -79,6 +81,24 @@ class dataBayi
     }
 }
 
+class kms
+{
+    var idKMS: String //Primary Key
+    var idDataBayi: String //Foreign Key
+    var berat: Double
+    var lingkarkepala: Int
+    var panjang: Int
+    var tanggal: Date
+    init(idKMS: String, idDataBayi: String, berat: Double, lingkarkepala: Int, panjang: Int, tanggal: Date) {
+        self.idKMS = idKMS
+        self.idDataBayi = idDataBayi
+        self.berat = berat
+        self.lingkarkepala = lingkarkepala
+        self.panjang = panjang
+        self.tanggal = tanggal
+    }
+}
+
 class dataKesehatan
 {
     var idDataKesehatan: String //Primary Key
@@ -124,18 +144,19 @@ class imunisasi
     var jenisImunisasi: String
     var descImunisasi: String
     var tanggalImunisasi: Date
+    var bulan: Int
     var isCheck: Bool
     
-    init(idImunisasi: String, IdAkun: String, jenisImunisasi: String, descImunisasi:String, tanggalImunisasi: Date, isCheck: Bool) {
+    init(idImunisasi: String, IdAkun: String, jenisImunisasi: String, descImunisasi:String, tanggalImunisasi: Date, bulan: Int, isCheck: Bool) {
         self.idImunisasi = idImunisasi
         self.idAkun = IdAkun
         self.jenisImunisasi = jenisImunisasi
         self.descImunisasi = descImunisasi
         self.tanggalImunisasi = tanggalImunisasi
+        self.bulan = bulan
         self.isCheck = isCheck
     }
 }
-
 
 class komunitas
 {
@@ -183,17 +204,24 @@ class tumbuh
 {
     var idTumbuh: String // Primary Key
     var idAkun: String // Foreign Key
+    var bulan: Int
     var namaTumbuh: String
     var descTumbuh: String
     var isCheck: Bool
     
-    init(idTumbuh: String, idAkun: String, namaTumbuh: String, descTumbuh: String, isCheck: Bool) {
+    init(idTumbuh: String, idAkun: String, bulan: Int, namaTumbuh: String, descTumbuh: String, isCheck: Bool) {
         self.idTumbuh = idTumbuh
         self.idAkun = idAkun
+        self.bulan = bulan
         self.namaTumbuh = namaTumbuh
         self.descTumbuh = descTumbuh
         self.isCheck = isCheck
     }
+}
+
+enum EnumJenisKelamin {
+    case LakiLaki
+    case Perempuan
 }
 
 enum jurnalCategoryEnum
@@ -202,6 +230,7 @@ enum jurnalCategoryEnum
     case imunisasi
     case catatanKesehatan
     case empty
+    case all
 }
 
 class jurnal
@@ -253,8 +282,66 @@ class jurnalContent
     }
 }
 
+func initTumbuh() {
+    let t1 = tumbuh(idTumbuh: "1", idAkun: "1", bulan: 1, namaTumbuh: "Menatap ke Ibu", descTumbuh: "Menatap ke Ibu", isCheck: false)
+    let t2 = tumbuh(idTumbuh: "2", idAkun: "1", bulan: 1, namaTumbuh: "Mengeluarkan suara o… o…", descTumbuh: "Mengeluarkan suara o… o…", isCheck: false)
+    let t3 = tumbuh(idTumbuh: "3", idAkun: "1", bulan: 1, namaTumbuh: "Tersenyum", descTumbuh: "Tersenyum", isCheck: false)
+    let t4 = tumbuh(idTumbuh: "4", idAkun: "1", bulan: 1, namaTumbuh: "Menggerakkan tangan dan kaki", descTumbuh: "Menggerakkan tangan dan kaki", isCheck: false)
+    let t5 = tumbuh(idTumbuh: "5", idAkun: "1", bulan: 3, namaTumbuh: "Mengangkat kepala tegak ketika tengkurap", descTumbuh: "Mengangkat kepala tegak ketika tengkurap", isCheck: false)
+    let t6 = tumbuh(idTumbuh: "6", idAkun: "1", bulan: 3, namaTumbuh: "Tertawa", descTumbuh: "Tertawa", isCheck: false)
+    let t7 = tumbuh(idTumbuh: "7", idAkun: "1", bulan: 3, namaTumbuh: "Menggerakkan kepala ke kanan dan ke kiri", descTumbuh: "Menggerakkan kepala ke kanan dan ke kiri", isCheck: false)
+    let t8 = tumbuh(idTumbuh: "8", idAkun: "1", bulan: 3, namaTumbuh: "Membalas tersenyum ketika diajak bicara", descTumbuh: "Membalas tersenyum ketika diajak bicara", isCheck: false)
+    let t9 = tumbuh(idTumbuh: "9", idAkun: "1", bulan: 3, namaTumbuh: "Mengoceh spontan atau bereaksi dengan mengoceh", descTumbuh: "Mengoceh spontan atau bereaksi dengan mengoceh", isCheck: false)
+    let t10 = tumbuh(idTumbuh: "10", idAkun: "1", bulan: 6, namaTumbuh: "Berbalik dari telungkup ke telentang", descTumbuh: "Berbalik dari telungkup ke telentang", isCheck: false)
+    let t11 = tumbuh(idTumbuh: "11", idAkun: "1", bulan: 6, namaTumbuh: "Mempertahankan posisi kepala tetap tegak", descTumbuh: "Mempertahankan posisi kepala tetap tegak", isCheck: false)
+    let t12 = tumbuh(idTumbuh: "12", idAkun: "1", bulan: 6, namaTumbuh: "Meraih benda yang ada didekatnya", descTumbuh: "Meraih benda yang ada didekatnya", isCheck: false)
+    let t13 = tumbuh(idTumbuh: "13", idAkun: "1", bulan: 6, namaTumbuh: "Menirukan bunyi", descTumbuh: "Menirukan bunyi", isCheck: false)
+    let t14 = tumbuh(idTumbuh: "14", idAkun: "1", bulan: 6, namaTumbuh: "Menggenggam mainan", descTumbuh: "Menggenggam mainan", isCheck: false)
+    let t15 = tumbuh(idTumbuh: "15", idAkun: "1", bulan: 6, namaTumbuh: "Tersenyum ketika melihat mainan/gambar yang menarik", descTumbuh: "Tersenyum ketika melihat mainan/gambar yang menarik", isCheck: false)
+    let t16 = tumbuh(idTumbuh: "16", idAkun: "1", bulan: 9, namaTumbuh: "Merambat", descTumbuh: "Merambat", isCheck: false)
+    let t17 = tumbuh(idTumbuh: "17", idAkun: "1", bulan: 9, namaTumbuh: "Mengucapkan ma … ma, da … da", descTumbuh: "Mengucapkan ma … ma, da … da", isCheck: false)
+    let t18 = tumbuh(idTumbuh: "18", idAkun: "1", bulan: 9, namaTumbuh: "Meraih benda sebesar kacang", descTumbuh: "Meraih benda sebesar kacang", isCheck: false)
+    let t19 = tumbuh(idTumbuh: "19", idAkun: "1", bulan: 9, namaTumbuh: "Mencari benda/mainan yang dijatuhkan", descTumbuh: "Mencari benda/mainan yang dijatuhkan", isCheck: false)
+    let t20 = tumbuh(idTumbuh: "20", idAkun: "1", bulan: 9, namaTumbuh: "Bermain tepuk tangan atau ci-luk-ba", descTumbuh: "Bermain tepuk tangan atau ci-luk-ba", isCheck: false)
+    let t21 = tumbuh(idTumbuh: "21", idAkun: "1", bulan: 9, namaTumbuh: "Makan kue/biskuit sendiri", descTumbuh: "Makan kue/biskuit sendiri", isCheck: false)
+    let t22 = tumbuh(idTumbuh: "22", idAkun: "1", bulan: 12, namaTumbuh: "Berdiri dan berjalan berpegangan", descTumbuh: "Berdiri dan berjalan berpegangan", isCheck: false)
+    let t23 = tumbuh(idTumbuh: "23", idAkun: "1", bulan: 12, namaTumbuh: "Memegang benda kecil", descTumbuh: "Memegang benda kecil", isCheck: false)
+    let t24 = tumbuh(idTumbuh: "24", idAkun: "1", bulan: 12, namaTumbuh: "Meniru kata sederhana seperti ma.. ma.., pa.. pa..", descTumbuh: "Meniru kata sederhana seperti ma.. ma.., pa.. pa..", isCheck: false)
+    let t25 = tumbuh(idTumbuh: "25", idAkun: "1", bulan: 12, namaTumbuh: "Mengenal anggota keluarga", descTumbuh: "Mengenal anggota keluarga", isCheck: false)
+    let t26 = tumbuh(idTumbuh: "26", idAkun: "1", bulan: 12, namaTumbuh: "Takut pada orang yang baru dikenal", descTumbuh: "Takut pada orang yang baru dikenal", isCheck: false)
+    let t27 = tumbuh(idTumbuh: "27", idAkun: "1", bulan: 12, namaTumbuh: "Menunjuk apa yang diinginkan tappa menangis/merengek", descTumbuh: "Menunjuk apa yang diinginkan tappa menangis/merengek", isCheck: false)
+    
+    tabelTumbuh.append(t1)
+    tabelTumbuh.append(t2)
+    tabelTumbuh.append(t3)
+    tabelTumbuh.append(t4)
+    tabelTumbuh.append(t5)
+    tabelTumbuh.append(t6)
+    tabelTumbuh.append(t7)
+    tabelTumbuh.append(t8)
+    tabelTumbuh.append(t9)
+    tabelTumbuh.append(t10)
+    tabelTumbuh.append(t11)
+    tabelTumbuh.append(t12)
+    tabelTumbuh.append(t13)
+    tabelTumbuh.append(t14)
+    tabelTumbuh.append(t15)
+    tabelTumbuh.append(t16)
+    tabelTumbuh.append(t17)
+    tabelTumbuh.append(t18)
+    tabelTumbuh.append(t19)
+    tabelTumbuh.append(t20)
+    tabelTumbuh.append(t21)
+    tabelTumbuh.append(t22)
+    tabelTumbuh.append(t23)
+    tabelTumbuh.append(t24)
+    tabelTumbuh.append(t25)
+    tabelTumbuh.append(t26)
+    tabelTumbuh.append(t27)
+}
+
 func initAccount() {
-    let account1 = akun(idAkun: "1", namaOrangTua: "Linda Cook", panggilan: "Mama")
+    let account1 = akun(idAkun: "1", namaOrangTua: "Linda Jobs", panggilan: "Mama")
     tabelAkun.append(account1)
 }
 
@@ -262,9 +349,35 @@ func initDataBayi() {
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy/MM/dd"
     
-    let bayi1 = dataBayi(idDataBayi: "1", idAkun: "1", namaBayi: "Zhafran", panjang: 50, berat: 2.98, tglLahir: formatter.date(from: "2013/05/23")!, jnsKelamin: "Laki-Laki", lingkarKepala: 30)
+    let bayi1 = dataBayi(idDataBayi: "1", idAkun: "1", namaBayi: "Joko Cook", panjang: 50, berat: 2.98, tglLahir: formatter.date(from: "2019/05/23")!, jnsKelamin: "Laki-Laki", lingkarKepala: 30)
     
     tabelDataBayi.append(bayi1)
+}
+
+func initImunisasi() {
+    let i1 = imunisasi(idImunisasi: "1", IdAkun: "1", jenisImunisasi: "HB-0", descImunisasi: "HB-0", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 0, isCheck: false)
+    let i2 = imunisasi(idImunisasi: "2", IdAkun: "1", jenisImunisasi: "BCG", descImunisasi: "BCG", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 1, isCheck: false)
+    let i3 = imunisasi(idImunisasi: "3", IdAkun: "1", jenisImunisasi: "Polio", descImunisasi: "Polio", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 1, isCheck: false)
+    let i4 = imunisasi(idImunisasi: "4", IdAkun: "1", jenisImunisasi: "DPT-HB-Hib 1", descImunisasi: "DPT-HB-Hib 1", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 2, isCheck: false)
+    let i5 = imunisasi(idImunisasi: "5", IdAkun: "1", jenisImunisasi: "Polio 2", descImunisasi: "Polio 2", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 2, isCheck: false)
+    let i6 = imunisasi(idImunisasi: "6", IdAkun: "1", jenisImunisasi: "DPT-HB-Hib 2", descImunisasi: "DPT-HB-Hib 2", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 3, isCheck: false)
+    let i7 = imunisasi(idImunisasi: "7", IdAkun: "1", jenisImunisasi: "Polio 3", descImunisasi: "Polio 3", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 3, isCheck: false)
+    let i8 = imunisasi(idImunisasi: "8", IdAkun: "1", jenisImunisasi: "DPT-HB-Hib 3", descImunisasi: "DPT-HB-Hib 3", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 4, isCheck: false)
+    let i9 = imunisasi(idImunisasi: "9", IdAkun: "1", jenisImunisasi: "Polio 4", descImunisasi: "Polio 4", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 4, isCheck: false)
+    let i10 = imunisasi(idImunisasi: "10", IdAkun: "1", jenisImunisasi: "IPV", descImunisasi: "IPV", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 4, isCheck: false)
+    let i11 = imunisasi(idImunisasi: "11", IdAkun: "1", jenisImunisasi: "Campak", descImunisasi: "Campak", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 9, isCheck: false)
+    
+    tabelImunisasi.append(i1)
+    tabelImunisasi.append(i2)
+    tabelImunisasi.append(i3)
+    tabelImunisasi.append(i4)
+    tabelImunisasi.append(i5)
+    tabelImunisasi.append(i6)
+    tabelImunisasi.append(i7)
+    tabelImunisasi.append(i8)
+    tabelImunisasi.append(i9)
+    tabelImunisasi.append(i10)
+    tabelImunisasi.append(i11)
 }
 
 func initJurnalObjects()
