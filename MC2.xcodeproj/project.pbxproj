@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FF9CC8E22E1A4DC009E12DD /* FormKmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF9CC8D22E1A4DC009E12DD /* FormKmsViewController.swift */; };
 		432DA16E22E17C4C00A7B78F /* JurnalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432DA16D22E17C4C00A7B78F /* JurnalButton.swift */; };
 		432DA17022E187C000A7B78F /* JurnalDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432DA16F22E187C000A7B78F /* JurnalDescriptionViewController.swift */; };
 		652FE2A322DDF26700B175C0 /* JurnalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A222DDF26700B175C0 /* JurnalViewController.swift */; };
@@ -39,15 +40,21 @@
 		E17F395A22D8844000901E47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17F395822D8844000901E47 /* LaunchScreen.storyboard */; };
 		E17F396222D8A1C800901E47 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F396122D8A1C800901E47 /* Objects.swift */; };
 		E19F5D4022DE01FF0096E364 /* KomunitasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19F5D3F22DE01FF0096E364 /* KomunitasViewController.swift */; };
+		E19F5D4222DF41030096E364 /* DetailCatatanKesehatanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19F5D4122DF41030096E364 /* DetailCatatanKesehatanViewController.swift */; };
+		E19F5D4422E0409B0096E364 /* AktivitasWithTahapanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19F5D4322E0409B0096E364 /* AktivitasWithTahapanViewController.swift */; };
+		E19F5D4B22E070630096E364 /* HomeTahapanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19F5D4A22E070630096E364 /* HomeTahapanTableViewCell.swift */; };
 		E1AC48ED22DC5CCF00B33A8A /* AktivitasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AC48EC22DC5CCF00B33A8A /* AktivitasViewController.swift */; };
 		E1AC48EF22DC604700B33A8A /* Komunitas.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AC48EE22DC604700B33A8A /* Komunitas.storyboard */; };
 		E1AC48F522DC66E400B33A8A /* FormKms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AC48F422DC66E400B33A8A /* FormKms.storyboard */; };
 		E1AC48F722DC674300B33A8A /* FormImunisasi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AC48F622DC674300B33A8A /* FormImunisasi.storyboard */; };
 		E1AC48F922DC675200B33A8A /* FormCatatanKesehatan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AC48F822DC675200B33A8A /* FormCatatanKesehatan.storyboard */; };
+		E1E62F9E22E086170078A3D4 /* HomeAktivitasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E62F9D22E086170078A3D4 /* HomeAktivitasTableViewCell.swift */; };
+		E1E62FA022E19CE70078A3D4 /* HomeKomunitasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E62F9F22E19CE70078A3D4 /* HomeKomunitasTableViewCell.swift */; };
 		E1EC277222D9AE3300528532 /* Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EC277122D9AE3300528532 /* Rounded.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FF9CC8D22E1A4DC009E12DD /* FormKmsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormKmsViewController.swift; path = ../../../TemanKMS/MC2/Controller/FormKmsViewController.swift; sourceTree = "<group>"; };
 		432DA16D22E17C4C00A7B78F /* JurnalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JurnalButton.swift; sourceTree = "<group>"; };
 		432DA16F22E187C000A7B78F /* JurnalDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JurnalDescriptionViewController.swift; sourceTree = "<group>"; };
 		652FE2A222DDF26700B175C0 /* JurnalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalViewController.swift; sourceTree = "<group>"; };
@@ -82,11 +89,16 @@
 		E17F395B22D8844000901E47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E17F396122D8A1C800901E47 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
 		E19F5D3F22DE01FF0096E364 /* KomunitasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KomunitasViewController.swift; sourceTree = "<group>"; };
+		E19F5D4122DF41030096E364 /* DetailCatatanKesehatanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCatatanKesehatanViewController.swift; sourceTree = "<group>"; };
+		E19F5D4322E0409B0096E364 /* AktivitasWithTahapanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AktivitasWithTahapanViewController.swift; sourceTree = "<group>"; };
+		E19F5D4A22E070630096E364 /* HomeTahapanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTahapanTableViewCell.swift; sourceTree = "<group>"; };
 		E1AC48EC22DC5CCF00B33A8A /* AktivitasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AktivitasViewController.swift; sourceTree = "<group>"; };
 		E1AC48EE22DC604700B33A8A /* Komunitas.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Komunitas.storyboard; sourceTree = "<group>"; };
 		E1AC48F422DC66E400B33A8A /* FormKms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FormKms.storyboard; sourceTree = "<group>"; };
 		E1AC48F622DC674300B33A8A /* FormImunisasi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FormImunisasi.storyboard; sourceTree = "<group>"; };
 		E1AC48F822DC675200B33A8A /* FormCatatanKesehatan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FormCatatanKesehatan.storyboard; sourceTree = "<group>"; };
+		E1E62F9D22E086170078A3D4 /* HomeAktivitasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAktivitasTableViewCell.swift; sourceTree = "<group>"; };
+		E1E62F9F22E19CE70078A3D4 /* HomeKomunitasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKomunitasTableViewCell.swift; sourceTree = "<group>"; };
 		E1EC277122D9AE3300528532 /* Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rounded.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +161,16 @@
 			path = MC2;
 			sourceTree = "<group>";
 		};
+		E19F5D4722E06E820096E364 /* HomeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E19F5D4A22E070630096E364 /* HomeTahapanTableViewCell.swift */,
+				E1E62F9D22E086170078A3D4 /* HomeAktivitasTableViewCell.swift */,
+				E1E62F9F22E19CE70078A3D4 /* HomeKomunitasTableViewCell.swift */,
+			);
+			path = HomeTableViewCell;
+			sourceTree = "<group>";
+		};
 		E1EC276C22D98FC800528532 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +184,7 @@
 		E1EC276D22D98FCD00528532 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E19F5D4722E06E820096E364 /* HomeTableViewCell */,
 				652FE2A422DDF28F00B175C0 /* JurnalCellDateRow.swift */,
 				652FE2A522DDF28F00B175C0 /* JurnalCellRow.swift */,
 				E1EC277122D9AE3300528532 /* Rounded.swift */,
@@ -185,12 +208,14 @@
 				8612B3E122E052EB00AEA961 /* DetailBayiViewController.swift */,
 				E13058E322DB598500E76BB8 /* DetailTahapanViewController.swift */,
 				E1AC48EC22DC5CCF00B33A8A /* AktivitasViewController.swift */,
+				2FF9CC8D22E1A4DC009E12DD /* FormKmsViewController.swift */,
 				E106535822DDA7E100389E02 /* DetailAktivitasViewController.swift */,
 				E106535A22DDB27400389E02 /* KesehatanViewController.swift */,
 				E106535E22DDBE3100389E02 /* CatatanKesehatanViewController.swift */,
 				652FE2A222DDF26700B175C0 /* JurnalViewController.swift */,
-				432DA16F22E187C000A7B78F /* JurnalDescriptionViewController.swift */,
+				E19F5D4122DF41030096E364 /* DetailCatatanKesehatanViewController.swift */,
 				654D4D8D22DF619F00EE0B23 /* onboardingViewController.swift */,
+				E19F5D4322E0409B0096E364 /* AktivitasWithTahapanViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -277,7 +302,11 @@
 			files = (
 				E1EC277222D9AE3300528532 /* Rounded.swift in Sources */,
 				E13058E622DB59B000E76BB8 /* DetailTahapanTableViewCell.swift in Sources */,
+				E1E62F9E22E086170078A3D4 /* HomeAktivitasTableViewCell.swift in Sources */,
 				652FE2A722DDF28F00B175C0 /* JurnalCellRow.swift in Sources */,
+				E19F5D4422E0409B0096E364 /* AktivitasWithTahapanViewController.swift in Sources */,
+				E19F5D4222DF41030096E364 /* DetailCatatanKesehatanViewController.swift in Sources */,
+				E19F5D4B22E070630096E364 /* HomeTahapanTableViewCell.swift in Sources */,
 				652FE2A922DDF30200B175C0 /* CommunityTableViewCell.swift in Sources */,
 				E106535922DDA7E100389E02 /* DetailAktivitasViewController.swift in Sources */,
 				E13058E422DB598500E76BB8 /* DetailTahapanViewController.swift in Sources */,
@@ -291,6 +320,7 @@
 				E12F5FBF22D9D80000C1C934 /* HariIniViewController.swift in Sources */,
 				652FE2A322DDF26700B175C0 /* JurnalViewController.swift in Sources */,
 				E17F396222D8A1C800901E47 /* Objects.swift in Sources */,
+				2FF9CC8E22E1A4DC009E12DD /* FormKmsViewController.swift in Sources */,
 				8612B3E222E052EB00AEA961 /* DetailBayiViewController.swift in Sources */,
 				432DA17022E187C000A7B78F /* JurnalDescriptionViewController.swift in Sources */,
 				E1AC48ED22DC5CCF00B33A8A /* AktivitasViewController.swift in Sources */,

@@ -1,24 +1,26 @@
 //
-//  DetailTahapanViewController.swift
+//  AktivitasWithTahapanViewController.swift
 //  MC2
 //
-//  Created by Muhammad Reynaldi on 14/07/19.
+//  Created by Muhammad Reynaldi on 18/07/19.
 //  Copyright © 2019 Group 16. All rights reserved.
 //
 
 import UIKit
 
-class DetailTahapanViewController: UIViewController {
+class AktivitasWithTahapanViewController: UIViewController {
+    
+    let cellTahapan = "cellTahapanAktivitas"
+
     @IBOutlet weak var detailTahapanTableView: UITableView!
-  
-    // Constant
-    let cellTahapan = "cellTahapan"
-    let segue = "goToDetailTahapan"
+    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var viewTahapan: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setView()
         cellDelegate()
-        addDataTahapan()
+        addData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,23 +28,36 @@ class DetailTahapanViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+    func addData(){
+        let tahapan1 = tumbuh(idTumbuh: "1", idAkun: "1", bulan: 1, namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
+        let tahapan2 = tumbuh(idTumbuh: "1", idAkun: "1", bulan: 2, namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
+        let tahapan3 = tumbuh(idTumbuh: "1", idAkun: "1", bulan: 3, namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
+        let tahapan4 = tumbuh(idTumbuh: "1", idAkun: "1", bulan: 4, namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
+        let tahapan5 = tumbuh(idTumbuh: "1", idAkun: "1", bulan: 5, namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
+        
+        tabelTumbuh.append(tahapan1)
+        tabelTumbuh.append(tahapan2)
+        tabelTumbuh.append(tahapan3)
+        tabelTumbuh.append(tahapan4)
+        tabelTumbuh.append(tahapan5)
+    }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let detailTahapan = segue.destination as! MoreDetailTahapanViewController
-//        if let indexPath = detailTahapanTableView.indexPathForSelectedRow{
-//            let tahapan = tabelTumbuh[indexPath.row]
-//            detailTahapan.objTahapan = tahapan
-//        }
-//    }
-    
+    func setView(){
+        viewTahapan.setShadowView()
+        viewTahapan.littleRoundView()
+        submitButton.setShadowButton()
+        submitButton.littleRoundButton()
+    }
+
+    @IBAction func submitTapped(_ sender: UIButton) {
+        
+    }
 }
-
-extension DetailTahapanViewController:UITableViewDelegate, UITableViewDataSource{
-
+extension AktivitasWithTahapanViewController: UITableViewDelegate, UITableViewDataSource{
+    
     func cellDelegate(){
-        self.detailTahapanTableView.delegate = self
-        self.detailTahapanTableView.dataSource = self
-        self.detailTahapanTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        detailTahapanTableView.delegate = self
+        detailTahapanTableView.dataSource = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

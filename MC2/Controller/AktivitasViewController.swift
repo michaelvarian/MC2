@@ -35,7 +35,7 @@ class AktivitasViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cellDelegate()
-        addData()
+        addDataAktivitas()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,19 +43,7 @@ class AktivitasViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    func addData(){
-        let aktivitas1 = aktivitas(idAktivitas: "1", idAkun: "1", namaAktivitas: "Bernafas", descAktivitas: "Jika mencoba untuk bernafas, tolong di ajak bermain sepak bola, serta berenang", fotoAktivitas: UIImage(imageLiteralResourceName: "bernafas.jpg"))
-        let aktivitas2 = aktivitas(idAktivitas: "2", idAkun: "2", namaAktivitas: "Bernafas", descAktivitas: "Jika mencoba untuk bernafas, tolong di ajak bermain sepak bola, serta berenang", fotoAktivitas: UIImage(imageLiteralResourceName: "bernafas.jpg"))
-        let aktivitas3 = aktivitas(idAktivitas: "3", idAkun: "3", namaAktivitas: "Bernafas", descAktivitas: "Jika mencoba untuk bernafas, tolong di ajak bermain sepak bola, serta berenang", fotoAktivitas: UIImage(imageLiteralResourceName: "bernafas.jpg"))
-        let aktivitas4 = aktivitas(idAktivitas: "4", idAkun: "4", namaAktivitas: "Bernafas", descAktivitas: "Jika mencoba untuk bernafas, tolong di ajak bermain sepak bola, serta berenang", fotoAktivitas: UIImage(imageLiteralResourceName: "bernafas.jpg"))
-        let aktivitas5 = aktivitas(idAktivitas: "5", idAkun: "5", namaAktivitas: "Bernafas", descAktivitas: "Jika mencoba untuk bernafas, tolong di ajak bermain sepak bola, serta berenang", fotoAktivitas: UIImage(imageLiteralResourceName: "bernafas.jpg"))
-        
-        tabelAktivitas.append(aktivitas1)
-        tabelAktivitas.append(aktivitas2)
-        tabelAktivitas.append(aktivitas3)
-        tabelAktivitas.append(aktivitas4)
-        tabelAktivitas.append(aktivitas5)
-    }
+    
     
     @IBAction func pilihBulanTapped(_ sender: UIBarButtonItem) {
         createMonthPicker()

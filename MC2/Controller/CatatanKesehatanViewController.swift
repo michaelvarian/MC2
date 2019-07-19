@@ -51,6 +51,14 @@ class CatatanKesehatanViewController: UIViewController {
         catatButton.littleRoundButton()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailCatatanKesehatan  = segue.destination as! DetailCatatanKesehatanViewController
+        if let indexPath = catatanKesehatanTableView.indexPathForSelectedRow{
+            let catatan = tabelDataKesehatan[indexPath.row] 
+            detailCatatanKesehatan.objCatatanKesehatan = catatan
+        }
+    }
+    
 }
 extension CatatanKesehatanViewController: UITableViewDelegate, UITableViewDataSource{
     
