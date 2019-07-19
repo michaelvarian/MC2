@@ -142,18 +142,18 @@ class imunisasi
     var idImunisasi: String //Primary Key
     var idAkun: String // Foreign Key
     var jenisImunisasi: String
-    var descImunisasi: String
     var tanggalImunisasi: Date
     var bulan: Int
+    var lokasi: String
     var isCheck: Bool
     
-    init(idImunisasi: String, IdAkun: String, jenisImunisasi: String, descImunisasi:String, tanggalImunisasi: Date, bulan: Int, isCheck: Bool) {
+    init(idImunisasi: String, IdAkun: String, jenisImunisasi: String, tanggalImunisasi: Date, bulan: Int, lokasi: String, isCheck: Bool) {
         self.idImunisasi = idImunisasi
         self.idAkun = IdAkun
         self.jenisImunisasi = jenisImunisasi
-        self.descImunisasi = descImunisasi
         self.tanggalImunisasi = tanggalImunisasi
         self.bulan = bulan
+        self.lokasi = lokasi
         self.isCheck = isCheck
     }
 }
@@ -355,18 +355,18 @@ func initDataBayi() {
 }
 
 func initImunisasi() {
-    let i1 = imunisasi(idImunisasi: "1", IdAkun: "1", jenisImunisasi: "HB-0", descImunisasi: "HB-0", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 0, isCheck: false)
-    let i2 = imunisasi(idImunisasi: "2", IdAkun: "1", jenisImunisasi: "BCG", descImunisasi: "BCG", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 1, isCheck: false)
-    let i3 = imunisasi(idImunisasi: "3", IdAkun: "1", jenisImunisasi: "Polio", descImunisasi: "Polio", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 1, isCheck: false)
-    let i4 = imunisasi(idImunisasi: "4", IdAkun: "1", jenisImunisasi: "DPT-HB-Hib 1", descImunisasi: "DPT-HB-Hib 1", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 2, isCheck: false)
-    let i5 = imunisasi(idImunisasi: "5", IdAkun: "1", jenisImunisasi: "Polio 2", descImunisasi: "Polio 2", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 2, isCheck: false)
-    let i6 = imunisasi(idImunisasi: "6", IdAkun: "1", jenisImunisasi: "DPT-HB-Hib 2", descImunisasi: "DPT-HB-Hib 2", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 3, isCheck: false)
-    let i7 = imunisasi(idImunisasi: "7", IdAkun: "1", jenisImunisasi: "Polio 3", descImunisasi: "Polio 3", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 3, isCheck: false)
-    let i8 = imunisasi(idImunisasi: "8", IdAkun: "1", jenisImunisasi: "DPT-HB-Hib 3", descImunisasi: "DPT-HB-Hib 3", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 4, isCheck: false)
-    let i9 = imunisasi(idImunisasi: "9", IdAkun: "1", jenisImunisasi: "Polio 4", descImunisasi: "Polio 4", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 4, isCheck: false)
-    let i10 = imunisasi(idImunisasi: "10", IdAkun: "1", jenisImunisasi: "IPV", descImunisasi: "IPV", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 4, isCheck: false)
-    let i11 = imunisasi(idImunisasi: "11", IdAkun: "1", jenisImunisasi: "Campak", descImunisasi: "Campak", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 9, isCheck: false)
-    
+    let i1 = imunisasi(idImunisasi: "1", IdAkun: "1", jenisImunisasi: "HB-0", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 0, lokasi: "", isCheck: false)
+    let i2 = imunisasi(idImunisasi: "2", IdAkun: "1", jenisImunisasi: "BCG", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 1, lokasi: "", isCheck: false)
+    let i3 = imunisasi(idImunisasi: "3", IdAkun: "1", jenisImunisasi: "Polio", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 1, lokasi: "", isCheck: false)
+    let i4 = imunisasi(idImunisasi: "4", IdAkun: "1", jenisImunisasi: "DPT-HB-Hib 1", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 2, lokasi: "", isCheck: false)
+    let i5 = imunisasi(idImunisasi: "5", IdAkun: "1", jenisImunisasi: "Polio 2", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 2, lokasi: "", isCheck: false)
+    let i6 = imunisasi(idImunisasi: "6", IdAkun: "1", jenisImunisasi: "DPT-HB-Hib 2", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 3, lokasi: "", isCheck: false)
+    let i7 = imunisasi(idImunisasi: "7", IdAkun: "1", jenisImunisasi: "Polio 3", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 3, lokasi: "", isCheck: false)
+    let i8 = imunisasi(idImunisasi: "8", IdAkun: "1", jenisImunisasi: "DPT-HB-Hib 3", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 4, lokasi: "", isCheck: false)
+    let i9 = imunisasi(idImunisasi: "9", IdAkun: "1", jenisImunisasi: "Polio 4", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 4, lokasi: "", isCheck: false)
+    let i10 = imunisasi(idImunisasi: "10", IdAkun: "1", jenisImunisasi: "IPV", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 4, lokasi: "", isCheck: false)
+    let i11 = imunisasi(idImunisasi: "11", IdAkun: "1", jenisImunisasi: "Campak", tanggalImunisasi: Date(timeIntervalSinceNow: 0), bulan: 9, lokasi: "", isCheck: false)
+
     tabelImunisasi.append(i1)
     tabelImunisasi.append(i2)
     tabelImunisasi.append(i3)
