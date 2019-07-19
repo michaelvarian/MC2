@@ -45,6 +45,8 @@
 		E1AC48F522DC66E400B33A8A /* FormKms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AC48F422DC66E400B33A8A /* FormKms.storyboard */; };
 		E1AC48F722DC674300B33A8A /* FormImunisasi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AC48F622DC674300B33A8A /* FormImunisasi.storyboard */; };
 		E1AC48F922DC675200B33A8A /* FormCatatanKesehatan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AC48F822DC675200B33A8A /* FormCatatanKesehatan.storyboard */; };
+		E1E62F9E22E086170078A3D4 /* HomeAktivitasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E62F9D22E086170078A3D4 /* HomeAktivitasTableViewCell.swift */; };
+		E1E62FA022E19CE70078A3D4 /* HomeKomunitasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E62F9F22E19CE70078A3D4 /* HomeKomunitasTableViewCell.swift */; };
 		E1EC277222D9AE3300528532 /* Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EC277122D9AE3300528532 /* Rounded.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +91,8 @@
 		E1AC48F422DC66E400B33A8A /* FormKms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FormKms.storyboard; sourceTree = "<group>"; };
 		E1AC48F622DC674300B33A8A /* FormImunisasi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FormImunisasi.storyboard; sourceTree = "<group>"; };
 		E1AC48F822DC675200B33A8A /* FormCatatanKesehatan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FormCatatanKesehatan.storyboard; sourceTree = "<group>"; };
+		E1E62F9D22E086170078A3D4 /* HomeAktivitasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAktivitasTableViewCell.swift; sourceTree = "<group>"; };
+		E1E62F9F22E19CE70078A3D4 /* HomeKomunitasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKomunitasTableViewCell.swift; sourceTree = "<group>"; };
 		E1EC277122D9AE3300528532 /* Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rounded.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				E19F5D4A22E070630096E364 /* HomeTahapanTableViewCell.swift */,
+				E1E62F9D22E086170078A3D4 /* HomeAktivitasTableViewCell.swift */,
+				E1E62F9F22E19CE70078A3D4 /* HomeKomunitasTableViewCell.swift */,
 			);
 			path = HomeTableViewCell;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 			files = (
 				E1EC277222D9AE3300528532 /* Rounded.swift in Sources */,
 				E13058E622DB59B000E76BB8 /* DetailTahapanTableViewCell.swift in Sources */,
+				E1E62F9E22E086170078A3D4 /* HomeAktivitasTableViewCell.swift in Sources */,
 				652FE2A722DDF28F00B175C0 /* JurnalCellRow.swift in Sources */,
 				E19F5D4422E0409B0096E364 /* AktivitasWithTahapanViewController.swift in Sources */,
 				E19F5D4222DF41030096E364 /* DetailCatatanKesehatanViewController.swift in Sources */,
@@ -305,6 +312,7 @@
 				E12F5FBF22D9D80000C1C934 /* HariIniViewController.swift in Sources */,
 				652FE2A322DDF26700B175C0 /* JurnalViewController.swift in Sources */,
 				E17F396222D8A1C800901E47 /* Objects.swift in Sources */,
+				E1E62FA022E19CE70078A3D4 /* HomeKomunitasTableViewCell.swift in Sources */,
 				8612B3E222E052EB00AEA961 /* DetailBayiViewController.swift in Sources */,
 				E1AC48ED22DC5CCF00B33A8A /* AktivitasViewController.swift in Sources */,
 				E12F5FC122D9E7A900C1C934 /* Shadow.swift in Sources */,

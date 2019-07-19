@@ -12,6 +12,8 @@ class HariIniViewController: UIViewController {
     
     // Contants
     let cellHomeTahapan = "cellHomeTahapan"
+    let cellHomeAktivitas = "cellHomeAktivitas"
+    let cellHomeKomunitas = "cellHomeKomunitas"
     
     // Layout
     @IBOutlet weak var headerView: UIImageView!
@@ -25,9 +27,6 @@ class HariIniViewController: UIViewController {
     // Content Status Gizi
     @IBOutlet weak var namaStatusLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var outerUmur: UIView!
-    @IBOutlet weak var outerBerat: UIView!
-    @IBOutlet weak var outerTinggi: UIView!
     @IBOutlet weak var umurView: UIView!
     @IBOutlet weak var beratView: UIView!
     @IBOutlet weak var tinggiView: UIView!
@@ -54,11 +53,15 @@ class HariIniViewController: UIViewController {
     
     
     @IBOutlet weak var homeTahapanTable: UITableView!
+    @IBOutlet weak var homeAktivitasTable: UITableView!
+    @IBOutlet weak var homeKomunitasTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setStartView()
         addDataTahapan()
+        addDataAktivitas()
+        addDataKomunitas()
         cellDelegate()
     }
     
@@ -90,34 +93,77 @@ extension HariIniViewController: UITableViewDataSource, UITableViewDelegate{
     func cellDelegate(){
         homeTahapanTable.delegate = self
         homeTahapanTable.dataSource = self
+        homeAktivitasTable.delegate = self
+        homeAktivitasTable.dataSource = self
+        homeKomunitasTable.delegate = self
+        homeKomunitasTable.dataSource = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tabelTumbuh.count
+        var count:Int!
+        
+        if tableView == homeTahapanTable{
+            return tabelTumbuh.count
+        }else if tableView == homeAktivitasTable{
+            return tabelAktivitas.count
+        }else{
+            return tabelKomunitas.count
+        }
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellHomeTahapan) as! HomeTahapanTableViewCell
-        let tahapan = tabelTumbuh[indexPath.row]
-        cell.tahapanDeskripsi.text = tahapan.descTumbuh
-        cell.checkBoxTahapan.addTarget(self, action: #selector(checkMarkedClicked(sender:)), for: .touchUpInside)
+        if tableView == self.homeTahapanTable{
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellHomeTahapan) as! HomeTahapanTableViewCell
+            let tahapan = tabelTumbuh[indexPath.row]
+            
+            cell.tahapanDeskripsi.text = tahapan.descTumbuh
+            cell.checkBoxTahapan.tag = indexPath.row
+            cell.checkBoxTahapan.addTarget(self, action: #selector(checkMarkedClicked(sender:)), for: .touchUpInside)
+            return cell
+        }else if tableView == homeAktivitasTable {
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellHomeAktivitas) as! HomeAktivitasTableViewCell
+            let aktivitas = tabelAktivitas[indexPath.row]
+
+            cell.imageAktivitas.image = aktivitas.fotoAktivitas
+            cell.titleAktivitas.text = aktivitas.namaAktivitas
+            cell.deskripsiAktivitas.text = aktivitas.descAktivitas
+            cell.imageAktivitas.setShadow()
+            cell.imageAktivitas.littleRound()
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellHomeKomunitas) as! HomeKomunitasTableViewCell
+            let komunitas = tabelKomunitas[indexPath.row]
+            cell.imageKomunitas.image = komunitas.fotoKomunitas
+            cell.namaKomunitas.text = komunitas.namaKomunitas
+            cell.deskripsiKomunitas.text = komunitas.descKomunitas
+            cell.imageKomunitas.setShadow()
+            cell.imageKomunitas.littleRound()
+            return cell
+        }
         
-        return cell
     }
     
     @objc func checkMarkedClicked(sender: UIButton){
         if sender.isSelected == false{
-            showAlertView(sender: sender)
+            showAlertView(sender: sender, row: sender.tag)
         }else{
             sender.isSelected = false
         }
+        
     }
     
-    func showAlertView(sender:UIButton){
+    func showAlertView(sender:UIButton, row:Int){
+
         let alert = UIAlertController(title: "Waw Hebat", message: "Apakah buah hati anda dapat melakukannya", preferredStyle: .alert)
         
         let ya = UIAlertAction(title: "Ya", style: .default) { action in
             sender.isSelected = true
+            self.homeTahapanTable.beginUpdates()
+            tabelTumbuh.remove(at: row)
+            self.homeTahapanTable.deleteRows(at: [IndexPath(row: row, section: 0)], with: .fade)
+            self.homeTahapanTable.endUpdates()
+            self.homeTahapanTable.reloadData()
         }
         
         let tidak = UIAlertAction(title: "Tidak ", style: .default) { action in
@@ -129,7 +175,6 @@ extension HariIniViewController: UITableViewDataSource, UITableViewDelegate{
         
         present(alert, animated: true, completion: nil)
     }
-    
     
     
 }
@@ -149,16 +194,10 @@ extension HariIniViewController{
         aktivitasView.littleRoundView()
         komunitasView.setShadowView()
         komunitasView.littleRoundView()
-        outerUmur.setRoundedView()
-        outerUmur.setShadowView()
         umurView.setShadowView()
         umurView.littleRoundCondition()
-        outerBerat.setRoundedView()
-        outerBerat.setShadowView()
         beratView.setShadowView()
         beratView.littleRoundCondition()
-        outerTinggi.setRoundedView()
-        outerTinggi.setShadowView()
         tinggiView.setShadowView()
         tinggiView.littleRoundCondition()
         
