@@ -691,6 +691,10 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         filterTumbuhKembang.setTouched(bool: false)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? JurnalDescriptionViewController
+    }
+    
     @objc func doneDatePicker(){
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
@@ -719,6 +723,7 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
     {
         print("sectionIndex: \(sender.sectionIndex)")
         print("rowIndex: \(sender.rowIndex)")
+        performSegue(withIdentifier: "viewJurnalDescriptionSegue", sender: self)
     }
 }
 
