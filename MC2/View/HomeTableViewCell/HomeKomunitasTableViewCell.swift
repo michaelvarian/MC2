@@ -9,20 +9,21 @@
 import UIKit
 
 class HomeKomunitasTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var imageKomunitas: UIImageView!
     @IBOutlet weak var namaKomunitas: UILabel!
     @IBOutlet weak var deskripsiKomunitas: UILabel!
     
-    override func awakeFromNib() {
+    override
+    func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
