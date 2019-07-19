@@ -665,7 +665,7 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
       //  let space = UIBarButtonItem(title: "Select the date", style: .plain, target: nil, action: nil)
        // let space = UIBarButtonItem(barButtonSystemItem: ., target: <#T##Any?#>, action: <#T##Selector?#>)
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 0))
-        label.text = "Select the date"
+        label.text = ""
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         
