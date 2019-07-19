@@ -16,20 +16,24 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zhf-xn-Vw6" userLabel="background">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cdn-zt-WAX">
                     <rect key="frame" x="57" y="165" width="310" height="310"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="cdn-zt-WAX" secondAttribute="height" multiplier="1:1" id="Z4l-uh-ZpG"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aplikasi ini akan membantu anda untuk peduli terhadap tumbuh kembang buah hati anda" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAe-Qi-n5V" userLabel="descLabel">
-                    <rect key="frame" x="57" y="639.5" width="310" height="57.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aplikasi ini akan membantu anda untuk peduli terhadap tumbuh kembang buah hati anda" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAe-Qi-n5V" userLabel="descLabel">
+                    <rect key="frame" x="57" y="619" width="310" height="96"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
+                    <size key="shadowOffset" width="0.0" height="0.0"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEg-PT-H9C">
-                    <rect key="frame" x="163.5" y="608.5" width="87" height="23"/>
+                    <rect key="frame" x="57" y="575" width="310" height="23"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -49,24 +53,33 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="cdn-zt-WAX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="5" id="0bQ-Pn-MYJ"/>
-                <constraint firstItem="zAe-Qi-n5V" firstAttribute="top" secondItem="PEg-PT-H9C" secondAttribute="bottom" constant="8" symbolic="YES" id="6Nv-ur-vay"/>
+                <constraint firstItem="zhf-xn-Vw6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0t4-Sw-MOq"/>
+                <constraint firstItem="PEg-PT-H9C" firstAttribute="centerX" secondItem="FMx-Tg-KuR" secondAttribute="centerX" constant="5" id="285-9j-7XO"/>
+                <constraint firstAttribute="bottom" secondItem="zhf-xn-Vw6" secondAttribute="bottom" id="4AE-DW-OhT"/>
+                <constraint firstItem="zhf-xn-Vw6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6MB-u2-q9k"/>
+                <constraint firstItem="zAe-Qi-n5V" firstAttribute="top" secondItem="PEg-PT-H9C" secondAttribute="bottom" constant="21" id="6cr-yc-OZa"/>
                 <constraint firstItem="cdn-zt-WAX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="121" id="7Ka-Bh-inK"/>
+                <constraint firstItem="zhf-xn-Vw6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ijp-Jk-wWi"/>
                 <constraint firstItem="cdn-zt-WAX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-128" id="MIi-Fg-XEe"/>
                 <constraint firstItem="zAe-Qi-n5V" firstAttribute="trailing" secondItem="cdn-zt-WAX" secondAttribute="trailing" id="OlO-9m-An9"/>
-                <constraint firstItem="FMx-Tg-KuR" firstAttribute="top" secondItem="zAe-Qi-n5V" secondAttribute="bottom" constant="52" id="PmX-Yq-BNB"/>
-                <constraint firstItem="PEg-PT-H9C" firstAttribute="top" secondItem="cdn-zt-WAX" secondAttribute="bottom" priority="250" constant="129" id="WPX-A1-Yjf"/>
-                <constraint firstAttribute="bottom" secondItem="zAe-Qi-n5V" secondAttribute="bottom" constant="199" id="dbj-Kr-xa6"/>
+                <constraint firstItem="FMx-Tg-KuR" firstAttribute="top" secondItem="zAe-Qi-n5V" secondAttribute="bottom" constant="34" id="PmX-Yq-BNB"/>
+                <constraint firstAttribute="bottom" secondItem="PEg-PT-H9C" secondAttribute="bottom" constant="298" id="UhK-6t-lrM"/>
+                <constraint firstItem="zhf-xn-Vw6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="VtR-P3-GrK"/>
+                <constraint firstItem="PEg-PT-H9C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="57" id="ZGq-Po-awD"/>
+                <constraint firstAttribute="trailing" secondItem="zhf-xn-Vw6" secondAttribute="trailing" id="ajx-Zj-8wD"/>
+                <constraint firstAttribute="bottom" secondItem="zAe-Qi-n5V" secondAttribute="bottom" constant="181" id="dbj-Kr-xa6"/>
                 <constraint firstItem="FMx-Tg-KuR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tJo-dL-1w9"/>
                 <constraint firstItem="zAe-Qi-n5V" firstAttribute="leading" secondItem="cdn-zt-WAX" secondAttribute="leading" id="tn5-0P-Yrz"/>
-                <constraint firstItem="PEg-PT-H9C" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ttC-CH-t5w"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="backgroundView" destination="zhf-xn-Vw6" id="lZI-31-ejm"/>
                 <outlet property="descLabel" destination="zAe-Qi-n5V" id="win-EH-tWh"/>
                 <outlet property="imageView" destination="cdn-zt-WAX" id="IWJ-Ws-fBZ"/>
                 <outlet property="mainTitle" destination="PEg-PT-H9C" id="grv-GL-OOS"/>
                 <outlet property="pushButton" destination="FMx-Tg-KuR" id="sb9-Ah-lwU"/>
             </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="140.625"/>
         </view>
     </objects>
 </document>

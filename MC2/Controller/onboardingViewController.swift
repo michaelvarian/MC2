@@ -11,25 +11,6 @@ import UIKit
 class onboardingViewController: UIViewController, UIScrollViewDelegate, OnBoardingInputData {
     func didTap() {
         performSegue(withIdentifier: "goToHome", sender: self)
-//        let alert = UIAlertController(title: "What's your name?", message: nil, preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//
-//                alert.addTextField(configurationHandler: { textField in
-//                    textField.placeholder = "Masukan nama anak anda ..."
-//                })
-//
-//                alert.addTextField(configurationHandler: { textField in
-//                    textField.placeholder = "Masukan tanggal lahir anak anda ..."
-//                })
-//
-//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-//
-//                    if let name = alert.textFields?.first?.text {
-//                        print("Your name: \(name)")
-//                    }
-//                }))
-//
-//                self.present(alert, animated: true)
     }
     
 
@@ -63,27 +44,31 @@ class onboardingViewController: UIViewController, UIScrollViewDelegate, OnBoardi
     func createSlides() -> [Slide] {
         
         let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
+        slide1.backgroundView.image = UIImage(named: "background_1")
         slide1.imageView.image = UIImage(named: "onboarding_1")
-        slide1.mainTitle.text = "Main Title 1"
-        slide1.descLabel.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod."
-        slide1.listener = self
+        slide1.mainTitle.text = "Selamat Datang"
+        slide1.descLabel.text = "Kami akan membantu anda dalam menjaga tumbuh kembang buah hati anda."
+        slide1.pushButton.isHidden = true
         
         let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
+        slide2.backgroundView.image = UIImage(named: "background_2")
         slide2.imageView.image = UIImage(named: "onboarding_2")
-        slide2.mainTitle.text = "Main Title 2"
-        slide2.descLabel.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod."
-        slide2.listener = self
+        slide2.mainTitle.text = "KMS Digital"
+        slide2.descLabel.text = "Ketahui status gizi anak agar bisa mengantisipasi kekurangan gizi buah hati kita!"
+        slide2.pushButton.isHidden = true
         
         let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
+        slide3.backgroundView.image = UIImage(named: "background_3")
         slide3.imageView.image = UIImage(named: "onboarding_3")
-        slide3.mainTitle.text = "Main Title 3"
-        slide3.descLabel.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod."
-        slide3.listener = self
+        slide3.mainTitle.text = "Catatan Kesehatan"
+        slide3.descLabel.text = "Satukan catatan kesehatan anak untuk memudahkan konsultasi ke dokter!"
+        slide3.pushButton.isHidden = true
         
         let slide4:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
+        slide4.backgroundView.image = UIImage(named: "background_4")
         slide4.imageView.image = UIImage(named: "onboarding_4")
-        slide4.mainTitle.text = "Main Title 4"
-        slide4.descLabel.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod."
+        slide4.mainTitle.text = "Jurnal"
+        slide4.descLabel.text = "Simpan semua proses tumbuh kembang anak untuk monitor perkembangannya"
         slide4.listener = self
         
         return [slide1, slide2, slide3, slide4]
@@ -133,7 +118,6 @@ class onboardingViewController: UIViewController, UIScrollViewDelegate, OnBoardi
         let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
         
         if(percentOffset.x > 0 && percentOffset.x <= 0.25) {
-            
             slides[0].imageView.transform = CGAffineTransform(scaleX: (0.25-percentOffset.x)/0.25, y: (0.25-percentOffset.x)/0.25)
             slides[1].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.25, y: percentOffset.x/0.25)
             
@@ -142,9 +126,11 @@ class onboardingViewController: UIViewController, UIScrollViewDelegate, OnBoardi
             slides[2].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.50, y: percentOffset.x/0.50)
             
         } else if(percentOffset.x > 0.50 && percentOffset.x <= 0.75) {
-            slides[2].imageView.transform = CGAffineTransform(scaleX: (0.75-percentOffset.x)/0.25, y: (0.75-percentOffset.x)/0.25)
+            slides[2].imageView.transform = CGAffineTransform(scaleX: (0.52-percentOffset.x)/0.25, y: (0.82-percentOffset.x)/0.25)
             slides[3].imageView.transform = CGAffineTransform(scaleX: percentOffset.x, y: percentOffset.x)
             
+        } else if(percentOffset.x > 0.75 && percentOffset.x <= 1) {
+            slides[3].imageView.transform = CGAffineTransform(scaleX: (1.15-percentOffset.x)/0.25, y: (1.15-percentOffset.x)/0.25)
         }
     }
 }
