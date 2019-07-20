@@ -230,11 +230,11 @@
             </objects>
             <point key="canvasLocation" x="3450.7246376811595" y="543.75"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Kesehatan-->
         <scene sceneID="PyM-1y-s8Z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5hw-Kw-A4V" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" selectedImage="Tab Kesehatan" systemItem="favorites" id="Sx7-Rm-NLr">
+                    <tabBarItem key="tabBarItem" title="Kesehatan" image="KesehatanTabBar" selectedImage="KesehatanTabBar" id="Sx7-Rm-NLr">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -256,6 +256,6 @@
     <resources>
         <image name="CatatanSehat" width="384" height="119"/>
         <image name="ImunisasiSehat" width="384" height="119"/>
-        <image name="Tab Kesehatan" width="79" height="51.5"/>
+        <image name="KesehatanTabBar" width="20.5" height="28"/>
     </resources>
 </document>

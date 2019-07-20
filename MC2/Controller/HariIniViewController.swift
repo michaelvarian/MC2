@@ -74,6 +74,7 @@ class HariIniViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -187,11 +188,12 @@ extension HariIniViewController{
     }
     
     func setDate(){
-        var dateFormatter = DateFormatter()
-        dateFormatter.timeStyle = .medium
-        var timeString = "The time is: \(dateFormatter.string(from: NSDate() as Date))"
+        let today = Date()
+        let weekday = Calendar.current.component(.weekday, from: today)
+        let month = Calendar.current.component(.month, from: today)
+        let date = Calendar.current.component(.day, from: today)
         
-        tanggalLabel.text = timeString
+        tanggalLabel.text = Calendar.current.weekdaySymbols[weekday-1] + " \(date) \(Calendar.current.shortMonthSymbols[month-1]) 2019"
     }
     
     func setStartView(){

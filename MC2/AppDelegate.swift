@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Untuk membuat launch screen menjadi lebih lambat, atur intervalnya
         Thread.sleep(forTimeInterval: 0.5)
+        UITabBar.appearance().barTintColor = #colorLiteral(red: 0.5215686275, green: 0.8117647059, blue: 0.8666666667, alpha: 1)
+        UITabBar.appearance().tintColor = #colorLiteral(red: 0.150000006, green: 0.150000006, blue: 0.150000006, alpha: 1)
         
        // untuk membuat agar onboarding muncul jika belum mengisi data bayi
         self.window = UIWindow(frame: UIScreen.main.bounds)
