@@ -508,7 +508,7 @@
                                             <constraint firstAttribute="height" constant="359" id="f78-Eh-0UF"/>
                                         </constraints>
                                     </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="AkunGambar" translatesAutoresizingMaskIntoConstraints="NO" id="qVY-iT-hkU">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="AkunGambar" translatesAutoresizingMaskIntoConstraints="NO" id="qVY-iT-hkU">
                                         <rect key="frame" x="296" y="136" width="139" height="139"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="139" id="0KV-Mq-3fz"/>
