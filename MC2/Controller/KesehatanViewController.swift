@@ -10,13 +10,26 @@ import UIKit
 
 class KesehatanViewController: UIViewController {
 
+    @IBOutlet weak var grafikView: UIView!
+    @IBOutlet weak var imunisasiButton: UIButton!
+    @IBOutlet weak var catatanKesehatanButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setView()
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
+    }
+    
+    func setView(){
+        grafikView.setShadowView()
+        grafikView.littleRoundView()
+        imunisasiButton.setShadowButton()
+        imunisasiButton.littleRoundView()
+        catatanKesehatanButton.setShadowButton()
+        catatanKesehatanButton.littleRoundView()
     }
 }

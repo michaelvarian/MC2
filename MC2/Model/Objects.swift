@@ -423,26 +423,13 @@ func initJurnalObjects()
     tabelJurnal.append(section2)
 }
 
-func addDataTahapan(){
-    let tahapan1 = tumbuh(idTumbuh: "1", idAkun: "1", bulan: 1, namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
-    let tahapan2 = tumbuh(idTumbuh: "1", idAkun: "1", bulan: 2, namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
-    let tahapan3 = tumbuh(idTumbuh: "1", idAkun: "1", bulan: 3, namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
-    let tahapan4 = tumbuh(idTumbuh: "1", idAkun: "1", bulan: 4, namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
-    let tahapan5 = tumbuh(idTumbuh: "1", idAkun: "1", bulan: 5, namaTumbuh: "Berbicara", descTumbuh: "Refleks tersenyum baik sedang bangun maupun tidur", isCheck: false)
-    
-    tabelTumbuh.append(tahapan1)
-    tabelTumbuh.append(tahapan2)
-    tabelTumbuh.append(tahapan3)
-    tabelTumbuh.append(tahapan4)
-    tabelTumbuh.append(tahapan5)
-}
 
 func addDataAktivitas(){
     let aktivitas1 = aktivitas(idAktivitas: "1", idAkun: "1", namaAktivitas: "Bernafas", descAktivitas: "Jika mencoba untuk bernafas, tolong di ajak bermain sepak bola, serta berenang", fotoAktivitas: UIImage(imageLiteralResourceName: "bernafas.jpg"))
-    let aktivitas2 = aktivitas(idAktivitas: "2", idAkun: "2", namaAktivitas: "Bernafas", descAktivitas: "Jika mencoba untuk bernafas, tolong di ajak bermain sepak bola, serta berenang", fotoAktivitas: UIImage(imageLiteralResourceName: "bernafas.jpg"))
-    let aktivitas3 = aktivitas(idAktivitas: "3", idAkun: "3", namaAktivitas: "Bernafas", descAktivitas: "Jika mencoba untuk bernafas, tolong di ajak bermain sepak bola, serta berenang", fotoAktivitas: UIImage(imageLiteralResourceName: "bernafas.jpg"))
-    let aktivitas4 = aktivitas(idAktivitas: "4", idAkun: "4", namaAktivitas: "Bernafas", descAktivitas: "Jika mencoba untuk bernafas, tolong di ajak bermain sepak bola, serta berenang", fotoAktivitas: UIImage(imageLiteralResourceName: "bernafas.jpg"))
-    let aktivitas5 = aktivitas(idAktivitas: "5", idAkun: "5", namaAktivitas: "Bernafas", descAktivitas: "Jika mencoba untuk bernafas, tolong di ajak bermain sepak bola, serta berenang", fotoAktivitas: UIImage(imageLiteralResourceName: "bernafas.jpg"))
+    let aktivitas2 = aktivitas(idAktivitas: "2", idAkun: "2", namaAktivitas: "Bermain", descAktivitas: "Jika mencoba untuk bernafas, tolong di ajak bermain sepak bola, serta berenang", fotoAktivitas: UIImage(imageLiteralResourceName: "bernafas.jpg"))
+    let aktivitas3 = aktivitas(idAktivitas: "3", idAkun: "3", namaAktivitas: "Meluncur", descAktivitas: "Jika mencoba untuk bernafas, tolong di ajak bermain sepak bola, serta berenang", fotoAktivitas: UIImage(imageLiteralResourceName: "bernafas.jpg"))
+    let aktivitas4 = aktivitas(idAktivitas: "4", idAkun: "4", namaAktivitas: "Salto", descAktivitas: "Jika mencoba untuk bernafas, tolong di ajak bermain sepak bola, serta berenang", fotoAktivitas: UIImage(imageLiteralResourceName: "bernafas.jpg"))
+    let aktivitas5 = aktivitas(idAktivitas: "5", idAkun: "5", namaAktivitas: "Menyelam", descAktivitas: "Jika mencoba untuk bernafas, tolong di ajak bermain sepak bola, serta berenang", fotoAktivitas: UIImage(imageLiteralResourceName: "bernafas.jpg"))
     
     tabelAktivitas.append(aktivitas1)
     tabelAktivitas.append(aktivitas2)

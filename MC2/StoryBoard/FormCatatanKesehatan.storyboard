@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Form Catantan Kesehatan View Controller-->
+        <!--Catatan Kesehatan-->
         <scene sceneID="Fyh-QO-jKS">
             <objects>
                 <viewController id="AWn-aW-8Yd" customClass="FormCatantanKesehatanViewController" customModule="MC2" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CatatanKesehatan" translatesAutoresizingMaskIntoConstraints="NO" id="Bag-Ae-oDe">
-                                <rect key="frame" x="125" y="129" width="165" height="137"/>
+                                <rect key="frame" x="125" y="164" width="165" height="137"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pengobatan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiS-gh-0uh">
@@ -135,7 +135,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yuk mam catat histori pengobatan " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fjn-5X-4qC">
-                                <rect key="frame" x="74" y="322" width="278" height="21"/>
+                                <rect key="frame" x="74" y="351" width="278" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
@@ -145,6 +145,7 @@
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="X32-4w-nyr"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Catatan Kesehatan" id="ZK5-2K-R9j"/>
                     <connections>
                         <outlet property="catatButton" destination="of3-fH-Ku8" id="70B-YF-7I2"/>
                         <outlet property="catatanTF" destination="UKR-vz-ZDa" id="2bx-sf-Qsf"/>

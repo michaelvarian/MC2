@@ -22,7 +22,7 @@ class CatatanKesehatanViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cellDelegate()
-        addData()
+//        addData()
         setView()
     }
     
@@ -30,19 +30,20 @@ class CatatanKesehatanViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
     
-    func addData(){
-        let catatanKesehatan1 = dataKesehatan(idDataKesehatan: "1", idAkun: "1", lokasi: "Siloam Kebon Jeruk", fotoKesehatan: UIImage(named: "siloam")!, pengobatan: "Pemeriksaan Bulanan", tanggalPengobatan: "09-07-19", catatan: "Badan Kuning")
-        let catatanKesehatan2 = dataKesehatan(idDataKesehatan: "2", idAkun: "2", lokasi: "Siloam Kebon Jeruk", fotoKesehatan: UIImage(named: "siloam")!, pengobatan: "Pemeriksaan Bulanan", tanggalPengobatan: "09-07-19", catatan: "Badan Kuning")
-        let catatanKesehatan3 = dataKesehatan(idDataKesehatan: "3", idAkun: "3", lokasi: "Siloam Kebon Jeruk", fotoKesehatan: UIImage(named: "siloam")!, pengobatan: "Pemeriksaan Bulanan", tanggalPengobatan: "09-07-19", catatan: "Badan Kuning")
-        let catatanKesehatan4 = dataKesehatan(idDataKesehatan: "4", idAkun: "4", lokasi: "Siloam Kebon Jeruk", fotoKesehatan: UIImage(named: "siloam")!, pengobatan: "Pemeriksaan Bulanan", tanggalPengobatan: "09-07-19", catatan: "Badan Kuning")
-        let catatanKesehatan5 = dataKesehatan(idDataKesehatan: "5", idAkun: "5", lokasi: "Siloam Kebon Jeruk", fotoKesehatan: UIImage(named: "siloam")!, pengobatan: "Pemeriksaan Bulanan", tanggalPengobatan: "09-07-19", catatan: "Badan Kuning")
-        
-        tabelDataKesehatan.append(catatanKesehatan1)
-        tabelDataKesehatan.append(catatanKesehatan2)
-        tabelDataKesehatan.append(catatanKesehatan3)
-        tabelDataKesehatan.append(catatanKesehatan4)
-        tabelDataKesehatan.append(catatanKesehatan5)
-    }
+//
+//    func addData(){
+//        let catatanKesehatan1 = dataKesehatan(idDataKesehatan: "1", idAkun: "1", lokasi: "Siloam Kebon Jeruk", fotoKesehatan: UIImage(named: "siloam")!, pengobatan: "Pemeriksaan Bulanan", tanggalPengobatan: "09-07-19", catatan: "Badan Kuning")
+//        let catatanKesehatan2 = dataKesehatan(idDataKesehatan: "2", idAkun: "2", lokasi: "Siloam Kebon Jeruk", fotoKesehatan: UIImage(named: "siloam")!, pengobatan: "Pemeriksaan Bulanan", tanggalPengobatan: "09-07-19", catatan: "Badan Kuning")
+//        let catatanKesehatan3 = dataKesehatan(idDataKesehatan: "3", idAkun: "3", lokasi: "Siloam Kebon Jeruk", fotoKesehatan: UIImage(named: "siloam")!, pengobatan: "Pemeriksaan Bulanan", tanggalPengobatan: "09-07-19", catatan: "Badan Kuning")
+//        let catatanKesehatan4 = dataKesehatan(idDataKesehatan: "4", idAkun: "4", lokasi: "Siloam Kebon Jeruk", fotoKesehatan: UIImage(named: "siloam")!, pengobatan: "Pemeriksaan Bulanan", tanggalPengobatan: "09-07-19", catatan: "Badan Kuning")
+//        let catatanKesehatan5 = dataKesehatan(idDataKesehatan: "5", idAkun: "5", lokasi: "Siloam Kebon Jeruk", fotoKesehatan: UIImage(named: "siloam")!, pengobatan: "Pemeriksaan Bulanan", tanggalPengobatan: "09-07-19", catatan: "Badan Kuning")
+//
+//        tabelDataKesehatan.append(catatanKesehatan1)
+//        tabelDataKesehatan.append(catatanKesehatan2)
+//        tabelDataKesehatan.append(catatanKesehatan3)
+//        tabelDataKesehatan.append(catatanKesehatan4)
+//        tabelDataKesehatan.append(catatanKesehatan5)
+//    }
     
     func setView(){
         headerView.setShadowView()
@@ -89,6 +90,7 @@ extension CatatanKesehatanViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: segue, sender: self)
+        catatanKesehatanTableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
