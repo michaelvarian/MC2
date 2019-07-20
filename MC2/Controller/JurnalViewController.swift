@@ -69,21 +69,35 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         headerView.setShadow()
         
+        headerView.backgroundColor = .init(red: 133/255, green: 207/255, blue: 221/255, alpha: 1)
+        
         filterView.layer.cornerRadius = 20
         
         filterView.setShadow()
+        
+        filterView.backgroundColor = .init(red: 56/255, green: 56/255, blue: 56/255, alpha: 1)
         
         filterOvalShape.layer.cornerRadius = 3
         
         isFilterOpened = false
         
+        filterTumbuhKembang.backgroundColor = .init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
+        
+        filterImunisasi.backgroundColor = .init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
+        
+        filterCatatanKesehatan.backgroundColor = .init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
+        
         filterDateStart.layer.cornerRadius = 5
         
         filterDateStart.setShadow()
         
+        filterDateStart.backgroundColor = .init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
+        
         filterDateEnd.layer.cornerRadius = 5
         
         filterDateEnd.setShadow()
+        
+        filterDateEnd.backgroundColor = .init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
         
         filterTumbuhKembang.layer.cornerRadius = 5
         
@@ -173,8 +187,21 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
             else
             {
                 let cell = jurnalTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JurnalCellRow
+                let categoryEnumChosen = tabelJurnal[indexPath.section].jurnalContent[indexPath.row].jurnalCategory
+                switch categoryEnumChosen
+                {
+                case .tumbuhKembang:
+                    cell.jurnalCircle.backgroundColor = .init(red: 145/255, green: 255/255, blue: 175/255, alpha: 1)
+                case .imunisasi:
+                    cell.jurnalCircle.backgroundColor = .init(red: 255/255, green: 162/255, blue: 162/255, alpha: 1)
+                case .catatanKesehatan:
+                    cell.jurnalCircle.backgroundColor = .init(red: 255/255, green: 200/255, blue: 154/255, alpha: 1)
+                default: break
+                }
                 cell.jurnalTitle.text = tabelJurnal[indexPath.section].jurnalContent[indexPath.row].titleJurnal
                 cell.jurnalCircle.layer.cornerRadius = cell.jurnalCircle.frame.size.width/2
+                cell.jurnalCircle.layer.borderColor = UIColor.black.cgColor
+                cell.jurnalCircle.layer.borderWidth = 1
                 cell.jurnalClick!.sectionIndex = indexPath.section
                 cell.jurnalClick!.rowIndex = indexPath.row
                 cell.jurnalClick!.addTarget(self, action: #selector(jurnalRowButtonClicked(sender:)), for: .touchUpInside)
@@ -199,8 +226,21 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
             else
             {
                 let cell = jurnalTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JurnalCellRow
+                let categoryEnumChosen = tabelJurnalFiltered[indexPath.section].jurnalContent[indexPath.row].jurnalCategory
+                switch categoryEnumChosen
+                {
+                case .tumbuhKembang:
+                    cell.jurnalCircle.backgroundColor = .init(red: 145/255, green: 255/255, blue: 175/255, alpha: 1)
+                case .imunisasi:
+                    cell.jurnalCircle.backgroundColor = .init(red: 255/255, green: 162/255, blue: 162/255, alpha: 1)
+                case .catatanKesehatan:
+                    cell.jurnalCircle.backgroundColor = .init(red: 255/255, green: 200/255, blue: 154/255, alpha: 1)
+                default: break
+                }
                 cell.jurnalTitle.text = tabelJurnalFiltered[indexPath.section].jurnalContent[indexPath.row].titleJurnal
                 cell.jurnalCircle.layer.cornerRadius = cell.jurnalCircle.frame.size.width/2
+                cell.jurnalCircle.layer.borderColor = UIColor.black.cgColor
+                cell.jurnalCircle.layer.borderWidth = 1
                 cell.jurnalClick!.sectionIndex = indexPath.section
                 cell.jurnalClick!.rowIndex = indexPath.row
                 cell.jurnalClick!.addTarget(self, action: #selector(jurnalRowButtonClicked(sender:)), for: .touchUpInside)
@@ -725,7 +765,41 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("rowIndex: \(sender.rowIndex)")
         performSegue(withIdentifier: "viewJurnalDescriptionSegue", sender: self)
     }
+    
+//    @objc func panGestureHandler(panGesture recognizer: UIPanGestureRecognizer) {
+//        //  print("clicked")
+//        //   let buttonTag = (recognizer.view?.tag)!
+//        if let button = chat_button
+//            //view.viewWithTag(buttonTag) as? UIButton
+//        {
+//            if recognizer.state == .began
+//            {
+//                //wordButtonCenter = button.center // store old button center
+//                UIView.animate(withDuration: 0.5, animations:
+//                    {
+//                        self.chat_button.alpha = 0.5
+//                }
+//                )
+//            }
+//            else if recognizer.state == .ended || recognizer.state == .failed || recognizer.state == .cancelled
+//            {
+//                // button.center = wordButtonCenter // restore button center
+//                UIView.animate(withDuration: 0.5, animations:
+//                    {
+//                        self.chat_button.alpha = 1
+//                }
+//                )
+//            }
+//            else
+//            {
+//                let location = recognizer.location(in: view) // get pan location
+//                button.center = location // set button to where finger is
+//            }
+//        }
+//    }
 }
+
+
 
 extension UIView
 {
@@ -743,7 +817,18 @@ extension UIView
     {
         if bool == true
         {
-            self.backgroundColor = .lightGray
+            switch self.tag
+            {
+            case 0:
+                self.backgroundColor = .init(red: 145/255, green: 255/255, blue: 175/255, alpha: 1)
+            case 1:
+                self.backgroundColor = .init(red: 255/255, green: 162/255, blue: 162/255, alpha: 1)
+            case 2:
+                self.backgroundColor = .init(red: 255/255, green: 200/255, blue: 154/255, alpha: 1)
+            default: break
+            }
+            
+            //self.backgroundColor = .lightGray
             
             self.layer.shadowColor = UIColor.darkGray.cgColor
             self.layer.shadowOpacity = 0.3
@@ -755,7 +840,7 @@ extension UIView
         
         else if bool == false
         {
-            self.backgroundColor = .white
+            self.backgroundColor = .init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
             
             self.layer.shadowColor = UIColor.darkGray.cgColor
             self.layer.shadowOpacity = 0.3
