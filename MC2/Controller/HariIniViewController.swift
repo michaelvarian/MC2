@@ -5,6 +5,7 @@
 //  Created by Muhammad Reynaldi on 13/07/19.
 //  Copyright © 2019 Group 16. All rights reserved.
 //
+var color = #colorLiteral(red: 1, green: 0.6687598228, blue: 0.3416582942, alpha: 1)
 
 import UIKit
 
@@ -23,8 +24,15 @@ class HariIniViewController: UIViewController {
     @IBOutlet weak var aktivitasView: UIView!
     @IBOutlet weak var komunitasView: UIView!
     @IBOutlet weak var catatButton: UIButton!
+    @IBOutlet weak var urgentView: UIView!
     
-    // Content Status Gizi
+    // Contents Header
+    @IBOutlet weak var ucapanLabel: UILabel!
+    @IBOutlet weak var tanggalLabel: UILabel!
+    @IBOutlet weak var namaHeaderLabel: UILabel!
+    
+    
+    // Contents Status Gizi
     @IBOutlet weak var namaStatusLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var umurView: UIView!
@@ -38,15 +46,15 @@ class HariIniViewController: UIViewController {
     @IBOutlet weak var deskripsiSummaryTumbuh: UILabel!
     
     
-    // Content Tahapan
+    // Contents Tahapan
     @IBOutlet weak var tahapanButton: UIButton!
     @IBOutlet weak var namaTahapanLabel: UILabel!
     
-    // Content Aktivitas
+    // Contents Aktivitas
     @IBOutlet weak var aktivitasButton: UIButton!
     @IBOutlet weak var namaAktivitasLabel: UILabel!
     
-    // Content Komunitas
+    // Contents Komunitas
     @IBOutlet weak var komunitasButton: UIButton!
     @IBOutlet weak var namaKomunitasLabel: UILabel!
     @IBOutlet weak var detailKomunitasButton: UIButton!
@@ -59,7 +67,6 @@ class HariIniViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStartView()
-        addDataTahapan()
         addDataAktivitas()
         addDataKomunitas()
         cellDelegate()
@@ -69,24 +76,18 @@ class HariIniViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     @IBAction func catatTapped(_ sender: UIButton) {
         showActionSheet()
     }
     
-    
-    @IBAction func tahapanTapped(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func aktivitasTapped(_ sender: UIButton) {
-    }
-    
-    @IBAction func komunitasTapped(_ sender: UIButton) {
-    }
+
     
    
 }
-
 extension HariIniViewController: UITableViewDataSource, UITableViewDelegate{
     
     
@@ -181,9 +182,24 @@ extension HariIniViewController: UITableViewDataSource, UITableViewDelegate{
 
 extension HariIniViewController{
     
+    func setName(){
+        namaHeaderLabel.text = "Mama " 
+    }
+    
+    func setDate(){
+        var dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .medium
+        var timeString = "The time is: \(dateFormatter.string(from: NSDate() as Date))"
+        
+        tanggalLabel.text = timeString
+    }
+    
     func setStartView(){
+        setDate()
         accountImage.setRounded()
         
+        urgentView.setShadow()
+        urgentView.littleRoundView()
         catatButton.setShadowButton()
         catatButton.littleRoundButton()
         kondisiView.setShadowView()

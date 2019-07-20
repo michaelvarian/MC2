@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F9825DB22E1E2CC00D37C1A /* JurnalDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9825DA22E1E2CC00D37C1A /* JurnalDescriptionViewController.swift */; };
+		2F9825DC22E1E31900D37C1A /* HomeKomunitasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E62F9F22E19CE70078A3D4 /* HomeKomunitasTableViewCell.swift */; };
 		2FF9CC8E22E1A4DC009E12DD /* FormKmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF9CC8D22E1A4DC009E12DD /* FormKmsViewController.swift */; };
 		432DA16E22E17C4C00A7B78F /* JurnalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432DA16D22E17C4C00A7B78F /* JurnalButton.swift */; };
-		432DA17022E187C000A7B78F /* JurnalDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432DA16F22E187C000A7B78F /* JurnalDescriptionViewController.swift */; };
 		652FE2A322DDF26700B175C0 /* JurnalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A222DDF26700B175C0 /* JurnalViewController.swift */; };
 		652FE2A622DDF28F00B175C0 /* JurnalCellDateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A422DDF28F00B175C0 /* JurnalCellDateRow.swift */; };
 		652FE2A722DDF28F00B175C0 /* JurnalCellRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FE2A522DDF28F00B175C0 /* JurnalCellRow.swift */; };
@@ -39,6 +40,8 @@
 		E17F395722D8844000901E47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E17F395622D8844000901E47 /* Assets.xcassets */; };
 		E17F395A22D8844000901E47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17F395822D8844000901E47 /* LaunchScreen.storyboard */; };
 		E17F396222D8A1C800901E47 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F396122D8A1C800901E47 /* Objects.swift */; };
+		E17FDBD922E1CDD000C1A0A8 /* HomeKomunitasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E62F9F22E19CE70078A3D4 /* HomeKomunitasTableViewCell.swift */; };
+		E17FDBDB22E1D00E00C1A0A8 /* FormCatantanKesehatanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17FDBDA22E1D00E00C1A0A8 /* FormCatantanKesehatanViewController.swift */; };
 		E19F5D4022DE01FF0096E364 /* KomunitasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19F5D3F22DE01FF0096E364 /* KomunitasViewController.swift */; };
 		E19F5D4222DF41030096E364 /* DetailCatatanKesehatanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19F5D4122DF41030096E364 /* DetailCatatanKesehatanViewController.swift */; };
 		E19F5D4422E0409B0096E364 /* AktivitasWithTahapanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19F5D4322E0409B0096E364 /* AktivitasWithTahapanViewController.swift */; };
@@ -49,14 +52,13 @@
 		E1AC48F722DC674300B33A8A /* FormImunisasi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AC48F622DC674300B33A8A /* FormImunisasi.storyboard */; };
 		E1AC48F922DC675200B33A8A /* FormCatatanKesehatan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AC48F822DC675200B33A8A /* FormCatatanKesehatan.storyboard */; };
 		E1E62F9E22E086170078A3D4 /* HomeAktivitasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E62F9D22E086170078A3D4 /* HomeAktivitasTableViewCell.swift */; };
-		E1E62FA022E19CE70078A3D4 /* HomeKomunitasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E62F9F22E19CE70078A3D4 /* HomeKomunitasTableViewCell.swift */; };
 		E1EC277222D9AE3300528532 /* Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EC277122D9AE3300528532 /* Rounded.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2FF9CC8D22E1A4DC009E12DD /* FormKmsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormKmsViewController.swift; path = ../../../TemanKMS/MC2/Controller/FormKmsViewController.swift; sourceTree = "<group>"; };
+		2F9825DA22E1E2CC00D37C1A /* JurnalDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalDescriptionViewController.swift; sourceTree = "<group>"; };
+		2FF9CC8D22E1A4DC009E12DD /* FormKmsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormKmsViewController.swift; sourceTree = "<group>"; };
 		432DA16D22E17C4C00A7B78F /* JurnalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JurnalButton.swift; sourceTree = "<group>"; };
-		432DA16F22E187C000A7B78F /* JurnalDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JurnalDescriptionViewController.swift; sourceTree = "<group>"; };
 		652FE2A222DDF26700B175C0 /* JurnalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalViewController.swift; sourceTree = "<group>"; };
 		652FE2A422DDF28F00B175C0 /* JurnalCellDateRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalCellDateRow.swift; sourceTree = "<group>"; };
 		652FE2A522DDF28F00B175C0 /* JurnalCellRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JurnalCellRow.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		E17F395922D8844000901E47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E17F395B22D8844000901E47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E17F396122D8A1C800901E47 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
+		E17FDBDA22E1D00E00C1A0A8 /* FormCatantanKesehatanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCatantanKesehatanViewController.swift; sourceTree = "<group>"; };
 		E19F5D3F22DE01FF0096E364 /* KomunitasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KomunitasViewController.swift; sourceTree = "<group>"; };
 		E19F5D4122DF41030096E364 /* DetailCatatanKesehatanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCatatanKesehatanViewController.swift; sourceTree = "<group>"; };
 		E19F5D4322E0409B0096E364 /* AktivitasWithTahapanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AktivitasWithTahapanViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +116,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F9825D922E1AC2000D37C1A /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		E12F5FB522D9C6C100C1C934 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +144,8 @@
 			children = (
 				E17F394B22D8843F00901E47 /* MC2 */,
 				E17F394A22D8843F00901E47 /* Products */,
+				E17FDBD522E1CD6100C1A0A8 /* Recovered References */,
+				2F9825D922E1AC2000D37C1A /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +171,13 @@
 				E17F395B22D8844000901E47 /* Info.plist */,
 			);
 			path = MC2;
+			sourceTree = "<group>";
+		};
+		E17FDBD522E1CD6100C1A0A8 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		E19F5D4722E06E820096E364 /* HomeTableViewCell */ = {
@@ -202,6 +221,8 @@
 		E1EC276E22D98FD200528532 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E17FDBDA22E1D00E00C1A0A8 /* FormCatantanKesehatanViewController.swift */,
+				2F9825DA22E1E2CC00D37C1A /* JurnalDescriptionViewController.swift */,
 				E19F5D3F22DE01FF0096E364 /* KomunitasViewController.swift */,
 				8612B3DF22E052DF00AEA961 /* ProfilViewController.swift */,
 				E12F5FBE22D9D80000C1C934 /* HariIniViewController.swift */,
@@ -304,6 +325,7 @@
 				E13058E622DB59B000E76BB8 /* DetailTahapanTableViewCell.swift in Sources */,
 				E1E62F9E22E086170078A3D4 /* HomeAktivitasTableViewCell.swift in Sources */,
 				652FE2A722DDF28F00B175C0 /* JurnalCellRow.swift in Sources */,
+				2F9825DC22E1E31900D37C1A /* HomeKomunitasTableViewCell.swift in Sources */,
 				E19F5D4422E0409B0096E364 /* AktivitasWithTahapanViewController.swift in Sources */,
 				E19F5D4222DF41030096E364 /* DetailCatatanKesehatanViewController.swift in Sources */,
 				E19F5D4B22E070630096E364 /* HomeTahapanTableViewCell.swift in Sources */,
@@ -315,14 +337,16 @@
 				E19F5D4022DE01FF0096E364 /* KomunitasViewController.swift in Sources */,
 				E17F394F22D8843F00901E47 /* ViewController.swift in Sources */,
 				E106535B22DDB27400389E02 /* KesehatanViewController.swift in Sources */,
+				2F9825DB22E1E2CC00D37C1A /* JurnalDescriptionViewController.swift in Sources */,
 				E106536122DDD32D00389E02 /* CatatanKesehatanTableViewCell.swift in Sources */,
 				E17F395522D8843F00901E47 /* MC2.xcdatamodeld in Sources */,
 				E12F5FBF22D9D80000C1C934 /* HariIniViewController.swift in Sources */,
+				E17FDBDB22E1D00E00C1A0A8 /* FormCatantanKesehatanViewController.swift in Sources */,
 				652FE2A322DDF26700B175C0 /* JurnalViewController.swift in Sources */,
 				E17F396222D8A1C800901E47 /* Objects.swift in Sources */,
 				2FF9CC8E22E1A4DC009E12DD /* FormKmsViewController.swift in Sources */,
+				E17FDBD922E1CDD000C1A0A8 /* HomeKomunitasTableViewCell.swift in Sources */,
 				8612B3E222E052EB00AEA961 /* DetailBayiViewController.swift in Sources */,
-				432DA17022E187C000A7B78F /* JurnalDescriptionViewController.swift in Sources */,
 				E1AC48ED22DC5CCF00B33A8A /* AktivitasViewController.swift in Sources */,
 				E12F5FC122D9E7A900C1C934 /* Shadow.swift in Sources */,
 				E106535722DD9A4A00389E02 /* AktivitasTableViewCell.swift in Sources */,
@@ -477,7 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5H2267G252;
+				DEVELOPMENT_TEAM = YQ3D9XVJVD;
 				INFOPLIST_FILE = MC2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -495,7 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5H2267G252;
+				DEVELOPMENT_TEAM = YQ3D9XVJVD;
 				INFOPLIST_FILE = MC2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

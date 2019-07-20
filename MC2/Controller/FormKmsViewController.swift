@@ -18,14 +18,18 @@ class FormKmsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.2196078431, green: 0.2196078431, blue: 0.2196078431, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.5215686275, green: 0.8117647059, blue: 0.8666666667, alpha: 1)
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: color]
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     @IBAction func tapToAddKms(_ sender: Any) {
         id += 1
       
-        
         let data = kms(idKMS: "\(id)", idDataBayi: "1", berat: Double(heightTextField.text!)!, lingkarkepala: Int(lingkarKepalaTextField.text!)!, panjang: Int(heightTextField.text!)!, tanggal: Date(timeIntervalSinceNow: 0))
         
         tabelKMS.append(data)
