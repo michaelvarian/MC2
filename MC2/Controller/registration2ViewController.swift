@@ -100,6 +100,8 @@ class registration2ViewController: UIViewController, UIPickerViewDataSource, UIP
     
     @IBAction func lanjutButtonAction(_ sender: UIButton) {
         
+        // Ini gimana cara ambil data dari Date Picker nya???
+        
         let data = dataBayi(idDataBayi: "1", idAkun: "1", namaBayi: String(namaBayiField.text!), panjang: 0, berat: 0, tglLahir: Date(timeIntervalSinceNow: 0), jnsKelamin: String(jenisKelaminField.text!), lingkarKepala: 0)
         
         performSegue(withIdentifier: "goToHome", sender: self)
