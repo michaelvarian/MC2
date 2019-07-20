@@ -10,7 +10,7 @@ import UIKit
 
 class onboardingViewController: UIViewController, UIScrollViewDelegate, OnBoardingInputData {
     func didTap() {
-        performSegue(withIdentifier: "goToHome", sender: self)
+        performSegue(withIdentifier: "register1", sender: self)
     }
     
 
