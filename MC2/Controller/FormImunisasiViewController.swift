@@ -8,13 +8,17 @@
 
 import UIKit
 
-class FormImunisasiViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class FormImunisasiViewController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var jenisImunisasi: UITextField!
     
     @IBOutlet weak var tanggalImunisasi: UITextField!
     
     @IBOutlet weak var lokasi: UITextField!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var catatButton: UIButton!
     
     var selectedMonth: String!
    // var toolBar = UIToolbar()
@@ -36,8 +40,19 @@ class FormImunisasiViewController: UIViewController, UIPickerViewDelegate, UIPic
         
         picker.delegate = self
         picker.dataSource = self
+        lokasi.delegate = self
+        
+        self.navigationController?.navigationBar.isHidden = false
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        self.navigationController?.navigationBar.isTranslucent = true
+        
+        //self.navigationController?.navigationBar.barTintColor = .init(p3red: 133/255, green: 207/255, blue: 221/255, alpha: 1)
+        
+        self.navigationController?.navigationBar.barTintColor = .init(red: 133/255, green: 207/255, blue: 221/255, alpha: 1)
+        
+        catatButton.setShadowAndRound()
     }
     
 
@@ -50,6 +65,15 @@ class FormImunisasiViewController: UIViewController, UIPickerViewDelegate, UIPic
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) // became first responder
+    {
+        scrollView.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    }
     
     
     func setPicker(){
@@ -145,5 +169,23 @@ class FormImunisasiViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedMonth = tabelImunisasi[row].jenisImunisasi
+    }
+    @IBAction func tapDismiss(_ sender: UITapGestureRecognizer) {
+//        self.view.endEditing(true)
+//        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    }
+}
+
+extension UIView
+{
+    func setShadowAndRound()
+    {
+        self.layer.cornerRadius = 10
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowOffset = CGSize(width: 0, height: 5)
+        self.layer.shadowRadius = 2
+        self.layer.shouldRasterize = true
+        self.layer.masksToBounds = false
     }
 }
