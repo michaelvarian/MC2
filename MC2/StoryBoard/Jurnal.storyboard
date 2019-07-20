@@ -317,7 +317,10 @@ Kembang</string>
         <scene sceneID="A0U-a9-K2s">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gki-7c-hct" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="SRP-5B-3a4"/>
+                    <tabBarItem key="tabBarItem" selectedImage="Tab Jurnal" systemItem="history" id="SRP-5B-3a4">
+                        <color key="badgeColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="3"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kl3-M8-RYR">
@@ -334,4 +337,7 @@ Kembang</string>
             <point key="canvasLocation" x="520.28985507246375" y="-385.04464285714283"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Tab Jurnal" width="78" height="53"/>
+    </resources>
 </document>

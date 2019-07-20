@@ -23,6 +23,7 @@ class HariIniViewController: UIViewController {
     @IBOutlet weak var aktivitasView: UIView!
     @IBOutlet weak var komunitasView: UIView!
     @IBOutlet weak var catatButton: UIButton!
+    @IBOutlet weak var urgentView: UIView!
     
     // Content Status Gizi
     @IBOutlet weak var namaStatusLabel: UILabel!
@@ -184,6 +185,8 @@ extension HariIniViewController{
     func setStartView(){
         accountImage.setRounded()
         
+        urgentView.setShadow()
+        urgentView.littleRoundView()
         catatButton.setShadowButton()
         catatButton.littleRoundButton()
         kondisiView.setShadowView()
