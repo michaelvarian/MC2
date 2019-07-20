@@ -16,7 +16,8 @@ class JurnalDescriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.backgroundColor = .lightGray
         // Do any additional setup after loading the view.
     }
     

@@ -40,14 +40,14 @@ class DetailBayiViewController: UIViewController {
         txtBabyName.text = dataBayi.namaBayi
         txtSex.text = dataBayi.jnsKelamin
         //txtBirthDate.text = String(c)
-        txtHeight.text = String(dataBayi.berat)
-        txtWeight.text = String(dataBayi.panjang)
+        txtHeight.text = String(dataBayi.panjang)
+        txtWeight.text = String(dataBayi.berat)
         txtHeadRound.text = String(dataBayi.lingkarKepala)
         
         var date = Date()
         date = dataBayi.tglLahir
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
+        formatter.dateFormat = "dd/MM/yyyy"
         let dateString = formatter.string(from: date)
         txtBirthDate.text = dateString
     }
@@ -70,7 +70,7 @@ class DetailBayiViewController: UIViewController {
     
     @objc func doneDatePicker() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
+        formatter.dateFormat = "dd/MM/yyyy"
         
         txtBirthDate.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
