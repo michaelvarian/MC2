@@ -249,7 +249,9 @@
         <scene sceneID="PyM-1y-s8Z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5hw-Kw-A4V" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Sx7-Rm-NLr"/>
+                    <tabBarItem key="tabBarItem" selectedImage="Tab Kesehatan" systemItem="favorites" id="Sx7-Rm-NLr">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b8e-nx-0cr">
@@ -266,4 +268,7 @@
             <point key="canvasLocation" x="140.57971014492756" y="-22.098214285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Tab Kesehatan" width="79" height="51.5"/>
+    </resources>
 </document>

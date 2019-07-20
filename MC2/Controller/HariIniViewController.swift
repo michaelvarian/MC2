@@ -23,6 +23,7 @@ class HariIniViewController: UIViewController {
     @IBOutlet weak var aktivitasView: UIView!
     @IBOutlet weak var komunitasView: UIView!
     @IBOutlet weak var catatButton: UIButton!
+    @IBOutlet weak var urgentView: UIView!
     
     // Content Status Gizi
     @IBOutlet weak var namaStatusLabel: UILabel!
@@ -67,6 +68,10 @@ class HariIniViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     @IBAction func catatTapped(_ sender: UIButton) {
@@ -184,6 +189,8 @@ extension HariIniViewController{
     func setStartView(){
         accountImage.setRounded()
         
+        urgentView.setShadow()
+        urgentView.littleRoundView()
         catatButton.setShadowButton()
         catatButton.littleRoundButton()
         kondisiView.setShadowView()

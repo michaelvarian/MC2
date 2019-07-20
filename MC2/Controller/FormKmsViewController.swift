@@ -25,7 +25,6 @@ class FormKmsViewController: UIViewController {
     @IBAction func tapToAddKms(_ sender: Any) {
         id += 1
       
-        
         let data = kms(idKMS: "\(id)", idDataBayi: "1", berat: Double(heightTextField.text!)!, lingkarkepala: Int(lingkarKepalaTextField.text!)!, panjang: Int(heightTextField.text!)!, tanggal: Date(timeIntervalSinceNow: 0))
         
         tabelKMS.append(data)
