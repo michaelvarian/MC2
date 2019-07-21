@@ -313,11 +313,11 @@ Kembang</string>
             </objects>
             <point key="canvasLocation" x="2653.6231884057975" y="-385.04464285714283"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Jurnal-->
         <scene sceneID="A0U-a9-K2s">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gki-7c-hct" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" selectedImage="Tab Jurnal" systemItem="history" id="SRP-5B-3a4">
+                    <tabBarItem key="tabBarItem" title="Jurnal" image="JurnalTabBar" selectedImage="JurnalTabBar" id="SRP-5B-3a4">
                         <color key="badgeColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="3"/>
                     </tabBarItem>
@@ -338,6 +338,6 @@ Kembang</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Tab Jurnal" width="78" height="53"/>
+        <image name="JurnalTabBar" width="20" height="25.5"/>
     </resources>
 </document>

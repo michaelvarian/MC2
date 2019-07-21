@@ -56,7 +56,6 @@ class HariIniViewController: UIViewController {
     
     // Contents Komunitas
     @IBOutlet weak var komunitasButton: UIButton!
-    @IBOutlet weak var namaKomunitasLabel: UILabel!
     @IBOutlet weak var detailKomunitasButton: UIButton!
     
     
@@ -67,6 +66,7 @@ class HariIniViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStartView()
+        setName()
         addDataAktivitas()
         addDataKomunitas()
         cellDelegate()
@@ -184,7 +184,9 @@ extension HariIniViewController: UITableViewDataSource, UITableViewDelegate{
 extension HariIniViewController{
     
     func setName(){
-        namaHeaderLabel.text = "Mama " 
+        namaHeaderLabel.text = "Mama " + tabelAkun[0].namaOrangTua
+        namaStatusLabel.text = tabelDataBayi[0].namaBayi
+        namaAktivitasLabel.text = tabelDataBayi[0].namaBayi
     }
     
     func setDate(){
