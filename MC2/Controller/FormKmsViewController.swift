@@ -18,6 +18,7 @@ class FormKmsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {        self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -34,6 +35,10 @@ class FormKmsViewController: UIViewController {
         
         tabelKMS.append(data)
         navigationController?.popViewController(animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
     
 
