@@ -40,8 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         initJurnalObjects()
-        initAccount()
-        initDataBayi()
+//        initAccount()
+//        initDataBayi()
         initTumbuh()
         initImunisasi()
         return true

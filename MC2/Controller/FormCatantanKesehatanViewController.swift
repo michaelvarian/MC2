@@ -11,7 +11,7 @@ import UIKit
 class FormCatantanKesehatanViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var id:Int = 0
-    var imageCatatan:UIImage!
+    var imageCatatan:UIImage? = nil
     private var datePicker:UIDatePicker?
     
     @IBOutlet weak var tujuanBerobatTF: UITextField!
@@ -49,7 +49,7 @@ class FormCatantanKesehatanViewController: UIViewController, UIImagePickerContro
     func addCatatanKesehatan(){
         id += 1
         
-        let dataCatatanKesehatan = dataKesehatan(idDataKesehatan: "\(id)", idAkun: "1", lokasi: lokasiBerobatTF.text!, fotoKesehatan: imageCatatan ,pengobatan: tujuanBerobatTF.text!, tanggalPengobatan: tanggalBerobatTF.text!, catatan: catatanTF.text!)
+        let dataCatatanKesehatan = dataKesehatan(idDataKesehatan: "\(id)", idAkun: "1", lokasi: lokasiBerobatTF.text!, fotoKesehatan: imageCatatan! ,pengobatan: tujuanBerobatTF.text!, tanggalPengobatan: tanggalBerobatTF.text!, catatan: catatanTF.text!)
         
         tabelDataKesehatan.append(dataCatatanKesehatan)
     }

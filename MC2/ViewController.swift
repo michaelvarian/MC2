@@ -16,16 +16,6 @@ class ViewController: UIViewController {
         // Inisialisasi Data
 
         
-        let aku = akun(idAkun: "1", namaOrangTua: "kevin", panggilan: "")
-        let aku2 = akun(idAkun: "1", namaOrangTua: "aldi", panggilan: "")
-        let aku3 = akun(idAkun: "1", namaOrangTua: "azis", panggilan: "")
-        
-        
-        
-        tabelAkun.append(aku)
-        tabelAkun.append(aku2)
-        tabelAkun.append(aku3)
-        
         //example code filter data / where di database
         let b = (tabelAkun.filter{$0.idAkun.contains("1") && $0.idAkun.contains("azis")})
         

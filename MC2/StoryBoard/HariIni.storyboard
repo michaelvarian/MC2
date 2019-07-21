@@ -86,8 +86,8 @@
                                                         <color key="textColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCF-Z2-zdE">
-                                                        <rect key="frame" x="23" y="22" width="36" height="39"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCF-Z2-zdE">
+                                                        <rect key="frame" x="10" y="22" width="65" height="39"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                                                         <color key="textColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
@@ -107,8 +107,8 @@
                                                         <color key="textColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rd-ZO-MGV">
-                                                        <rect key="frame" x="24" y="22" width="36" height="39"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rd-ZO-MGV">
+                                                        <rect key="frame" x="8" y="22" width="68" height="39"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                                                         <color key="textColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
@@ -128,8 +128,8 @@
                                                         <color key="textColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdP-YE-2Cp">
-                                                        <rect key="frame" x="24" y="22" width="36" height="39"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdP-YE-2Cp">
+                                                        <rect key="frame" x="8" y="22" width="67" height="39"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                                                         <color key="textColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
@@ -159,7 +159,7 @@
                                                 <rect key="frame" x="19" y="251" width="34" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deskripsi Summary Imunisasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9I4-eV-9Np">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tolong perhatikan imunisasi di bulan ini " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9I4-eV-9Np">
                                                 <rect key="frame" x="65" y="226" width="262" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -173,7 +173,7 @@
                                                 <color key="textColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deskripsi Summary Imunisasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxo-7c-JcU" userLabel="Deskripsi Summary Gizi">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gizi cukup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxo-7c-JcU" userLabel="Deskripsi Summary Gizi">
                                                 <rect key="frame" x="65" y="278" width="262" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -187,8 +187,8 @@
                                                 <color key="textColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deskripsi Summary Imunisasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Es-rF-7fT" userLabel="Deskripsi Summary Tumbuh">
-                                                <rect key="frame" x="65" y="324" width="262" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tolong perhatikan tumbuh kembang" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Es-rF-7fT" userLabel="Deskripsi Summary Tumbuh">
+                                                <rect key="frame" x="65" y="324" width="254" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -455,7 +455,7 @@
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellHomeKomunitas" rowHeight="62" id="k1q-Oa-R7k" customClass="HomeKomunitasTableViewCell" customModule="MC2" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="288" height="62"/>
                                                         <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k1q-Oa-R7k" id="hqE-CG-7WM">
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k1q-Oa-R7k" id="hqE-CG-7WM">
                                                             <rect key="frame" x="0.0" y="0.0" width="288" height="62"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
@@ -571,6 +571,7 @@
                         <outlet property="accountImage" destination="qVY-iT-hkU" id="WWG-qp-ua1"/>
                         <outlet property="aktivitasButton" destination="PIl-T4-qdx" id="x0r-l5-nb8"/>
                         <outlet property="aktivitasView" destination="irF-Fj-7qA" id="UK9-0V-Gq4"/>
+                        <outlet property="beratLabel" destination="2Rd-ZO-MGV" id="kPg-Da-qeM"/>
                         <outlet property="beratView" destination="evW-YH-fSh" id="c2P-RB-czd"/>
                         <outlet property="catatButton" destination="3Hw-jH-YA3" id="C7U-LG-iCY"/>
                         <outlet property="deskripsiSummaryGizi" destination="oxo-7c-JcU" id="XbP-bb-HoQ"/>
@@ -595,8 +596,10 @@
                         <outlet property="tahapanButton" destination="lGi-Za-JOC" id="1bW-WD-w9z"/>
                         <outlet property="tahapanView" destination="xVx-tV-STB" id="pou-mO-KrU"/>
                         <outlet property="tanggalLabel" destination="BD6-it-7L8" id="Jg1-Ro-EZy"/>
+                        <outlet property="tinggiLabel" destination="IdP-YE-2Cp" id="zOY-m4-s6s"/>
                         <outlet property="tinggiView" destination="vuj-s0-Zyr" id="Yzq-dg-wo7"/>
                         <outlet property="ucapanLabel" destination="UY0-US-Wb8" id="Jcp-ab-3ud"/>
+                        <outlet property="umurLabel" destination="HCF-Z2-zdE" id="jON-00-dtp"/>
                         <outlet property="umurView" destination="OOk-wx-bSD" id="quF-4C-r7p"/>
                         <outlet property="urgentView" destination="3TG-B1-bTm" id="uHe-yl-F54"/>
                         <segue destination="bYB-QY-5wy" kind="show" identifier="goToImunisasi" id="iQV-OH-hse"/>

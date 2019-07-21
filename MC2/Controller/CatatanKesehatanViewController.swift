@@ -30,6 +30,11 @@ class CatatanKesehatanViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
     
+    @IBAction func catatTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToCatatKesehatan", sender: self)
+    }
+    
+    
 //
 //    func addData(){
 //        let catatanKesehatan1 = dataKesehatan(idDataKesehatan: "1", idAkun: "1", lokasi: "Siloam Kebon Jeruk", fotoKesehatan: UIImage(named: "siloam")!, pengobatan: "Pemeriksaan Bulanan", tanggalPengobatan: "09-07-19", catatan: "Badan Kuning")
@@ -53,10 +58,17 @@ class CatatanKesehatanViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let detailCatatanKesehatan  = segue.destination as! DetailCatatanKesehatanViewController
-        if let indexPath = catatanKesehatanTableView.indexPathForSelectedRow{
-            let catatan = tabelDataKesehatan[indexPath.row] 
-            detailCatatanKesehatan.objCatatanKesehatan = catatan
+        switch segue.identifier {
+        case "goToCatatKesehatan":
+            print("Gogogo")
+        case "goToDetailCatatan" :
+            let detailCatatanKesehatan  = segue.destination as! DetailCatatanKesehatanViewController
+            if let indexPath = catatanKesehatanTableView.indexPathForSelectedRow{
+                let catatan = tabelDataKesehatan[indexPath.row]
+                detailCatatanKesehatan.objCatatanKesehatan = catatan
+            }
+        default:
+            break
         }
     }
     

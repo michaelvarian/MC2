@@ -36,8 +36,11 @@ class HariIniViewController: UIViewController {
     @IBOutlet weak var namaStatusLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var umurView: UIView!
+    @IBOutlet weak var umurLabel: UILabel!
     @IBOutlet weak var beratView: UIView!
+    @IBOutlet weak var beratLabel: UILabel!
     @IBOutlet weak var tinggiView: UIView!
+    @IBOutlet weak var tinggiLabel: UILabel!
     @IBOutlet weak var summaryImunisasiLabel: UILabel!
     @IBOutlet weak var deskripsiSummaryImunisasi: UILabel!
     @IBOutlet weak var summaryGiziLabel: UILabel!
@@ -66,7 +69,6 @@ class HariIniViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStartView()
-        setName()
         addDataAktivitas()
         addDataKomunitas()
         cellDelegate()
@@ -75,6 +77,7 @@ class HariIniViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         self.tabBarController?.tabBar.isHidden = false
+        setStatus()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -90,8 +93,7 @@ class HariIniViewController: UIViewController {
    
 }
 extension HariIniViewController: UITableViewDataSource, UITableViewDelegate{
-    
-    
+
     func cellDelegate(){
         homeTahapanTable.delegate = self
         homeTahapanTable.dataSource = self
@@ -184,8 +186,9 @@ extension HariIniViewController: UITableViewDataSource, UITableViewDelegate{
 extension HariIniViewController{
     
     func setName(){
-        namaHeaderLabel.text = "Mama " + tabelAkun[0].namaOrangTua
+        namaHeaderLabel.text = tabelAkun[0].panggilan + " " + tabelAkun[0].namaOrangTua
         namaStatusLabel.text = tabelDataBayi[0].namaBayi
+        namaTahapanLabel.text = tabelDataBayi[0].namaBayi
         namaAktivitasLabel.text = tabelDataBayi[0].namaBayi
     }
     
@@ -198,8 +201,18 @@ extension HariIniViewController{
         tanggalLabel.text = Calendar.current.weekdaySymbols[weekday-1] + " \(date) \(Calendar.current.shortMonthSymbols[month-1]) 2019"
     }
     
+    func setStatus(){
+        if tabelKMS.count != 0{
+            beratLabel.text = "\(tabelKMS[tabelKMS.count-1].berat)"
+            tinggiLabel.text = "\(tabelKMS[tabelKMS.count-1].panjang)"
+        }
+    }
+    
+    
     func setStartView(){
         setDate()
+        setName()
+        calcAge()
         accountImage.setRounded()
         
         urgentView.setShadow()
@@ -247,6 +260,19 @@ extension HariIniViewController{
         actionSheet.addAction(cancel)
         
         present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func calcAge(){
+        
+        let today = Date()
+        
+        let calendar = Calendar.current
+        
+        let components = calendar.dateComponents([.year, .month, .day], from: tabelDataBayi[0].tglLahir, to: today)
+        
+        let ageDays = components.day
+        
+        umurLabel.text = "\(ageDays!)"
     }
 }
 
