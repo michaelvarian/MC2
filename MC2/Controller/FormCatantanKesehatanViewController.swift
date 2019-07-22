@@ -36,6 +36,10 @@ class FormCatantanKesehatanViewController: UIViewController, UIImagePickerContro
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     @IBAction func catatTapped(_ sender: UIButton) {
         addCatatanKesehatan()
         navigationController?.popViewController(animated: true)

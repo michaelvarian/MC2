@@ -30,13 +30,15 @@ class CatatanKesehatanViewController: UIViewController {
 //        navigationController?.navigationBar.isHidden = true
         self.navigationController?.navigationBar.isHidden = false
         
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = false
         
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.2196078431, green: 0.2196078431, blue: 0.2196078431, alpha: 1)
         
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.5215686275, green: 0.8117647059, blue: 0.8666666667, alpha: 1)
         
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: color]
+        
+        self.catatanKesehatanTableView.reloadData()
         
 //        self.tabBarController?.tabBar.isHidden = true
         

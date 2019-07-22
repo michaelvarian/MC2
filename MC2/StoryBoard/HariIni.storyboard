@@ -709,7 +709,6 @@
                     <connections>
                         <outlet property="aktivitasTableView" destination="Uxr-S2-BrZ" id="lPe-Se-Mec"/>
                         <outlet property="pilihBulan" destination="XoI-WF-KEi" id="hzi-z1-Rcr"/>
-                        <segue destination="39z-he-24l" kind="show" identifier="goToDetailAktivitas" id="Rlh-0V-bj3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qhx-Rl-lnx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -748,7 +747,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uj2-gw-3dJ">
-                                <rect key="frame" x="56" y="742" width="302" height="60"/>
+                                <rect key="frame" x="56" y="791" width="302" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="BJL-DY-TE0"/>
@@ -762,7 +761,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUS-pD-lh1">
-                                <rect key="frame" x="46" y="111" width="323" height="606"/>
+                                <rect key="frame" x="46" y="67" width="323" height="699"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jadi apakah anak anda sudah dapat melakukan hal dibawah ini bun ?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHE-1A-4S6">
                                         <rect key="frame" x="8" y="96" width="310" height="45.5"/>
@@ -771,7 +770,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4bO-gQ-UUr">
-                                        <rect key="frame" x="8" y="169" width="310" height="420"/>
+                                        <rect key="frame" x="8" y="169" width="310" height="513"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellTahapanAktivitas" rowHeight="91" id="1nh-vM-Lhd" customClass="DetailTahapanTableViewCell" customModule="MC2" customModuleProvider="target">
