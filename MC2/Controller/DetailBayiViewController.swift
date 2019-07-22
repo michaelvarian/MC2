@@ -8,7 +8,25 @@
 
 import UIKit
 
-class DetailBayiViewController: UIViewController {
+class DetailBayiViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return jenisKelaminTypes.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return jenisKelaminTypes[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedJenisKelamin = jenisKelaminTypes[row]
+        txtSex.text = selectedJenisKelamin
+    }
+    
+    var selectedJenisKelamin : String?
 
     @IBOutlet weak var lblBabyName: UILabel!
     @IBOutlet weak var lblBabyAge: UILabel!
@@ -19,11 +37,15 @@ class DetailBayiViewController: UIViewController {
     @IBOutlet weak var txtHeight: UITextField!
     @IBOutlet weak var txtHeadRound: UITextField!
     
+    var jenisKelaminTypes = ["- - -","Laki - Laki","Perempuan"]
+    
     let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createPickerView()
         updateView()
+        dismissPickerView()
         // Do any additional setup after loading the view.
     }
     
@@ -32,6 +54,33 @@ class DetailBayiViewController: UIViewController {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
         setDatePicker()
+    }
+    
+    func createPickerView(){
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        txtSex.inputView = pickerView
+        
+//        let tapgesture = UITapGestureRecognizer(target: self,  action:#selector(registration2ViewController.viewTapped(gestureRecognizer:)))
+        
+        //view.addGestureRecognizer(tapgesture)
+        
+    }
+    
+    func dismissPickerView(){
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(self.dissmissKeyboard))
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        txtSex.inputAccessoryView = toolBar
+        
+    }
+    
+    @objc func dissmissKeyboard(){
+        view.endEditing(true)
     }
     
     func updateView() {
@@ -56,12 +105,15 @@ class DetailBayiViewController: UIViewController {
         let currBaby = tabelDataBayi[0]
         let newBaby = currBaby
         
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        
         newBaby.berat = Double(txtWeight.text!) as! Double
         newBaby.jnsKelamin = txtSex.text!
         newBaby.lingkarKepala = Int(txtHeadRound.text!)!
         newBaby.namaBayi = txtBabyName.text!
         newBaby.panjang = Double(txtHeight.text!) as! Double
-        //newBaby.tglLahir = Date(txtBirthDate.text)
+        newBaby.tglLahir = formatter.date(from: txtBirthDate.text!)!
         
         tabelDataBayi.remove(at: 0)
         tabelDataBayi.append(newBaby)
