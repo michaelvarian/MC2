@@ -35,7 +35,6 @@ class AktivitasViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cellDelegate()
-        addDataAktivitas()
     }
     
     override func viewWillAppear(_ animated: Bool) {

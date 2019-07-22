@@ -41,4 +41,8 @@ class KomunitasViewController: UIViewController, UITableViewDataSource, UITableV
         cell?.lblCommunityDesc.text = tabelKomunitas[indexPath.row].descKomunitas
         return cell!
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Lu tambah code disini ziz
+    }
 }
