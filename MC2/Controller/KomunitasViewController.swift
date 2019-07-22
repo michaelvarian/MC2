@@ -43,6 +43,8 @@ class KomunitasViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Lu tambah code disini ziz
+        if let url = URL(string: "https://t.me/joinchat/DRouLxOEK0-GHBJu76Bd6A") {
+            UIApplication.shared.open(url)
+        }
     }
 }
