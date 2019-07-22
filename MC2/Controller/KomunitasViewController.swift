@@ -41,4 +41,5 @@ class KomunitasViewController: UIViewController, UITableViewDataSource, UITableV
         cell?.lblCommunityDesc.text = tabelKomunitas[indexPath.row].descKomunitas
         return cell!
     }
+    
 }

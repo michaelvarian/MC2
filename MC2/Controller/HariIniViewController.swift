@@ -5,7 +5,7 @@
 //  Created by Muhammad Reynaldi on 13/07/19.
 //  Copyright © 2019 Group 16. All rights reserved.
 //
-var color = #colorLiteral(red: 1, green: 0.6687598228, blue: 0.3416582942, alpha: 1)
+var color = #colorLiteral(red: 0.2196078431, green: 0.2196078431, blue: 0.2196078431, alpha: 1)
 
 import UIKit
 
