@@ -51,20 +51,20 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.52156862745098043" green="0.81176470588235294" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xA-fZ-tt1" userLabel="Catatan Kesehatan">
-                                <rect key="frame" x="15" y="694" width="384" height="119"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4B-F1-Bh0" userLabel="Imunisasi">
+                                <rect key="frame" x="15" y="536" width="384" height="119"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="CatatanSehat"/>
-                                <connections>
-                                    <segue destination="cEU-8F-mvb" kind="show" id="qMJ-Pf-7Et"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4B-F1-Bh0" userLabel="Imunisasi">
-                                <rect key="frame" x="15" y="567" width="384" height="119"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="ImunisasiSehat"/>
+                                <state key="normal" image="KesehatanBtn"/>
                                 <connections>
                                     <segue destination="04B-gi-aca" kind="show" id="5UJ-3x-q8l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xA-fZ-tt1" userLabel="Catatan Kesehatan">
+                                <rect key="frame" x="15" y="674" width="384" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ImunisasiBtn"/>
+                                <connections>
+                                    <segue destination="cEU-8F-mvb" kind="show" id="qMJ-Pf-7Et"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -389,6 +389,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="deskripsiImunisasi" destination="jAd-I0-0ao" id="Jwq-8p-lGJ"/>
+                                            <outlet property="judulImunisasiLabel" destination="53e-O1-MIS" id="tw2-X3-eGa"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -456,7 +460,7 @@
                                 <rect key="frame" x="26" y="298" width="374" height="265"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Vaksin polio adalah vaksin yang diberikan untuk mencegah penyakit polio. Terdapat dua jenis vaksin polio, yaitu vaksin yang berisi virus polio yang tidak aktif yang disuntikkan ke dalam tubuh atau vaksin berisi virus polio yang sudah dilemahkan yang diberikan lewat mulut.The World Health Organization recommends all children be fully vaccinated against polio.Kedua vaksin ini telah memberantas polio hampir di seluruh dunia dan telah mengurangi jumlah kasus dari 350.000 pada tahun 1988 menjadi 22 saja pada tahun 2017.</mutableString>
+                                <string key="text">Vaksin polio adalah vaksin yang diberikan untuk mencegah penyakit polio. Terdapat dua jenis vaksin polio, yaitu vaksin yang berisi virus polio yang tidak aktif yang disuntikkan ke dalam tubuh atau vaksin berisi virus polio yang sudah dilemahkan yang diberikan lewat mulut.The World Health Organization recommends all children be fully vaccinated against polio.Kedua vaksin ini telah memberantas polio hampir di seluruh dunia dan telah mengurangi jumlah kasus dari 350.000 pada tahun 1988 menjadi 22 saja pada tahun 2017.</string>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -474,12 +478,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CatatanSehat" width="384" height="119"/>
         <image name="Close Button" width="46" height="46"/>
         <image name="Graph Line" width="328" height="162.5"/>
         <image name="GraphNumbers" width="348.5" height="313"/>
         <image name="GraphPicture" width="374" height="284"/>
-        <image name="ImunisasiSehat" width="384" height="119"/>
+        <image name="ImunisasiBtn" width="1087.5" height="304.5"/>
+        <image name="KesehatanBtn" width="1087.5" height="304.5"/>
         <image name="KesehatanTabBar" width="20.5" height="28"/>
         <image name="Polio" width="440" height="307.5"/>
         <image name="Polio Small" width="127" height="100"/>

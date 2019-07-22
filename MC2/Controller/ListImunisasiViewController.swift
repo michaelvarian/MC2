@@ -37,7 +37,7 @@ class ListImunisasiViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 10
+        return tabelImunisasi.count
     }
     
     
@@ -47,6 +47,9 @@ class ListImunisasiViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = listImunisasiTableView.dequeueReusableCell(withIdentifier: "cellImunisasi", for: indexPath) as! ListImunisasiTableViewCell
+        let imunisasi = tabelImunisasi[indexPath.row]
+        
+        cell.judulImunisasiLabel.text = imunisasi.jenisImunisasi
         return cell
     }
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat

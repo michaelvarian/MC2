@@ -10,6 +10,9 @@ import UIKit
 
 class ListImunisasiTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var judulImunisasiLabel: UILabel!
+    @IBOutlet weak var deskripsiImunisasi: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
