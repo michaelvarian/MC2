@@ -14,10 +14,12 @@ class FormKmsViewController: UIViewController {
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var lingkarKepalaTextField: UITextField!
+    @IBOutlet weak var catatButton: UIButton!
     var id:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    catatButton.setShadowAndRound()
         self.tabBarController?.tabBar.isHidden = true
     }
     

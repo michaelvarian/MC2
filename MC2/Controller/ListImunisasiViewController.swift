@@ -29,8 +29,8 @@ class ListImunisasiViewController: UIViewController, UITableViewDelegate, UITabl
         
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: color]
         
-        self.tabBarController?.tabBar.isHidden = true
-        
+//        self.tabBarController?.tabBar.isHidden = true
+//        
         self.navigationController?.navigationBar.isTranslucent = true
     }
     

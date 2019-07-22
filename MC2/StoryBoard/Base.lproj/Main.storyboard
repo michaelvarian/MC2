@@ -180,6 +180,7 @@
                         <outlet property="mainTitleLabel" destination="RsC-dN-txq" id="aaG-xA-9mz"/>
                         <outlet property="nameField" destination="QcA-w4-02A" id="POB-yx-aoR"/>
                         <outlet property="nameLabel" destination="Y1R-u3-oMR" id="ANq-z0-VwZ"/>
+                        <outlet property="nextButton" destination="lDH-1S-n58" id="PHK-lH-Lgx"/>
                         <outlet property="panggilanField" destination="laG-hh-3lf" id="P3m-vw-PJl"/>
                         <outlet property="panggilanLabel" destination="PAZ-wO-9iQ" id="eF3-d5-gbd"/>
                         <segue destination="vaN-oz-ORS" kind="show" identifier="registration2" id="TkK-K3-TyO"/>
@@ -295,6 +296,7 @@ Boleh kami tahu namanya?</string>
                         <outlet property="mainTitleLabel" destination="HhE-c0-D4w" id="gjw-YB-wQb"/>
                         <outlet property="namaBayiField" destination="8zP-A8-cUA" id="tja-7l-kED"/>
                         <outlet property="namaBayiLabel" destination="fOJ-fp-OyM" id="xv0-3w-VhS"/>
+                        <outlet property="nextButton" destination="KPe-Fb-ksc" id="4gC-ZU-DWw"/>
                         <outlet property="tanggalLahirField" destination="kOw-g7-ccl" id="3CC-wj-U9C"/>
                         <outlet property="tanggalLahirLabel" destination="eIM-bq-QmV" id="6ZD-i2-hKG"/>
                         <segue destination="abp-Jz-fBO" kind="show" identifier="goToHome" id="AKy-1w-Oco"/>

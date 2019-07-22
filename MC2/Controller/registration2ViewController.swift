@@ -11,6 +11,7 @@ import UIKit
 class registration2ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     
+    @IBOutlet weak var nextButton: UIButton!
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -92,6 +93,9 @@ class registration2ViewController: UIViewController, UIPickerViewDataSource, UIP
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nextButton.setShadowAndRound()
+        
         createPickerView()
         
         dismissPickerView()

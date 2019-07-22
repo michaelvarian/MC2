@@ -10,6 +10,7 @@ import UIKit
 
 class registrationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
+    @IBOutlet weak var nextButton: UIButton!
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -71,6 +72,7 @@ class registrationViewController: UIViewController, UIPickerViewDataSource, UIPi
         super.viewDidLoad()
         createPickerView()
         dismissPickerView()
+        nextButton.setShadowAndRound()
         // Do any additional setup after loading the view.
     }
     @IBAction func lanjutActionButton(_ sender: Any) {

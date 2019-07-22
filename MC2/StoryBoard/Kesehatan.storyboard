@@ -150,7 +150,7 @@
             </objects>
             <point key="canvasLocation" x="2299" y="-22"/>
         </scene>
-        <!--Catatan Kesehatan View Controller-->
+        <!--Catatan Kesehatan-->
         <scene sceneID="hsN-dz-2GS">
             <objects>
                 <viewController id="cEU-8F-mvb" customClass="CatatanKesehatanViewController" customModule="MC2" customModuleProvider="target" sceneMemberID="viewController">
@@ -158,25 +158,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xlg-ZI-t3A">
-                                <rect key="frame" x="-1" y="0.0" width="415" height="101"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.52156862749999999" green="0.81176470590000005" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cv2-vV-VPx">
-                                <rect key="frame" x="36" y="69" width="343" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99215686270000003" green="0.60392156860000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                <state key="normal" title="Catat">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="catatTapped:" destination="cEU-8F-mvb" eventType="touchUpInside" id="oC3-2g-V9A"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nOP-UY-Ehd">
-                                <rect key="frame" x="-1" y="154" width="415" height="659"/>
+                                <rect key="frame" x="-1" y="225" width="415" height="671"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -244,14 +227,32 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wl0-d2-PnF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="184"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.52180543664383561" green="0.81175085616438358" blue="0.86782962328767121" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cv2-vV-VPx">
+                                <rect key="frame" x="35" y="155" width="343" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.60392156860000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <state key="normal" title="Catat Kesehatan">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="catatTapped:" destination="cEU-8F-mvb" eventType="touchUpInside" id="oC3-2g-V9A"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="uz8-RL-XT5"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Catatan Kesehatan" id="hKV-h3-mLa"/>
                     <connections>
                         <outlet property="catatButton" destination="Cv2-vV-VPx" id="yjm-VL-3dc"/>
                         <outlet property="catatanKesehatanTableView" destination="nOP-UY-Ehd" id="YVj-kN-xsP"/>
-                        <outlet property="headerView" destination="xlg-ZI-t3A" id="rln-9I-mpF"/>
+                        <outlet property="headerView" destination="Wl0-d2-PnF" id="AKg-2M-yW8"/>
                         <segue destination="djt-ft-kAc" kind="show" identifier="goToDetailCatatan" id="e1x-WZ-tWN"/>
                         <segue destination="L8h-Vj-Cxo" kind="show" identifier="goToCatatKesehatan" id="fYa-1Y-VLI"/>
                     </connections>

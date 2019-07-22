@@ -116,6 +116,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="KMS" id="3js-Uj-VGK"/>
                     <connections>
+                        <outlet property="catatButton" destination="DY1-Ud-jJn" id="R4M-kz-Nnj"/>
                         <outlet property="explanationLabel" destination="DSK-XS-bfv" id="vwv-u1-WoP"/>
                         <outlet property="heightTextField" destination="wib-e1-JyY" id="c6S-xC-dST"/>
                         <outlet property="lingkarKepalaTextField" destination="JqM-Tf-kDV" id="ZIp-4d-yQr"/>
