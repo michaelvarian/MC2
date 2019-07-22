@@ -717,6 +717,7 @@ class JurnalViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //textField.inputView = datePicker
 //        filterDateStart.inputAccessoryView = toolbar
 //        filterDateStart.inputView = datePicker
+        
         filterDateStart.inputAccessoryView = toolbar
         filterDateStart.inputView = datePicker
         filterDateEnd.inputAccessoryView = toolbar

@@ -22,11 +22,7 @@ class JurnalDescriptionViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.view.backgroundColor = .clear
-        navigationController?.navigationBar.backgroundColor = .clear
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -35,6 +31,12 @@ class JurnalDescriptionViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.view.backgroundColor = .clear
         navigationController?.navigationBar.backgroundColor = .clear
+        
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    @IBAction func closeButtonClicked(_ sender: UIButton) {
+    self.navigationController?.popViewController(animated: true)
     }
     
     /*
