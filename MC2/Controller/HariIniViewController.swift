@@ -197,8 +197,8 @@ extension HariIniViewController{
         let weekday = Calendar.current.component(.weekday, from: today)
         let month = Calendar.current.component(.month, from: today)
         let date = Calendar.current.component(.day, from: today)
-        
-        tanggalLabel.text = Calendar.current.weekdaySymbols[weekday-1] + " \(date) \(Calendar.current.shortMonthSymbols[month-1]) 2019"
+//        Calendar.current.weekdaySymbols[weekday-1]
+        tanggalLabel.text = "Senin " + "\(date) \(Calendar.current.shortMonthSymbols[month-1]) 2019"
     }
     
     func setStatus(){
