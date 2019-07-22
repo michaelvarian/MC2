@@ -77,10 +77,6 @@ extension AktivitasViewController:UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goToDetailAktivitas", sender: self)
-        aktivitasTableView.deselectRow(at: indexPath, animated: true)
-    }
     
 }
 

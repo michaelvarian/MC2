@@ -32,6 +32,7 @@ class ListImunisasiViewController: UIViewController, UITableViewDelegate, UITabl
 //        self.tabBarController?.tabBar.isHidden = true
 //        
         self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int

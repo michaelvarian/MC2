@@ -27,7 +27,7 @@ class DetailCatatanKesehatanViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = true
     }
     
     @IBAction func closeTapped(_ sender: UIButton) {
